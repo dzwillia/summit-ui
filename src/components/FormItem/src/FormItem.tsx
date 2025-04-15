@@ -17,7 +17,7 @@ const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
         {errorText && <p className={styles.text.error}>{errorText}</p>}
       </div>
     );
-  }
+  },
 );
 FormItem.displayName = 'FormItem';
 

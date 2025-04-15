@@ -1,6 +1,6 @@
 export interface DatePickerProps {
-  value?: Date
-  onChange: (date?: Date) => void
-  placeholder?: string
-  className?: string
+  value?: Date;
+  onChange: (date?: Date) => void;
+  placeholder?: string;
+  className?: string;
 }

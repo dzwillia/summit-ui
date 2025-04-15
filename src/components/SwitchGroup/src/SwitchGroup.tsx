@@ -13,8 +13,9 @@ const SwitchGroup = React.forwardRef<HTMLDivElement, SwitchGroupProps>(
             columns === 1 && 'grid-cols-1',
             columns === 2 && 'grid-cols-2',
             columns === 3 && 'grid-cols-3',
-            columns === 4 && 'grid-cols-4'
-          )}>
+            columns === 4 && 'grid-cols-4',
+          )}
+        >
           {options.map(option => (
             <div key={option.id}>
               <Switch
@@ -34,7 +35,7 @@ const SwitchGroup = React.forwardRef<HTMLDivElement, SwitchGroupProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 SwitchGroup.displayName = 'SwitchGroup';
 

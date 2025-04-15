@@ -1,2 +1,2 @@
-export { FormItem } from './src/FormItem'
-export type { FormItemProps } from './types'
+export { FormItem } from './src/FormItem';
+export type { FormItemProps } from './types';

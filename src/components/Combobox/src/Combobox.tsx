@@ -23,7 +23,7 @@ const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(
       emptyMessage = 'No item found.',
       className,
     },
-    ref
+    ref,
   ) => {
     const [open, setOpen] = React.useState(false);
 
@@ -35,7 +35,8 @@ const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className={cn('w-full justify-between', !value && 'text-muted-foreground', className)}>
+            className={cn('w-full justify-between', !value && 'text-muted-foreground', className)}
+          >
             {value ? options.find(option => option.value === value)?.label : placeholder}
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
@@ -52,11 +53,12 @@ const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(
                   onSelect={(currentValue: string) => {
                     onChange(currentValue === value ? '' : currentValue);
                     setOpen(false);
-                  }}>
+                  }}
+                >
                   <Check
                     className={cn(
                       'mr-2 h-4 w-4',
-                      value === option.value ? 'opacity-100' : 'opacity-0'
+                      value === option.value ? 'opacity-100' : 'opacity-0',
                     )}
                   />
                   {option.label}
@@ -67,7 +69,7 @@ const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(
         </PopoverContent>
       </Popover>
     );
-  }
+  },
 );
 Combobox.displayName = 'Combobox';
 

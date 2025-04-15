@@ -18,18 +18,20 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
           id={id}
           className={cn(
             'peer h-5 w-5 shrink-0 rounded-sm border-2 border-gray-500 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground',
-            className
+            className,
           )}
-          {...props}>
+          {...props}
+        >
           <CheckboxPrimitive.Indicator
-            className={cn('flex items-center justify-center text-current')}>
+            className={cn('flex items-center justify-center text-current')}
+          >
             <Check className="h-4 w-4" />
           </CheckboxPrimitive.Indicator>
         </CheckboxPrimitive.Root>
         {label && (typeof label === 'string' ? <Label htmlFor={id}>{label}</Label> : label)}
       </div>
     );
-  }
+  },
 );
 Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 

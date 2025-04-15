@@ -17,8 +17,9 @@ const RadioGroup = React.forwardRef<
         'grid gap-2',
         orientation === 'horizontal' && 'flex flex-row space-x-2',
         orientation === 'vertical' && 'flex flex-col space-y-1',
-        className
-      )}>
+        className,
+      )}
+    >
       {options.map(option => (
         <Radio key={option.value} id={option.value} value={option.value} label={option.label} />
       ))}

@@ -12,7 +12,8 @@ const SingleSelect = React.forwardRef<HTMLButtonElement, SingleSelectProps>(
       <Select value={value} onValueChange={onChange}>
         <SelectTrigger
           ref={ref}
-          className={cn('w-full justify-between', !value && 'text-muted-foreground', className)}>
+          className={cn('w-full justify-between', !value && 'text-muted-foreground', className)}
+        >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>
@@ -24,7 +25,7 @@ const SingleSelect = React.forwardRef<HTMLButtonElement, SingleSelectProps>(
         </SelectContent>
       </Select>
     );
-  }
+  },
 );
 SingleSelect.displayName = 'SingleSelect';
 

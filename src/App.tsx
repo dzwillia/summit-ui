@@ -102,7 +102,8 @@ const App: React.FC = () => {
             <FormItem
               label="Project Description"
               hintText="A brief overview of your project's goals and requirements"
-              errorText="Project description is required">
+              errorText="Project description is required"
+            >
               <Textarea
                 id="description"
                 placeholder="Describe your project..."
@@ -137,7 +138,8 @@ const App: React.FC = () => {
           {/* Switches */}
           <FormItem
             label="Project Settings"
-            hintText="Configure your project's visibility and licensing">
+            hintText="Configure your project's visibility and licensing"
+          >
             <SwitchGroup
               options={settingsOptions}
               value={settings}
@@ -149,7 +151,8 @@ const App: React.FC = () => {
           {/* Radio Buttons */}
           <FormItem
             label="Project Type"
-            hintText="Select the primary type of application you're building">
+            hintText="Select the primary type of application you're building"
+          >
             <RadioGroup options={projectTypes} value={projectType} onChange={setProjectType} />
           </FormItem>
 
@@ -186,7 +189,8 @@ const App: React.FC = () => {
 
             <FormItem
               label="Primary Language"
-              hintText="Choose the main programming language for development">
+              hintText="Choose the main programming language for development"
+            >
               <Combobox
                 options={languages}
                 value={language}
@@ -232,7 +236,8 @@ const App: React.FC = () => {
 
             <FormItem
               label="Maintenance Period"
-              hintText="Select the maintenance start and end dates">
+              hintText="Select the maintenance start and end dates"
+            >
               <DateRangePicker
                 value={dateRange2}
                 onChange={setDateRange2}
@@ -258,7 +263,8 @@ const App: React.FC = () => {
 
             <FormItem
               label="Development Tools"
-              hintText="Choose the development tools for your team">
+              hintText="Choose the development tools for your team"
+            >
               <MultiSelect
                 options={tools}
                 value={selectedTools}
@@ -270,7 +276,8 @@ const App: React.FC = () => {
 
             <FormItem
               label="Additional Languages"
-              hintText="Other programming languages used in the project">
+              hintText="Other programming languages used in the project"
+            >
               <MultiSelect
                 options={languages}
                 value={selectedLanguages}

@@ -18,7 +18,7 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
       },
       className,
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={cn('grid gap-2', className)}>
@@ -30,8 +30,9 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
               variant={'outline'}
               className={cn(
                 'w-full justify-start text-left font-normal',
-                !value.from && !value.to && 'text-muted-foreground'
-              )}>
+                !value.from && !value.to && 'text-muted-foreground',
+              )}
+            >
               <CalendarIcon className="mr-2 h-4 w-4" />
               {(() => {
                 if (value.from) {
@@ -61,7 +62,7 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
         </Popover>
       </div>
     );
-  }
+  },
 );
 DateRangePicker.displayName = 'DateRangePicker';
 
