@@ -1,3 +1,4 @@
+import { styles } from '@/lib/styles';
 import { cn } from '@/lib/utils';
 import * as React from 'react';
 import { Label } from '../../Label';
@@ -10,10 +11,10 @@ const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
         <div className="space-y-1">
           {label &&
             (typeof label === 'string' ? <Label className="font-bold">{label}</Label> : label)}
-          {hintText && <p className="text-sm text-muted-foreground">{hintText}</p>}
+          {hintText && <p className={styles.text.hint}>{hintText}</p>}
         </div>
         {children}
-        {errorText && <p className="text-sm font-medium text-destructive">{errorText}</p>}
+        {errorText && <p className={styles.text.error}>{errorText}</p>}
       </div>
     );
   }
