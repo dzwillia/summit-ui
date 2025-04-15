@@ -1,4 +1,4 @@
-import { buttonVariants } from '@/components/Button/types';
+import { buttonVariants } from '@/components/Button/constants';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { DayPicker } from 'react-day-picker';
