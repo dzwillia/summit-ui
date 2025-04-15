@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { styles } from '@/lib/styles';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import * as React from 'react';
 import { DialogTitleProps } from '../types';
@@ -9,7 +10,7 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Title
     ref={ref}
-    className={cn('text-lg font-semibold leading-none tracking-tight', className)}
+    className={cn(styles.text.title, 'leading-none tracking-tight', className)}
     {...props}
   />
 ));
