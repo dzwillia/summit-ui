@@ -20,6 +20,8 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
     },
     ref,
   ) => {
+    const selectedValue = value.from ? { from: value.from, to: value.to ?? undefined } : undefined;
+
     return (
       <div className={cn('grid gap-2', className)}>
         <Popover>
@@ -39,11 +41,11 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
                   if (value.to) {
                     return (
                       <>
-                        {format(value.from, 'LLL dd, y')} - {format(value.to, 'LLL dd, y')}
+                        {format(value.from, 'LLLL dd, y')} - {format(value.to, 'LLLL dd, y')}
                       </>
                     );
                   }
-                  return format(value.from, 'LLL dd, y');
+                  return format(value.from, 'LLLL dd, y');
                 }
                 return <span>{placeholder.from}</span>;
               })()}
@@ -54,9 +56,15 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
               initialFocus
               mode="range"
               defaultMonth={value.from}
-              selected={value.from && value.to ? { from: value.from, to: value.to } : undefined}
-              onSelect={range => range && onChange(range)}
+              selected={selectedValue}
+              onSelect={range => {
+                if (!range) return;
+                onChange({ from: range.from, to: range?.to });
+              }}
               numberOfMonths={2}
+              modifiers={{
+                today: () => false, // Disable the "today" modifier by returning false
+              }}
             />
           </PopoverContent>
         </Popover>
