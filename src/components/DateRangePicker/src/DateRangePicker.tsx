@@ -20,7 +20,25 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
     },
     ref,
   ) => {
-    const selectedValue = value.from ? { from: value.from, to: value.to ?? undefined } : undefined;
+    const handleDayClick = (day: Date) => {
+      // If no start date is selected or clicking before current start date,
+      // or if a complete range exists, start a new range
+      if (!value.from || day < value.from || (value.from && value.to)) {
+        onChange({ from: day, to: undefined });
+        return;
+      }
+
+      // If start date is selected and clicking after it, complete the range
+      if (value.from && day > value.from) {
+        onChange({ from: value.from, to: day });
+        return;
+      }
+
+      // If clicking the start date, clear the range
+      if (value.from && day.getTime() === value.from.getTime()) {
+        onChange({ from: undefined, to: undefined });
+      }
+    };
 
     return (
       <div className={cn('grid gap-2', className)}>
@@ -56,14 +74,14 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
               initialFocus
               mode="range"
               defaultMonth={value.from}
-              selected={selectedValue}
-              onSelect={range => {
-                if (!range) return;
-                onChange({ from: range.from, to: range?.to });
+              selected={{
+                from: value.from,
+                to: value.to,
               }}
+              onDayClick={handleDayClick}
               numberOfMonths={2}
               modifiers={{
-                today: () => false, // Disable the "today" modifier by returning false
+                today: () => false, // Disable the "today" modifier
               }}
             />
           </PopoverContent>
