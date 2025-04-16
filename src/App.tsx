@@ -1,3 +1,4 @@
+import { Autocomplete } from '@/components/Autocomplete';
 import { Button } from '@/components/Button';
 import { CheckboxGroup } from '@/components/CheckboxGroup';
 import { Combobox } from '@/components/Combobox';
@@ -30,6 +31,7 @@ const App: React.FC = () => {
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
   const [description, setDescription] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Single selects
   const [framework, setFramework] = useState('');
@@ -59,6 +61,19 @@ const App: React.FC = () => {
 
   // Radio
   const [projectType, setProjectType] = useState('web');
+
+  // Simulated async search function
+  const searchLibraries = async (query: string) => {
+    // Simulate API latency
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    // Filter libraries based on query
+    return libraries.filter(
+      lib =>
+        lib.label.toLowerCase().includes(query.toLowerCase()) ||
+        lib.value.toLowerCase().includes(query.toLowerCase()),
+    );
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
@@ -125,13 +140,28 @@ const App: React.FC = () => {
           </FormItem>
 
           {/* Library Combobox */}
-          <FormItem label="Library" hintText="Search and select from over 150 React libraries">
+          <FormItem label="Library" hintText="Search and select from over 140 React libraries">
             <Combobox
               options={libraries}
               value={library}
               onChange={setLibrary}
               placeholder="Select library..."
               searchPlaceholder="Search libraries..."
+            />
+          </FormItem>
+
+          {/* Async Search with Autocomplete */}
+          <FormItem
+            label="React Library Search"
+            hintText="Search through 140+ React libraries with async loading"
+          >
+            <Autocomplete
+              loadOptions={searchLibraries}
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="Search libraries..."
+              debounceMs={500}
+              minSearch={1}
             />
           </FormItem>
 

@@ -11,3 +11,4 @@ export type CommandGroupProps = ComponentPropsWithoutRef<typeof CommandPrimitive
 export type CommandSeparatorProps = ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>;
 export type CommandItemProps = ComponentPropsWithoutRef<typeof CommandPrimitive.Item>;
 export type CommandShortcutProps = HTMLAttributes<HTMLSpanElement>;
+export type CommandLoadingProps = HTMLAttributes<HTMLDivElement>;
