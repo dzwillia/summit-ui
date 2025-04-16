@@ -21,23 +21,22 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
     ref,
   ) => {
     const handleDayClick = (day: Date) => {
-      // If no start date is selected or clicking before current start date,
-      // or if a complete range exists, start a new range
-      if (!value.from || day < value.from || (value.from && value.to)) {
-        onChange({ from: day, to: undefined });
-        return;
-      }
+      const { from, to } = value;
 
-      // If start date is selected and clicking after it, complete the range
-      if (value.from && day > value.from) {
-        onChange({ from: value.from, to: day });
-        return;
-      }
+      // If no start date is selected, start a new date range
+      if (!from) return onChange({ from: day, to: undefined });
 
-      // If clicking the start date, clear the range
-      if (value.from && day.getTime() === value.from.getTime()) {
-        onChange({ from: undefined, to: undefined });
-      }
+      // If selecting a day before the current start date, start a new date range
+      if (day < from) return onChange({ from: day, to: undefined });
+
+      // If a complete date range exists, start a new date range
+      if (from && to) return onChange({ from: day, to: undefined });
+
+      // If start date is selected and selecting a day after it, complete the date range
+      if (day > from) return onChange({ from, to: day });
+
+      // If selecting the start date, clear the date range
+      if (day.getTime() === from.getTime()) return onChange({ from: undefined, to: undefined });
     };
 
     return (
