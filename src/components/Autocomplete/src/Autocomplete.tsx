@@ -1,7 +1,7 @@
 import { Button } from '@/components/Button';
 import {
   Command,
-  CommandEmpty,
+  CommandForceEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
@@ -181,9 +181,9 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
               onValueChange={handleInputChange}
             />
             {loading && <CommandLoading>{loadingMessage}</CommandLoading>}
-            {!loading && error && <CommandEmpty>{errorMessage}</CommandEmpty>}
+            {!loading && error && <CommandForceEmpty>{errorMessage}</CommandForceEmpty>}
             {!loading && !error && hasSearched && displayOptions.length === 0 && (
-              <CommandEmpty>{emptyMessage}</CommandEmpty>
+              <CommandForceEmpty>{emptyMessage}</CommandForceEmpty>
             )}
             {!loading && !error && displayOptions.length > 0 && (
               <CommandGroup className="max-h-[200px] overflow-y-auto">

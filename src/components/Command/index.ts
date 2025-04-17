@@ -1,6 +1,6 @@
 export { Command } from './src/Command';
 export { CommandDialog } from './src/CommandDialog';
-export { CommandEmpty } from './src/CommandEmpty';
+export { CommandEmpty, CommandForceEmpty } from './src/CommandEmpty';
 export { CommandGroup } from './src/CommandGroup';
 export { CommandInput } from './src/CommandInput';
 export { CommandItem } from './src/CommandItem';
@@ -10,7 +10,6 @@ export { CommandSeparator } from './src/CommandSeparator';
 export { CommandShortcut } from './src/CommandShortcut';
 
 export type {
-  CommandProps,
   CommandDialogProps,
   CommandEmptyProps,
   CommandGroupProps,
@@ -18,6 +17,7 @@ export type {
   CommandItemProps,
   CommandListProps,
   CommandLoadingProps,
+  CommandProps,
   CommandSeparatorProps,
   CommandShortcutProps,
 } from './types';
