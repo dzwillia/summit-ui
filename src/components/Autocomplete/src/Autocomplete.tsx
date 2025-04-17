@@ -25,7 +25,6 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
       emptyMessage = 'No results found',
       errorMessage = 'Failed to load options',
       className,
-      freeSolo = false,
       maxSuggestions = 10,
       debounceMs = 300,
       minSearch = 2,
@@ -110,9 +109,6 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
     const handleInputChange = React.useCallback(
       (input: string) => {
         setInputValue(input);
-        if (freeSolo) {
-          onChange(input);
-        }
 
         if (input.length === 0) {
           setHasSearched(false);
@@ -132,7 +128,7 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
           setAsyncOptions([]);
         }
       },
-      [freeSolo, onChange, loadOptions, minSearch, debounceMs, fetchOptions],
+      [onChange, loadOptions, minSearch, debounceMs, fetchOptions],
     );
 
     const handleClear = React.useCallback(() => {
