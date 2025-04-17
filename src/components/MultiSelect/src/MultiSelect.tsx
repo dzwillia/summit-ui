@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Check, ChevronsUpDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Check, ChevronsUpDown } from 'lucide-react';
+import * as React from 'react';
 import { Button } from '../../Button';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '../../Command';
 import { Popover, PopoverContent, PopoverTrigger } from '../../Popover';
@@ -14,7 +14,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
       onChange,
       placeholder = 'Select items...',
       searchPlaceholder = 'Search items...',
-      emptyMessage = 'No item found.',
+      emptyMessage = 'No items found',
       className,
     },
     ref,

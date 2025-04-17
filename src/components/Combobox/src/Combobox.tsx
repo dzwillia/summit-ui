@@ -20,7 +20,7 @@ const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(
       onChange,
       placeholder = 'Select an item...',
       searchPlaceholder = 'Search items...',
-      emptyMessage = 'No item found.',
+      emptyMessage = 'No items found',
       className,
     },
     ref,
