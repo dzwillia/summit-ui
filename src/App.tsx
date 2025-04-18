@@ -117,14 +117,17 @@ const App: React.FC = () => {
             <FormItem
               label="Project Description"
               hintText="A brief overview of your project's goals and requirements"
-              errorText="Project description is required"
+              errorText={
+                description.length > 20
+                  ? 'Project description cannot be longer than 20 characters'
+                  : null
+              }
             >
               <Textarea
                 id="description"
-                placeholder="Describe your project..."
+                placeholder="Describe your project in 20 characters or less..."
                 value={description}
                 onChange={e => setDescription(e.target.value)}
-                className="border-destructive"
               />
             </FormItem>
           </div>
