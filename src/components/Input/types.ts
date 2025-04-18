@@ -1,2 +1,8 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+import { InputHTMLAttributes } from 'react';
+
+export type TextTransform = 'uppercase' | 'lowercase' | 'trim' | 'none';
+
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+  transform?: TextTransform | TextTransform[];
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}

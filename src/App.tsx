@@ -32,6 +32,10 @@ const App: React.FC = () => {
   const [company, setCompany] = useState('');
   const [description, setDescription] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const [uppercaseText, setUppercaseText] = useState('');
+  const [lowercaseText, setLowercaseText] = useState('');
+  const [trimmedText, setTrimmedText] = useState('');
+  const [trimmedUpperText, setTrimmedUpperText] = useState('');
 
   // Single selects
   const [framework, setFramework] = useState('');
@@ -84,8 +88,47 @@ const App: React.FC = () => {
         </div>
 
         <div className="space-y-6">
-          {/* Text Inputs */}
+          {/* Text Inputs with Transformations */}
           <div className="space-y-4">
+            <FormItem label="Uppercase Text" hintText="This text will always be uppercase">
+              <Input
+                transform="uppercase"
+                placeholder="Type something..."
+                value={uppercaseText}
+                onChange={e => setUppercaseText(e.target.value)}
+              />
+            </FormItem>
+
+            <FormItem label="Lowercase Text" hintText="This text will always be lowercase">
+              <Input
+                transform="lowercase"
+                placeholder="Type something..."
+                value={lowercaseText}
+                onChange={e => setLowercaseText(e.target.value)}
+              />
+            </FormItem>
+
+            <FormItem label="Trimmed Text" hintText="This text will always be trimmed">
+              <Input
+                transform="trim"
+                placeholder="Type something..."
+                value={trimmedText}
+                onChange={e => setTrimmedText(e.target.value)}
+              />
+            </FormItem>
+
+            <FormItem
+              label="Trimmed & Uppercase Text"
+              hintText="This text will be trimmed and converted to uppercase"
+            >
+              <Input
+                transform={['trim', 'uppercase']}
+                placeholder="Type something..."
+                value={trimmedUpperText}
+                onChange={e => setTrimmedUpperText(e.target.value)}
+              />
+            </FormItem>
+
             <FormItem label="Name" hintText="Your full name as it will appear in the project">
               <Input
                 id="name"
