@@ -1,7 +1,25 @@
+const focusRingVisible =
+  'focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-[3px] focus-visible:ring-offset-[3px] focus-visible:ring-offset-background';
+const focusRingVisibleSm = 'focus-visible:ring-offset-[2px]';
+
+const focusRing = 'focus:outline-none focus:ring-[3px] focus:ring-ring focus:ring-offset-[3px]';
+const focusRingSm = 'focus:ring-offset-2';
+
+const input =
+  'flex h-10 w-full rounded-sm border border-input bg-background px-3 py-2 text-sm ring-offset-background disabled:cursor-not-allowed disabled:opacity-50';
+
+const button =
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors disabled:pointer-events-none disabled:opacity-50';
+
 export const styles = {
+  focusRingVisible,
+  focusRingVisibleSm,
+
+  focusRing,
+  focusRingSm,
+
   // Form elements
-  input:
-    'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+  input: `${input} ${focusRingVisible}`,
 
   // Typography
   text: {
@@ -14,8 +32,7 @@ export const styles = {
   },
 
   // Common component styles
-  button:
-    'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  button: `${button} ${focusRing}`,
 
   popover:
     'z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
