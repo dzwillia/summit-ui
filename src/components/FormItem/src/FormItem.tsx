@@ -7,7 +7,11 @@ import { FormItemProps } from '../types';
 const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
   ({ label, hintText, errorText, className, children }, ref) => {
     return (
-      <div ref={ref} className={cn('space-y-1', className)}>
+      <div
+        ref={ref}
+        className={cn('space-y-1', className)}
+        data-error={errorText ? 'true' : undefined}
+      >
         <div className="space-y-1">
           {label &&
             (typeof label === 'string' ? <Label className="font-bold">{label}</Label> : label)}

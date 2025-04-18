@@ -2,7 +2,7 @@ const focusRingVisible =
   'focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-[3px] focus-visible:ring-offset-[3px] focus-visible:ring-offset-background';
 const focusRingVisibleSm = 'focus-visible:ring-offset-[2px]';
 
-const focusRing = 'focus:outline-none focus:ring-[3px] focus:ring-ring focus:ring-offset-[3px]';
+const focusRing = 'focus:outline-none focus:ring-ring focus:ring-[3px] focus:ring-offset-[3px]';
 const focusRingSm = 'focus:ring-offset-2';
 
 const input =
