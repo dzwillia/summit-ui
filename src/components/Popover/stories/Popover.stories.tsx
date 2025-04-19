@@ -14,13 +14,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const WithArrow: Story = {
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="outline">Open Popover</Button>
       </PopoverTrigger>
-      <PopoverContent className="w-80">
+      <PopoverContent className="w-80" hasArrow>
         <div className="grid gap-4">
           <div className="space-y-2">
             <h4 className="font-medium leading-none">Dimensions</h4>
@@ -60,8 +60,21 @@ export const WithoutArrow: Story = {
       <PopoverTrigger asChild>
         <Button variant="outline">Open Popover</Button>
       </PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent className="w-80">
         <p className="text-sm">This is a simple popover without an arrow.</p>
+      </PopoverContent>
+    </Popover>
+  ),
+};
+
+export const CustomPosition: Story = {
+  render: () => (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline">Open Popover</Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-80" align="start" hasArrow>
+        <p className="text-sm">This popover is aligned to the start.</p>
       </PopoverContent>
     </Popover>
   ),

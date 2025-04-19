@@ -7,6 +7,14 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    checked: {
+      control: 'boolean',
+    },
+    onCheckedChange: {
+      action: 'checked changed',
+    },
+  },
   tags: ['autodocs'],
 } satisfies Meta<typeof Switch>;
 

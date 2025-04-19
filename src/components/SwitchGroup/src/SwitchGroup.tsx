@@ -5,6 +5,17 @@ import { SwitchGroupProps } from '../types';
 
 const SwitchGroup = React.forwardRef<HTMLDivElement, SwitchGroupProps>(
   ({ options, value, onChange, className, columns = 2 }, ref) => {
+    const handleSwitchChange = React.useCallback(
+      (id: string, checked: boolean) => {
+        if (checked) {
+          onChange([...value, id]);
+        } else {
+          onChange(value.filter(v => v !== id));
+        }
+      },
+      [onChange, value],
+    );
+
     return (
       <div ref={ref} className={cn('', className)}>
         <div
@@ -17,20 +28,13 @@ const SwitchGroup = React.forwardRef<HTMLDivElement, SwitchGroupProps>(
           )}
         >
           {options.map(option => (
-            <div key={option.id}>
-              <Switch
-                id={option.id}
-                label={option.label}
-                checked={value.includes(option.id)}
-                onCheckedChange={checked => {
-                  if (checked) {
-                    onChange([...value, option.id]);
-                  } else {
-                    onChange(value.filter(id => id !== option.id));
-                  }
-                }}
-              />
-            </div>
+            <Switch
+              key={option.id}
+              id={option.id}
+              label={option.label}
+              checked={value.includes(option.id)}
+              onCheckedChange={checked => handleSwitchChange(option.id, checked)}
+            />
           ))}
         </div>
       </div>
