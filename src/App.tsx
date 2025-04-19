@@ -83,7 +83,7 @@ const App: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
       <div className="w-full max-w-xl space-y-8">
         <div>
-          <h1 className="text-3xl font-bold">Brio UI</h1>
+          <h1 className="text-3xl font-bold">Summit UI</h1>
           <p className="text-muted-foreground mt-2">Configure your development environment</p>
         </div>
 
