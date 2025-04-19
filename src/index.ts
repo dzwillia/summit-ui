@@ -1,5 +1,6 @@
 // Export components
 export * from './components/Autocomplete';
+export * from './components/Badge';
 export * from './components/Button';
 export * from './components/Calendar';
 export * from './components/Checkbox';

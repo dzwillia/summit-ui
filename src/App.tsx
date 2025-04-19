@@ -1,4 +1,5 @@
 import { Autocomplete } from '@/components/Autocomplete';
+import { Badge } from '@/components/Badge';
 import { Button } from '@/components/Button';
 import { CheckboxGroup } from '@/components/CheckboxGroup';
 import { Combobox } from '@/components/Combobox';
@@ -85,6 +86,12 @@ const App: React.FC = () => {
         <div>
           <h1 className="text-3xl font-bold">Summit UI</h1>
           <p className="text-muted-foreground mt-2">Configure your development environment</p>
+          <div className="flex gap-2 mt-4">
+            <Badge>Default</Badge>
+            <Badge variant="secondary">Secondary</Badge>
+            <Badge variant="destructive">Destructive</Badge>
+            <Badge variant="outline">Outline</Badge>
+          </div>
         </div>
 
         <div className="space-y-6">
