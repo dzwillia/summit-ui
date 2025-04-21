@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '../src/Command';
+import { Command } from '../src/Command';
+import { CommandEmpty } from '../src/CommandEmpty';
+import { CommandGroup } from '../src/CommandGroup';
+import { CommandInput } from '../src/CommandInput';
+import { CommandItem } from '../src/CommandItem';
 
 const meta = {
   title: 'Components/Command',
