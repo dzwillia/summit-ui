@@ -8,10 +8,15 @@ import { DropdownButtonProps } from '../types';
 const DropdownButton = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Trigger>,
   DropdownButtonProps
->(({ className, children, items, align = 'start', ...props }, ref) => (
+>(({ className, children, items, align = 'start', variant = 'default', ...props }, ref) => (
   <DropdownMenuPrimitive.Root>
     <DropdownMenuPrimitive.Trigger asChild>
-      <Button ref={ref} className={cn('flex items-center gap-1', className)} {...props}>
+      <Button
+        ref={ref}
+        variant={variant}
+        className={cn('flex items-center gap-1', className)}
+        {...props}
+      >
         {children}
         <ChevronDown className="h-4 w-4" />
       </Button>

@@ -16,4 +16,5 @@ export interface DropdownButtonProps
   children: ReactNode;
   className?: string;
   align?: 'start' | 'center' | 'end';
+  variant?: 'default' | 'outline' | 'destructive' | 'secondary' | 'ghost' | 'link';
 }
