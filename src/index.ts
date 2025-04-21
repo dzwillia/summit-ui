@@ -10,6 +10,7 @@ export * from './components/Combobox';
 export * from './components/DatePicker';
 export * from './components/DateRangePicker';
 export * from './components/Dialog';
+export * from './components/DropdownButton';
 export * from './components/FormItem';
 export * from './components/Input';
 export * from './components/Label';
