@@ -7,6 +7,7 @@ import { DatePicker } from '@/components/DatePicker';
 import { DateRange, DateRangePicker } from '@/components/DateRangePicker';
 import { FormItem } from '@/components/FormItem';
 import { Input } from '@/components/Input';
+import { Label } from '@/components/Label';
 import { MultiSelect } from '@/components/MultiSelect';
 import { RadioGroup } from '@/components/RadioGroup';
 import { SingleSelect } from '@/components/Select';
@@ -24,7 +25,7 @@ import {
   themeOptions,
   tools,
 } from '@/constants';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const App: React.FC = () => {
   // Text inputs
@@ -67,6 +68,16 @@ const App: React.FC = () => {
   // Radio
   const [projectType, setProjectType] = useState('web');
 
+  // Theme
+  const [currentTheme, setCurrentTheme] = useState<string>('light');
+
+  useEffect(() => {
+    const classList = document.documentElement.classList;
+
+    classList.remove('light', 'dark', 'theme-uswds');
+    classList.add(currentTheme);
+  }, [currentTheme]);
+
   // Simulated async search function
   const searchLibraries = async (query: string) => {
     // Simulate API latency
@@ -80,13 +91,43 @@ const App: React.FC = () => {
     );
   };
 
+  const themeSelectOptions = [
+    { value: 'light', label: 'Light' },
+    { value: 'dark', label: 'Dark' },
+    { value: 'theme-uswds', label: 'USWDS' },
+  ];
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
       <div className="w-full max-w-xl space-y-8">
+        <div className="flex justify-between items-start">
+          <div>
+            <h1 className="text-3xl font-bold">Summit UI</h1>
+            <p className="text-muted-foreground mt-2">Configure your development environment</p>
+            <div className="flex flex-wrap gap-2 mt-3">
+              <Badge variant="secondary">React</Badge>
+              <Badge variant="secondary">TypeScript</Badge>
+              <Badge variant="secondary">Tailwind CSS</Badge>
+              <Badge variant="secondary">Radix UI</Badge>
+              <Badge variant="secondary">cmdk</Badge>
+              <Badge variant="secondary">React Day Picker</Badge>
+            </div>
+          </div>
+          <div className="w-[150px]">
+            <SingleSelect
+              options={themeSelectOptions}
+              value={currentTheme}
+              onChange={setCurrentTheme}
+              placeholder="Select theme..."
+            />
+          </div>
+        </div>
+
         <div>
-          <h1 className="text-3xl font-bold">Summit UI</h1>
-          <p className="text-muted-foreground mt-2">Configure your development environment</p>
-          <div className="flex gap-2 mt-4">
+          <div className="space-y-1">
+            <Label className="font-bold">Badges</Label>
+          </div>
+          <div className="flex gap-2 mt-2">
             <Badge>Default</Badge>
             <Badge variant="secondary">Secondary</Badge>
             <Badge variant="destructive">Destructive</Badge>
