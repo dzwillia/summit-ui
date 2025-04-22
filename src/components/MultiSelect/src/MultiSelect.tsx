@@ -43,7 +43,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
           <Command>
             <CommandInput placeholder={searchPlaceholder} />
             <CommandEmpty>{emptyMessage}</CommandEmpty>
-            <CommandGroup className="max-h-[200px] overflow-y-auto">
+            <CommandGroup className="max-h-[12rem] overflow-y-auto">
               {options.map(option => (
                 <CommandItem
                   key={option.value}

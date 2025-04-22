@@ -49,7 +49,7 @@ export const ReadOnly: Story = {
 
 export const WithCustomStyle: Story = {
   args: {
-    className: 'min-h-[200px] font-mono',
+    className: 'min-h-[12rem] font-mono',
     placeholder: 'This textarea has custom styling...',
   },
 };

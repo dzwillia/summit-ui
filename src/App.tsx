@@ -113,7 +113,7 @@ const App: React.FC = () => {
               <Badge variant="secondary">React Day Picker</Badge>
             </div>
           </div>
-          <div className="w-[150px]">
+          <div className="w-[16rem]">
             <SingleSelect
               options={themeSelectOptions}
               value={currentTheme}

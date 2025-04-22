@@ -182,7 +182,7 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
               <CommandForceEmpty>{emptyMessage}</CommandForceEmpty>
             )}
             {!loading && !error && displayOptions.length > 0 && (
-              <CommandGroup className="max-h-[200px] overflow-y-auto">
+              <CommandGroup className="max-h-[12rem] overflow-y-auto">
                 {displayOptions.map(option => (
                   <CommandItem
                     key={option.value}
