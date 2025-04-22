@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import { RadioGroup } from '../src/RadioGroup';
 import type { RadioGroupProps } from '../types';
 
@@ -23,7 +23,7 @@ const meta = {
     options: {
       control: 'object',
       description: 'Array of radio options',
-      type: { name: 'array', required: true },
+      type: { name: 'array', value: { name: 'object', value: {} }, required: true },
     },
     orientation: {
       control: 'radio',
@@ -65,6 +65,8 @@ export const Default: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
     options,
+    value: '',
+    onChange: () => {},
   },
 };
 
@@ -73,6 +75,7 @@ export const WithSelection: Story = {
   args: {
     options,
     value: 'option2',
+    onChange: () => {},
   },
 };
 
@@ -80,6 +83,8 @@ export const Horizontal: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
     options,
+    value: '',
+    onChange: () => {},
     orientation: 'horizontal',
   },
 };
@@ -88,6 +93,8 @@ export const Vertical: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
     options,
+    value: '',
+    onChange: () => {},
     orientation: 'vertical',
   },
 };
@@ -101,5 +108,7 @@ export const WithManyOptions: Story = {
       { value: 'option5', label: 'Option 5' },
       { value: 'option6', label: 'Option 6' },
     ],
+    value: '',
+    onChange: () => {},
   },
 };

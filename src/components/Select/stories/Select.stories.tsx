@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import { SingleSelect } from '../src/SingleSelect';
 import type { SingleSelectProps } from '../types';
 
@@ -23,7 +23,7 @@ const meta = {
     options: {
       control: 'object',
       description: 'Array of select options',
-      type: { name: 'array', required: true },
+      type: { name: 'array', value: { name: 'object', value: {} }, required: true },
     },
     placeholder: {
       control: 'text',
@@ -66,6 +66,8 @@ export const Default: Story = {
   render: args => <SelectDemo {...args} />,
   args: {
     options,
+    value: '',
+    onChange: () => {},
     placeholder: 'Select a fruit...',
   },
 };
@@ -75,6 +77,7 @@ export const WithValue: Story = {
   args: {
     options,
     value: 'apple',
+    onChange: () => {},
     placeholder: 'Select a fruit...',
   },
 };
@@ -83,6 +86,8 @@ export const CustomPlaceholder: Story = {
   render: args => <SelectDemo {...args} />,
   args: {
     options,
+    value: '',
+    onChange: () => {},
     placeholder: 'Choose your favorite fruit',
   },
 };
@@ -98,6 +103,8 @@ export const WithManyOptions: Story = {
       { value: 'kiwi', label: 'Kiwi' },
       { value: 'pineapple', label: 'Pineapple' },
     ],
+    value: '',
+    onChange: () => {},
     placeholder: 'Select a fruit...',
   },
 };

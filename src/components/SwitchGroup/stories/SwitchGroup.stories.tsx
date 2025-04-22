@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import { SwitchGroup } from '../src/SwitchGroup';
 import type { SwitchGroupProps } from '../types';
 
@@ -20,7 +20,7 @@ const meta = {
     value: {
       control: 'object',
       description: 'Array of selected switch IDs',
-      type: { name: 'array', required: false },
+      type: { name: 'array', value: { name: 'string' }, required: false },
     },
     onChange: {
       description: 'Callback when selection changes',
@@ -29,7 +29,7 @@ const meta = {
     options: {
       control: 'object',
       description: 'Array of switch options',
-      type: { name: 'array', required: true },
+      type: { name: 'array', value: { name: 'object', value: {} }, required: true },
     },
     columns: {
       control: 'radio',
@@ -62,6 +62,7 @@ export const Default: Story = {
     options,
     columns: 2,
     value: [],
+    onChange: () => {},
   },
 };
 
@@ -70,6 +71,7 @@ export const WithSelection: Story = {
   args: {
     options,
     value: ['notifications', 'emails'],
+    onChange: () => {},
     columns: 2,
   },
 };
@@ -79,6 +81,8 @@ export const SingleColumn: Story = {
   args: {
     options,
     columns: 1,
+    value: [],
+    onChange: () => {},
   },
 };
 
@@ -87,6 +91,8 @@ export const ThreeColumns: Story = {
   args: {
     options,
     columns: 3,
+    value: [],
+    onChange: () => {},
   },
 };
 
@@ -101,5 +107,7 @@ export const WithManyOptions: Story = {
       { id: 'beta', label: 'Beta features' },
     ],
     columns: 2,
+    value: [],
+    onChange: () => {},
   },
 };
