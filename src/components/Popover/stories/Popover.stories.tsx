@@ -5,9 +5,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '../src/Popover';
 const meta = {
   title: 'Components/Popover',
   component: Popover,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   tags: ['autodocs'],
 } satisfies Meta<typeof Popover>;
 

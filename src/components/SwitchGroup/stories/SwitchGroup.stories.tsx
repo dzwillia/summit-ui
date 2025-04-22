@@ -13,9 +13,7 @@ const options = [
 const meta = {
   title: 'Components/SwitchGroup',
   component: SwitchGroup,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   argTypes: {
     value: {
       control: 'object',

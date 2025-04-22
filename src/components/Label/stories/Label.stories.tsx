@@ -4,9 +4,7 @@ import { Label } from '../src/Label';
 const meta = {
   title: 'Components/Label',
   component: Label,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   tags: ['autodocs'],
 } satisfies Meta<typeof Label>;
 

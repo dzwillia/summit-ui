@@ -5,9 +5,7 @@ import { FormItem } from '../src/FormItem';
 const meta = {
   title: 'Components/FormItem',
   component: FormItem,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   tags: ['autodocs'],
 } satisfies Meta<typeof FormItem>;
 

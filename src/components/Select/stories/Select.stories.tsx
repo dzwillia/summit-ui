@@ -6,9 +6,7 @@ import type { SingleSelectProps } from '../types';
 const meta = {
   title: 'Components/Select',
   component: SingleSelect,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   argTypes: {
     value: {
       control: 'text',

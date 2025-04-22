@@ -6,9 +6,7 @@ import type { RadioGroupProps } from '../types';
 const meta = {
   title: 'Components/RadioGroup',
   component: RadioGroup,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   argTypes: {
     value: {
       control: 'text',

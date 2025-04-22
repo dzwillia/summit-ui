@@ -4,9 +4,7 @@ import { Switch } from '../src/Switch';
 const meta = {
   title: 'Components/Switch',
   component: Switch,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   argTypes: {
     checked: {
       control: 'boolean',

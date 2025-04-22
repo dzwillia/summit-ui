@@ -9,9 +9,7 @@ import { DialogTitle } from '../src/DialogTitle';
 const meta = {
   title: 'Components/Dialog',
   component: Dialog,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   tags: ['autodocs'],
 } satisfies Meta<typeof Dialog>;
 

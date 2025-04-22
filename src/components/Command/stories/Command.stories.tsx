@@ -8,9 +8,7 @@ import { CommandItem } from '../src/CommandItem';
 const meta = {
   title: 'Components/Command',
   component: Command,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   tags: ['autodocs'],
 } satisfies Meta<typeof Command>;
 

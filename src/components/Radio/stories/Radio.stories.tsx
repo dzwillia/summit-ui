@@ -1,13 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Radio } from '../src/Radio';
 
 const meta = {
   title: 'Components/Radio',
   component: Radio,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   decorators: [
     Story => (
       <RadioGroupPrimitive.Root defaultValue="option-1">

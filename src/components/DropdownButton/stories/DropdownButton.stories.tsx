@@ -5,9 +5,7 @@ import { DropdownButton } from '../src/DropdownButton';
 const meta = {
   title: 'Components/DropdownButton',
   component: DropdownButton,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: {},
   tags: ['autodocs'],
 } satisfies Meta<typeof DropdownButton>;
 
