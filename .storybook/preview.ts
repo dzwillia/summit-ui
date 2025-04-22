@@ -11,6 +11,30 @@ const preview: Preview = {
       },
     },
   },
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'paintbrush',
+        items: [
+          { value: 'light', title: 'Light' },
+          { value: 'dark', title: 'Dark' },
+          { value: 'theme-uswds', title: 'USWDS' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  decorators: [
+    (Story, context) => {
+      const classList = document.documentElement.classList;
+      classList.remove('light', 'dark', 'theme-uswds');
+      classList.add(context.globals.theme);
+      return Story();
+    },
+  ],
 };
 
 export default preview;
