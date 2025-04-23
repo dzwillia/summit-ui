@@ -14,6 +14,7 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
       className,
       disabled,
       errorText,
+      delimiterChars,
     },
     ref,
   ) => {
@@ -22,18 +23,28 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
     const inputRef = React.useRef<HTMLInputElement>(null);
     const tagsRef = React.useRef<(HTMLButtonElement | null)[]>([]);
 
+    const delimiters = React.useMemo(() => {
+      if (!delimiterChars) return [];
+      return Array.isArray(delimiterChars) ? delimiterChars : [delimiterChars];
+    }, [delimiterChars]);
+
+    const addTag = (text: string) => {
+      if (maxTags && value.length >= maxTags) return;
+      if (!text.trim()) return;
+
+      const newTag: Tag = {
+        id: crypto.randomUUID(),
+        text: text.trim(),
+      };
+
+      onChange([...value, newTag]);
+      setInputValue('');
+    };
+
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
       if (event.key === 'Enter' && inputValue.trim()) {
         event.preventDefault();
-        if (maxTags && value.length >= maxTags) return;
-
-        const newTag: Tag = {
-          id: crypto.randomUUID(),
-          text: inputValue.trim(),
-        };
-
-        onChange([...value, newTag]);
-        setInputValue('');
+        addTag(inputValue);
       } else if (event.key === 'Backspace' && !inputValue && value.length > 0) {
         event.preventDefault();
         setFocusedTagIndex(value.length - 1);
@@ -48,6 +59,33 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
         setFocusedTagIndex(value.length - 1);
         tagsRef.current[value.length - 1]?.focus();
       }
+    };
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const newValue = event.target.value;
+
+      if (delimiters.length > 0) {
+        const lastChar = newValue.slice(-1);
+
+        if (delimiters.includes(lastChar)) {
+          const tagText = newValue.slice(0, -1);
+          addTag(tagText);
+          return;
+        }
+
+        // Split on any delimiter
+        const pattern = new RegExp(`[${delimiters.map(d => `\\${d}`).join('')}]`);
+        if (pattern.test(newValue)) {
+          const tags = newValue.split(pattern);
+          const lastTag = tags.pop() || '';
+
+          tags.forEach(tag => addTag(tag));
+          setInputValue(lastTag);
+          return;
+        }
+      }
+
+      setInputValue(newValue);
     };
 
     const handleTagKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
@@ -93,11 +131,18 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
       tagsRef.current = tagsRef.current.slice(0, value.length);
     }, [value.length]);
 
+    const placeholderText = React.useMemo(() => {
+      if (!delimiterChars) return placeholder;
+      const delims = Array.isArray(delimiterChars) ? delimiterChars : [delimiterChars];
+      return `Type and press Enter or use ${delims.map(d => `"${d}"`).join(' or ')} to add tags...`;
+    }, [delimiterChars, placeholder]);
+
     return (
       <div ref={ref} className="space-y-1.5">
         <div
           className={cn(
             styles.input,
+            styles.focusRingWithin,
             'flex min-h-[2.5rem] w-full cursor-text flex-wrap gap-1.5 !p-1.5',
             disabled && 'cursor-not-allowed',
             errorText && 'border-destructive focus-visible:ring-destructive',
@@ -116,8 +161,9 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
               className={cn(
                 'flex items-center gap-1 rounded-sm bg-secondary px-2 py-0.5 text-sm text-secondary-foreground transition-colors',
                 'hover:bg-secondary/80',
-                'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
                 disabled && 'opacity-50 cursor-not-allowed',
+                styles.focusRing,
+                'focus:ring-2 focus:ring-offset-0',
               )}
             >
               {tag.text}
@@ -138,10 +184,10 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
             ref={inputRef}
             type="text"
             value={inputValue}
-            onChange={e => setInputValue(e.target.value)}
+            onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             onFocus={() => setFocusedTagIndex(-1)}
-            placeholder={value.length === 0 ? placeholder : ''}
+            placeholder={value.length === 0 ? placeholderText : ''}
             className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed"
             disabled={disabled || (maxTags !== undefined && value.length >= maxTags)}
           />

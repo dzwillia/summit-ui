@@ -11,4 +11,5 @@ export interface TagInputProps {
   className?: string;
   disabled?: boolean;
   errorText?: string;
+  delimiterChars?: string | string[];
 }
