@@ -33,7 +33,7 @@ export const WithValue: Story = {
 
 export const Disabled: Story = {
   args: {
-    disabled: true,
+    isDisabled: true,
     placeholder: 'Disabled input',
   },
 };

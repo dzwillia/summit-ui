@@ -4,7 +4,7 @@ import * as React from 'react';
 import { InputProps } from '../types';
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, transform = 'none', onChange, ...props }, ref) => {
+  ({ className, type, transform = 'none', isDisabled = false, onChange, ...props }, ref) => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (!onChange) return;
 
@@ -34,9 +34,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <input
-        type={type}
-        className={cn(styles.input, className)}
         ref={ref}
+        type={type}
+        disabled={isDisabled}
+        className={cn(styles.input, className)}
         onChange={handleChange}
         {...props}
       />
