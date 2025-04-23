@@ -1,0 +1,156 @@
+import { styles } from '@/lib/styles';
+import { cn } from '@/lib/utils';
+import { X } from 'lucide-react';
+import * as React from 'react';
+import { Tag, TagInputProps } from '../types';
+
+const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
+  (
+    {
+      value,
+      onChange,
+      placeholder = 'Type and press Enter...',
+      maxTags,
+      className,
+      disabled,
+      errorText,
+    },
+    ref,
+  ) => {
+    const [inputValue, setInputValue] = React.useState('');
+    const [focusedTagIndex, setFocusedTagIndex] = React.useState<number>(-1);
+    const inputRef = React.useRef<HTMLInputElement>(null);
+    const tagsRef = React.useRef<(HTMLButtonElement | null)[]>([]);
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === 'Enter' && inputValue.trim()) {
+        event.preventDefault();
+        if (maxTags && value.length >= maxTags) return;
+
+        const newTag: Tag = {
+          id: crypto.randomUUID(),
+          text: inputValue.trim(),
+        };
+
+        onChange([...value, newTag]);
+        setInputValue('');
+      } else if (event.key === 'Backspace' && !inputValue && value.length > 0) {
+        event.preventDefault();
+        setFocusedTagIndex(value.length - 1);
+        tagsRef.current[value.length - 1]?.focus();
+      } else if (
+        event.key === 'ArrowLeft' &&
+        !inputValue &&
+        focusedTagIndex === -1 &&
+        value.length > 0
+      ) {
+        event.preventDefault();
+        setFocusedTagIndex(value.length - 1);
+        tagsRef.current[value.length - 1]?.focus();
+      }
+    };
+
+    const handleTagKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+      if (event.key === 'Backspace' || event.key === 'Delete') {
+        event.preventDefault();
+        removeTag(value[index].id);
+        if (index > 0) {
+          setFocusedTagIndex(index - 1);
+          tagsRef.current[index - 1]?.focus();
+        } else {
+          inputRef.current?.focus();
+          setFocusedTagIndex(-1);
+        }
+      } else if (event.key === 'ArrowLeft' && index > 0) {
+        event.preventDefault();
+        setFocusedTagIndex(index - 1);
+        tagsRef.current[index - 1]?.focus();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        if (index < value.length - 1) {
+          setFocusedTagIndex(index + 1);
+          tagsRef.current[index + 1]?.focus();
+        } else {
+          inputRef.current?.focus();
+          setFocusedTagIndex(-1);
+        }
+      }
+    };
+
+    const removeTag = (tagId: string) => {
+      onChange(value.filter(tag => tag.id !== tagId));
+    };
+
+    const handleContainerClick = (event: React.MouseEvent) => {
+      if (event.target === event.currentTarget) {
+        inputRef.current?.focus();
+        setFocusedTagIndex(-1);
+      }
+    };
+
+    // Reset refs array when tags change
+    React.useEffect(() => {
+      tagsRef.current = tagsRef.current.slice(0, value.length);
+    }, [value.length]);
+
+    return (
+      <div ref={ref} className="space-y-1.5">
+        <div
+          className={cn(
+            styles.input,
+            'flex min-h-[2.5rem] w-full cursor-text flex-wrap gap-1.5 !p-1.5',
+            disabled && 'cursor-not-allowed',
+            errorText && 'border-destructive focus-visible:ring-destructive',
+            className,
+          )}
+          onClick={handleContainerClick}
+        >
+          {value.map((tag, index) => (
+            <button
+              key={tag.id}
+              ref={el => (tagsRef.current[index] = el)}
+              type="button"
+              disabled={disabled}
+              onClick={e => e.stopPropagation()}
+              onKeyDown={e => handleTagKeyDown(e, index)}
+              className={cn(
+                'flex items-center gap-1 rounded-sm bg-secondary px-2 py-0.5 text-sm text-secondary-foreground transition-colors',
+                'hover:bg-secondary/80',
+                'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+                disabled && 'opacity-50 cursor-not-allowed',
+              )}
+            >
+              {tag.text}
+              {!disabled && (
+                <X
+                  className="h-3 w-3 opacity-50 transition-opacity hover:opacity-100"
+                  role="button"
+                  aria-label={`Remove ${tag.text}`}
+                  onClick={e => {
+                    e.stopPropagation();
+                    removeTag(tag.id);
+                  }}
+                />
+              )}
+            </button>
+          ))}
+          <input
+            ref={inputRef}
+            type="text"
+            value={inputValue}
+            onChange={e => setInputValue(e.target.value)}
+            onKeyDown={handleKeyDown}
+            onFocus={() => setFocusedTagIndex(-1)}
+            placeholder={value.length === 0 ? placeholder : ''}
+            className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed"
+            disabled={disabled || (maxTags !== undefined && value.length >= maxTags)}
+          />
+        </div>
+        {errorText && <p className={styles.text.error}>{errorText}</p>}
+      </div>
+    );
+  },
+);
+TagInput.displayName = 'TagInput';
+
+export { TagInput };
