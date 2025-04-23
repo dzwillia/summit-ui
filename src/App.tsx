@@ -12,15 +12,19 @@ import { MultiSelect } from '@/components/MultiSelect';
 import { RadioGroup } from '@/components/RadioGroup';
 import { SingleSelect } from '@/components/Select';
 import { SwitchGroup } from '@/components/SwitchGroup';
+import { Tag, TagInput } from '@/components/TagInput';
 import { Textarea } from '@/components/Textarea';
 import {
   clouds,
+  databases,
   features,
+  frameworks,
   languages,
   libraries,
   projectTypes,
   settingsOptions,
   themeOptions,
+  tools,
 } from '@/constants';
 import { useEffect, useState } from 'react';
 
@@ -31,8 +35,14 @@ const App: React.FC = () => {
   const [company, setCompany] = useState('');
   const [description, setDescription] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const [uppercaseText, setUppercaseText] = useState('');
+  const [lowercaseText, setLowercaseText] = useState('');
+  const [trimmedText, setTrimmedText] = useState('');
+  const [trimmedUpperText, setTrimmedUpperText] = useState('');
 
   // Single selects
+  const [framework, setFramework] = useState('');
+  const [database, setDatabase] = useState('');
   const [language, setLanguage] = useState('');
   const [theme, setTheme] = useState('');
   const [library, setLibrary] = useState('');
@@ -40,10 +50,15 @@ const App: React.FC = () => {
   // Date inputs
   const [startDate1, setStartDate1] = useState<Date>();
   const [endDate1, setEndDate1] = useState<Date>();
+  const [startDate2, setStartDate2] = useState<Date>();
+  const [endDate2, setEndDate2] = useState<Date>();
+  const [dateRange1, setDateRange1] = useState<DateRange>({});
   const [dateRange2, setDateRange2] = useState<DateRange>({});
 
   // Multi selects
   const [selectedClouds, setSelectedClouds] = useState<string[]>([]);
+  const [selectedTools, setSelectedTools] = useState<string[]>([]);
+  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
 
   // Switches
   const [settings, setSettings] = useState<string[]>([]);
@@ -56,6 +71,12 @@ const App: React.FC = () => {
 
   // Theme
   const [currentTheme, setCurrentTheme] = useState<string>('light');
+
+  // Tags
+  const [tags, setTags] = useState<Tag[]>([
+    { id: '1', text: 'React' },
+    { id: '2', text: 'TypeScript' },
+  ]);
 
   useEffect(() => {
     const classList = document.documentElement.classList;
@@ -84,7 +105,7 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-6 mb-20">
+    <div className="min-h-screen flex items-center justify-center bg-background p-6">
       <div className="w-full max-w-xl space-y-8">
         <div className="flex justify-between items-start">
           <div>
@@ -122,8 +143,47 @@ const App: React.FC = () => {
         </div>
 
         <div className="space-y-6">
-          {/* Text Inputs */}
+          {/* Text Inputs with Transformations */}
           <div className="space-y-4">
+            <FormItem label="Uppercase Text" hintText="This text will always be uppercase">
+              <Input
+                transform="uppercase"
+                placeholder="Type something..."
+                value={uppercaseText}
+                onChange={e => setUppercaseText(e.target.value)}
+              />
+            </FormItem>
+
+            <FormItem label="Lowercase Text" hintText="This text will always be lowercase">
+              <Input
+                transform="lowercase"
+                placeholder="Type something..."
+                value={lowercaseText}
+                onChange={e => setLowercaseText(e.target.value)}
+              />
+            </FormItem>
+
+            <FormItem label="Trimmed Text" hintText="This text will always be trimmed">
+              <Input
+                transform="trim"
+                placeholder="Type something..."
+                value={trimmedText}
+                onChange={e => setTrimmedText(e.target.value)}
+              />
+            </FormItem>
+
+            <FormItem
+              label="Trimmed & Uppercase Text"
+              hintText="This text will be trimmed and converted to uppercase"
+            >
+              <Input
+                transform={['trim', 'uppercase']}
+                placeholder="Type something..."
+                value={trimmedUpperText}
+                onChange={e => setTrimmedUpperText(e.target.value)}
+              />
+            </FormItem>
+
             <FormItem label="Name" hintText="Your full name as it will appear in the project">
               <Input
                 id="name"
@@ -166,6 +226,10 @@ const App: React.FC = () => {
                 onChange={e => setDescription(e.target.value)}
               />
             </FormItem>
+
+            <FormItem label="Tags" hintText="Add tags to your project">
+              <TagInput value={tags} onChange={setTags} placeholder="Add a tag..." />
+            </FormItem>
           </div>
 
           {/* Theme Select */}
@@ -198,7 +262,7 @@ const App: React.FC = () => {
               loadOptions={searchLibraries}
               value={searchQuery}
               onChange={setSearchQuery}
-              placeholder="Search libraries (enter 'Re' to get results)..."
+              placeholder="Search libraries..."
               debounceMs={500}
               minSearch={1}
             />
@@ -236,6 +300,26 @@ const App: React.FC = () => {
 
           {/* Single Selects */}
           <div className="space-y-4">
+            <FormItem label="Framework" hintText="Choose the primary framework for your project">
+              <Combobox
+                options={frameworks}
+                value={framework}
+                onChange={setFramework}
+                placeholder="Select framework..."
+                searchPlaceholder="Search framework..."
+              />
+            </FormItem>
+
+            <FormItem label="Database" hintText="Select the main database for your application">
+              <Combobox
+                options={databases}
+                value={database}
+                onChange={setDatabase}
+                placeholder="Select database..."
+                searchPlaceholder="Search database..."
+              />
+            </FormItem>
+
             <FormItem
               label="Primary Language"
               hintText="Choose the main programming language for development"
@@ -259,6 +343,27 @@ const App: React.FC = () => {
 
               <FormItem label="Project End" hintText="Expected completion date">
                 <DatePicker value={endDate1} onChange={setEndDate1} placeholder="Pick a date" />
+              </FormItem>
+            </div>
+
+            <FormItem label="Project Duration" hintText="Select the start and end dates">
+              <DateRangePicker
+                value={dateRange1}
+                onChange={setDateRange1}
+                placeholder={{
+                  from: 'Start date',
+                  to: 'End date',
+                }}
+              />
+            </FormItem>
+
+            <div className="grid grid-cols-2 gap-4">
+              <FormItem label="Maintenance Start" hintText="When support period begins">
+                <DatePicker value={startDate2} onChange={setStartDate2} placeholder="Pick a date" />
+              </FormItem>
+
+              <FormItem label="Maintenance End" hintText="Support period end date">
+                <DatePicker value={endDate2} onChange={setEndDate2} placeholder="Pick a date" />
               </FormItem>
             </div>
 
@@ -286,6 +391,32 @@ const App: React.FC = () => {
                 onChange={setSelectedClouds}
                 placeholder="Select cloud providers..."
                 searchPlaceholder="Search cloud providers..."
+              />
+            </FormItem>
+
+            <FormItem
+              label="Development Tools"
+              hintText="Choose the development tools for your team"
+            >
+              <MultiSelect
+                options={tools}
+                value={selectedTools}
+                onChange={setSelectedTools}
+                placeholder="Select development tools..."
+                searchPlaceholder="Search tools..."
+              />
+            </FormItem>
+
+            <FormItem
+              label="Additional Languages"
+              hintText="Other programming languages used in the project"
+            >
+              <MultiSelect
+                options={languages}
+                value={selectedLanguages}
+                onChange={setSelectedLanguages}
+                placeholder="Select languages..."
+                searchPlaceholder="Search languages..."
               />
             </FormItem>
           </div>
