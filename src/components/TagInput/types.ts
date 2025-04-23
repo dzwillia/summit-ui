@@ -5,11 +5,11 @@ export interface Tag {
 
 export interface TagInputProps {
   value: Tag[];
-  onChange: (tags: Tag[]) => void;
+  className?: string;
   placeholder?: string;
   maxTags?: number;
-  className?: string;
-  disabled?: boolean;
   errorText?: string;
   delimiterChars?: string | string[];
+  isDisabled?: boolean;
+  onChange: (tags: Tag[]) => void;
 }

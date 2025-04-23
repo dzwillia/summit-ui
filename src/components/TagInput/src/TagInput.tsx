@@ -8,13 +8,13 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
   (
     {
       value,
-      onChange,
+      className,
       placeholder = 'Type and press Enter...',
       maxTags,
-      className,
-      disabled,
       errorText,
       delimiterChars,
+      isDisabled = false,
+      onChange,
     },
     ref,
   ) => {
@@ -144,7 +144,7 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
             styles.input,
             styles.focusRingWithin,
             'flex min-h-[2.5rem] w-full cursor-text flex-wrap gap-1.5 !p-1.5',
-            disabled && 'cursor-not-allowed',
+            isDisabled && 'cursor-not-allowed',
             errorText && 'border-destructive focus-visible:ring-destructive',
             className,
           )}
@@ -155,19 +155,19 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
               key={tag.id}
               ref={el => (tagsRef.current[index] = el)}
               type="button"
-              disabled={disabled}
+              disabled={isDisabled}
               onClick={e => e.stopPropagation()}
               onKeyDown={e => handleTagKeyDown(e, index)}
               className={cn(
                 'flex items-center gap-1 rounded-sm bg-secondary px-2 py-0.5 text-sm text-secondary-foreground transition-colors',
                 'hover:bg-secondary/80',
-                disabled && 'opacity-50 cursor-not-allowed',
+                isDisabled && 'opacity-50 cursor-not-allowed',
                 styles.focusRing,
                 'focus:ring-2 focus:ring-offset-0',
               )}
             >
               {tag.text}
-              {!disabled && (
+              {!isDisabled && (
                 <X
                   className="h-3 w-3 opacity-50 transition-opacity hover:opacity-100"
                   role="button"
@@ -189,7 +189,7 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
             onFocus={() => setFocusedTagIndex(-1)}
             placeholder={value.length === 0 ? placeholderText : ''}
             className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed"
-            disabled={disabled || (maxTags !== undefined && value.length >= maxTags)}
+            disabled={isDisabled || (maxTags !== undefined && value.length >= maxTags)}
           />
         </div>
         {errorText && <p className={styles.text.error}>{errorText}</p>}

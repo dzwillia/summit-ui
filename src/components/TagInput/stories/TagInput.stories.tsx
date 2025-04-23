@@ -29,7 +29,7 @@ const TagInputDemo = ({
   initialTags = [],
   maxTags,
   minTags,
-  disabled,
+  isDisabled,
   delimiterChars,
 }: TagInputDemoProps) => {
   const [tags, setTags] = useState<Tag[]>(initialTags);
@@ -43,7 +43,7 @@ const TagInputDemo = ({
         onChange={setTags}
         maxTags={maxTags}
         errorText={errorText}
-        disabled={disabled}
+        isDisabled={isDisabled}
         delimiterChars={delimiterChars}
       />
       <p className="text-sm text-muted-foreground">Tags: {tags.map(tag => tag.text).join(', ')}</p>
@@ -88,7 +88,7 @@ export const Disabled: Story = {
     ],
     onChange: () => {},
     placeholder: 'Add tags...',
-    disabled: true,
+    isDisabled: true,
   },
   render: () => (
     <TagInputDemo
@@ -97,7 +97,7 @@ export const Disabled: Story = {
         { id: '1', text: 'React' },
         { id: '2', text: 'TypeScript' },
       ]}
-      disabled={true}
+      isDisabled={true}
     />
   ),
 };
