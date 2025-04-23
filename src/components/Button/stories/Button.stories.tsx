@@ -77,6 +77,6 @@ export const Icon: Story = {
 export const Disabled: Story = {
   args: {
     children: 'Disabled Button',
-    disabled: true,
+    isDisabled: true,
   },
 };
