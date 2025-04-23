@@ -23,6 +23,18 @@ export const Default: Story = {
   },
 };
 
+export const Disabled: Story = {
+  args: {
+    children: 'Disabled Dropdown Button',
+    isDisabled: true,
+    items: [
+      { label: 'Profile', onClick: () => console.log('Profile clicked') },
+      { label: 'Settings', onClick: () => console.log('Settings clicked') },
+      { label: 'Logout', onClick: () => console.log('Logout clicked') },
+    ],
+  },
+};
+
 export const WithIcons: Story = {
   args: {
     children: 'Menu',
@@ -67,7 +79,7 @@ export const WithDisabledItems: Story = {
     items: [
       { label: 'Active Option', onClick: () => console.log('Active clicked') },
       'separator',
-      { label: 'Disabled Option', disabled: true },
+      { label: 'Disabled Option', isDisabled: true },
       'separator',
       { label: 'Another Active', onClick: () => console.log('Another clicked') },
     ],
