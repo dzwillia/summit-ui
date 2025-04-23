@@ -1,9 +1,13 @@
+const focusRing = 'focus:outline-none focus:ring-ring focus:ring-[3px] focus:ring-offset-[3px]';
+const focusRingSm = 'focus:ring-offset-2';
+
 const focusRingVisible =
   'focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-[3px] focus-visible:ring-offset-[3px] focus-visible:ring-offset-background';
 const focusRingVisibleSm = 'focus-visible:ring-offset-[2px]';
 
-const focusRing = 'focus:outline-none focus:ring-ring focus:ring-[3px] focus:ring-offset-[3px]';
-const focusRingSm = 'focus:ring-offset-2';
+const focusRingWithin =
+  'focus-within:outline-none focus-within:ring-ring focus-within:ring-[3px] focus-within:ring-offset-[3px] focus-within:ring-offset-background';
+const focusRingWithinSm = 'focus-within:ring-offset-[2px]';
 
 const input =
   'flex h-10 w-full rounded-sm border border-input bg-background px-3 py-2 text-sm ring-offset-background disabled:cursor-not-allowed disabled:opacity-50';
@@ -12,11 +16,14 @@ const button =
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors disabled:pointer-events-none disabled:opacity-50';
 
 export const styles = {
+  focusRing,
+  focusRingSm,
+
   focusRingVisible,
   focusRingVisibleSm,
 
-  focusRing,
-  focusRingSm,
+  focusRingWithin,
+  focusRingWithinSm,
 
   // Form elements
   input: `${input} ${focusRingVisible}`,
