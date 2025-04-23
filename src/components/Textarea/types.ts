@@ -1,2 +1,6 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
-export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+import { TextareaHTMLAttributes } from 'react';
+
+export interface TextareaProps
+  extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'disabled'> {
+  isDisabled?: boolean;
+}
