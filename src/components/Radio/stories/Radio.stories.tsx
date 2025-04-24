@@ -32,6 +32,7 @@ export const Selected: Story = {
     label: 'Selected radio',
     id: 'radio-2',
     value: 'option-2',
+    isChecked: true,
   },
 };
 
@@ -40,7 +41,7 @@ export const Disabled: Story = {
     label: 'Disabled radio',
     id: 'radio-3',
     value: 'option-3',
-    disabled: true,
+    isDisabled: true,
   },
 };
 
@@ -49,6 +50,7 @@ export const DisabledSelected: Story = {
     label: 'Disabled selected radio',
     id: 'radio-4',
     value: 'option-4',
-    disabled: true,
+    isChecked: true,
+    isDisabled: true,
   },
 };

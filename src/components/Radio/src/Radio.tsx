@@ -7,9 +7,25 @@ import * as React from 'react';
 import { RadioProps } from '../types';
 
 const Radio = React.forwardRef<React.ElementRef<typeof RadioGroupPrimitive.Item>, RadioProps>(
-  ({ className, label, id, 'aria-label': ariaLabel, ...props }, ref) => {
+  (
+    {
+      className,
+      label,
+      id,
+      'aria-label': ariaLabel,
+      isChecked = false,
+      isDisabled = false,
+      ...props
+    },
+    ref,
+  ) => {
     if (!label && !ariaLabel) {
       throw new Error('Radio must have either a label prop or an aria-label attribute');
+    }
+    if (label && ariaLabel) {
+      throw new Error(
+        'Radio must have either a label prop or an aria-label attribute, but not both',
+      );
     }
 
     return (
@@ -23,6 +39,9 @@ const Radio = React.forwardRef<React.ElementRef<typeof RadioGroupPrimitive.Item>
             'aspect-square h-5 w-5 rounded-full border-2 border-gray-500 text-primary ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary ',
             className,
           )}
+          checked={isChecked}
+          disabled={isDisabled}
+          aria-label={ariaLabel}
           {...props}
         >
           <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
