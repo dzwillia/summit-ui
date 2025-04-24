@@ -9,6 +9,9 @@ const meta = {
     isChecked: {
       control: 'boolean',
     },
+    isDisabled: {
+      control: 'boolean',
+    },
     onCheckedChange: {
       action: 'checked changed',
     },

@@ -5,6 +5,14 @@ const meta = {
   title: 'Components/Checkbox',
   component: Checkbox,
   parameters: {},
+  argTypes: {
+    isChecked: {
+      control: 'boolean',
+    },
+    isDisabled: {
+      control: 'boolean',
+    },
+  },
   tags: ['autodocs'],
 } satisfies Meta<typeof Checkbox>;
 

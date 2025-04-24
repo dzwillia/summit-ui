@@ -6,6 +6,14 @@ const meta = {
   title: 'Components/Radio',
   component: Radio,
   parameters: {},
+  argTypes: {
+    isChecked: {
+      control: 'boolean',
+    },
+    isDisabled: {
+      control: 'boolean',
+    },
+  },
   decorators: [
     Story => (
       <RadioGroupPrimitive.Root defaultValue="option-1">
