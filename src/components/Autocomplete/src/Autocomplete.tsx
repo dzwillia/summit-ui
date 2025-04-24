@@ -10,7 +10,7 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
 import { cn } from '@/lib/utils';
 import { Check, ChevronsUpDown, X } from 'lucide-react';
-import * as React from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AutocompleteOption, AutocompleteProps } from '../types';
 
 const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
@@ -31,18 +31,18 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
     },
     ref,
   ) => {
-    const [open, setOpen] = React.useState(false);
-    const [inputValue, setInputValue] = React.useState('');
-    const [loading, setLoading] = React.useState(false);
-    const [error, setError] = React.useState(false);
-    const [asyncOptions, setAsyncOptions] = React.useState<AutocompleteOption[]>([]);
-    const [hasSearched, setHasSearched] = React.useState(false);
+    const [open, setOpen] = useState(false);
+    const [inputValue, setInputValue] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+    const [asyncOptions, setAsyncOptions] = useState<AutocompleteOption[]>([]);
+    const [hasSearched, setHasSearched] = useState(false);
 
     // Debounce timer reference
-    const debounceTimer = React.useRef<NodeJS.Timeout>();
+    const debounceTimer = useRef<NodeJS.Timeout>();
 
     // Cleanup timer on unmount
-    React.useEffect(() => {
+    useEffect(() => {
       return () => {
         if (debounceTimer.current) {
           clearTimeout(debounceTimer.current);
@@ -50,7 +50,7 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
       };
     }, []);
 
-    const fetchOptions = React.useCallback(
+    const fetchOptions = useCallback(
       async (search: string) => {
         if (!loadOptions) return;
 
@@ -72,7 +72,7 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
     );
 
     // Filter static options
-    const filteredStaticOptions = React.useMemo(() => {
+    const filteredStaticOptions = useMemo(() => {
       if (loadOptions) return []; // Don't show static options in async mode
 
       const normalizedInput = inputValue.toLowerCase().trim();
@@ -91,12 +91,12 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
     // Combined options for rendering
     const displayOptions = loadOptions ? asyncOptions : filteredStaticOptions;
 
-    const selectedOption = React.useMemo(
+    const selectedOption = useMemo(
       () => displayOptions.find(option => option.value === value),
       [displayOptions, value],
     );
 
-    const handleSelect = React.useCallback(
+    const handleSelect = useCallback(
       (selectedValue: string) => {
         onChange(selectedValue);
         setOpen(false);
@@ -106,7 +106,7 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
       [onChange],
     );
 
-    const handleInputChange = React.useCallback(
+    const handleInputChange = useCallback(
       (input: string) => {
         setInputValue(input);
 
@@ -128,10 +128,10 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
           setAsyncOptions([]);
         }
       },
-      [onChange, loadOptions, minSearch, debounceMs, fetchOptions],
+      [loadOptions, minSearch, debounceMs, fetchOptions],
     );
 
-    const handleClear = React.useCallback(() => {
+    const handleClear = useCallback(() => {
       onChange('');
       setInputValue('');
       setAsyncOptions([]);

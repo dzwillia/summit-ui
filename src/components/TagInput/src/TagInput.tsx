@@ -1,7 +1,7 @@
 import { styles } from '@/lib/styles';
 import { cn } from '@/lib/utils';
 import { X } from 'lucide-react';
-import * as React from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Tag, TagInputProps } from '../types';
 
 const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
@@ -18,12 +18,12 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
     },
     ref,
   ) => {
-    const [inputValue, setInputValue] = React.useState('');
-    const [focusedTagIndex, setFocusedTagIndex] = React.useState<number>(-1);
-    const inputRef = React.useRef<HTMLInputElement>(null);
-    const tagsRef = React.useRef<(HTMLButtonElement | null)[]>([]);
+    const [inputValue, setInputValue] = useState('');
+    const [focusedTagIndex, setFocusedTagIndex] = useState<number>(-1);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const tagsRef = useRef<(HTMLButtonElement | null)[]>([]);
 
-    const delimiters = React.useMemo(() => {
+    const delimiters = useMemo(() => {
       if (!delimiterChars) return [];
       return Array.isArray(delimiterChars) ? delimiterChars : [delimiterChars];
     }, [delimiterChars]);
@@ -127,11 +127,11 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
     };
 
     // Reset refs array when tags change
-    React.useEffect(() => {
+    useEffect(() => {
       tagsRef.current = tagsRef.current.slice(0, value.length);
     }, [value.length]);
 
-    const placeholderText = React.useMemo(() => {
+    const placeholderText = useMemo(() => {
       if (!delimiterChars) return placeholder;
       const delims = Array.isArray(delimiterChars) ? delimiterChars : [delimiterChars];
       return `Type and press Enter or use ${delims.map(d => `"${d}"`).join(' or ')} to add tags...`;

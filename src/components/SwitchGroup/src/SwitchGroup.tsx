@@ -1,11 +1,11 @@
 import { cn } from '@/lib/utils';
-import * as React from 'react';
+import React, { useCallback } from 'react';
 import { Switch } from '../../Switch';
 import { SwitchGroupProps } from '../types';
 
 const SwitchGroup = React.forwardRef<HTMLDivElement, SwitchGroupProps>(
   ({ options, value, onChange, className, columns = 2 }, ref) => {
-    const handleSwitchChange = React.useCallback(
+    const handleSwitchChange = useCallback(
       (id: string, checked: boolean) => {
         if (checked) {
           onChange([...value, id]);

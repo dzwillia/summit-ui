@@ -9,7 +9,7 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
 import { cn } from '@/lib/utils';
 import { Check, ChevronsUpDown } from 'lucide-react';
-import * as React from 'react';
+import React, { useState } from 'react';
 import { ComboboxProps } from '../types';
 
 const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(
@@ -25,7 +25,7 @@ const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(
     },
     ref,
   ) => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     return (
       <Popover open={open} onOpenChange={setOpen}>
