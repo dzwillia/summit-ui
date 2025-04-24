@@ -6,9 +6,25 @@ import * as React from 'react';
 import { SwitchProps } from '../types';
 
 const Switch = React.forwardRef<React.ElementRef<typeof SwitchPrimitives.Root>, SwitchProps>(
-  ({ className, label, id, 'aria-label': ariaLabel, ...props }, ref) => {
+  (
+    {
+      className,
+      label,
+      id,
+      'aria-label': ariaLabel,
+      isChecked = false,
+      isDisabled = false,
+      ...props
+    },
+    ref,
+  ) => {
     if (!label && !ariaLabel) {
       throw new Error('Switch must have either a label prop or an aria-label attribute');
+    }
+    if (label && ariaLabel) {
+      throw new Error(
+        'Switch must have either a label prop or an aria-label attribute, but not both',
+      );
     }
 
     return (
@@ -19,6 +35,9 @@ const Switch = React.forwardRef<React.ElementRef<typeof SwitchPrimitives.Root>, 
             'peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted',
             className,
           )}
+          checked={isChecked}
+          disabled={isDisabled}
+          aria-label={ariaLabel}
           {...props}
           ref={ref}
           id={id}

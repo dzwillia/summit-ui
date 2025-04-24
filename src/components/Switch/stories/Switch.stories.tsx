@@ -6,7 +6,7 @@ const meta = {
   component: Switch,
   parameters: {},
   argTypes: {
-    checked: {
+    isChecked: {
       control: 'boolean',
     },
     onCheckedChange: {
@@ -30,7 +30,7 @@ export const Checked: Story = {
   args: {
     label: 'Notifications',
     id: 'notifications',
-    checked: true,
+    isChecked: true,
   },
 };
 
@@ -38,7 +38,7 @@ export const Disabled: Story = {
   args: {
     label: 'Disabled switch',
     id: 'disabled',
-    disabled: true,
+    isDisabled: true,
   },
 };
 
@@ -46,8 +46,8 @@ export const DisabledChecked: Story = {
   args: {
     label: 'Disabled checked switch',
     id: 'disabled-checked',
-    disabled: true,
-    checked: true,
+    isChecked: true,
+    isDisabled: true,
   },
 };
 
