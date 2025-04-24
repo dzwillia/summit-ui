@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Checkbox } from '../src/Checkbox';
 import { CheckboxProps } from '../types';
 
@@ -23,6 +23,11 @@ type Story = StoryObj<typeof meta>;
 
 const CheckboxDemo = ({ isChecked: initialValue = false, ...args }: CheckboxProps) => {
   const [isChecked, setIsChecked] = useState<boolean>(initialValue);
+
+  useEffect(() => {
+    setIsChecked(!!initialValue);
+  }, [initialValue]);
+
   return (
     <div className="space-y-4">
       <Checkbox {...args} isChecked={isChecked} onCheckedChange={() => setIsChecked(!isChecked)} />
@@ -33,11 +38,20 @@ const CheckboxDemo = ({ isChecked: initialValue = false, ...args }: CheckboxProp
   );
 };
 
+export const PlaygroundStory: Story = {
+  args: {
+    label: 'Accept terms and conditions',
+    id: 'terms',
+  },
+  // Removes this story from auto-generated documentation
+  tags: ['!autodocs'],
+};
+
 export const Default: Story = {
   render: args => <CheckboxDemo {...args} />,
   args: {
     label: 'Accept terms and conditions',
-    id: 'terms',
+    id: 'terms2',
   },
 };
 
