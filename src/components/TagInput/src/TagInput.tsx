@@ -132,7 +132,7 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
     }, [value.length]);
 
     const placeholderText = useMemo(() => {
-      if (!delimiterChars) return placeholder;
+      if (!delimiterChars?.length) return placeholder;
       const delims = Array.isArray(delimiterChars) ? delimiterChars : [delimiterChars];
       return `Type and press Enter or use ${delims.map(d => `"${d}"`).join(' or ')} to add tags...`;
     }, [delimiterChars, placeholder]);

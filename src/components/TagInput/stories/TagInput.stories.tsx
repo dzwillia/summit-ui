@@ -7,6 +7,21 @@ const meta = {
   title: 'Components/TagInput',
   component: TagInput,
   parameters: {},
+  argTypes: {
+    value: {
+      control: 'object',
+      description: 'Array of id/string pairs representing tags',
+      type: { name: 'array', value: { name: 'object', value: {} }, required: true },
+    },
+    delimiterChars: {
+      control: 'object',
+      description: 'Array delimiter characters to split tags',
+      type: { name: 'array', value: { name: 'object', value: {} }, required: false },
+    },
+    isDisabled: {
+      control: 'boolean',
+    },
+  },
   tags: ['autodocs'],
 } satisfies Meta<typeof TagInput>;
 
@@ -49,6 +64,12 @@ const TagInputDemo = ({
       <p className="text-sm text-muted-foreground">Tags: {tags.map(tag => tag.text).join(', ')}</p>
     </div>
   );
+};
+
+export const Playground: Story = {
+  args: { value: [], delimiterChars: [], onChange: () => {}, placeholder: 'Add tags...' },
+  // Removes this story from auto-generated documentation
+  tags: ['!autodocs'],
 };
 
 export const Default: Story = {
