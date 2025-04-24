@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { useEffect, useState } from 'react';
 import { Switch } from '../src/Switch';
+import { SwitchProps } from '../types';
 
 const meta = {
   title: 'Components/Switch',
@@ -22,7 +24,32 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const SwitchDemo = ({ isChecked: initialValue = false, ...args }: SwitchProps) => {
+  const [isChecked, setIsChecked] = useState<boolean>(initialValue);
+
+  useEffect(() => {
+    setIsChecked(!!initialValue);
+  }, [initialValue]);
+
+  return (
+    <div className="space-y-4">
+      <Switch {...args} isChecked={isChecked} onCheckedChange={() => setIsChecked(!isChecked)} />
+      <p className="text-sm text-muted-foreground">Switch {isChecked ? 'is on' : 'is off'}</p>
+    </div>
+  );
+};
+
+export const Playground: Story = {
+  args: {
+    label: 'Airplane Mode',
+    id: 'airplane-mode',
+  },
+  // Removes this story from auto-generated documentation
+  tags: ['!autodocs'],
+};
+
 export const Default: Story = {
+  render: args => <SwitchDemo {...args} />,
   args: {
     label: 'Airplane Mode',
     id: 'airplane-mode',
@@ -30,6 +57,7 @@ export const Default: Story = {
 };
 
 export const Checked: Story = {
+  render: args => <SwitchDemo {...args} />,
   args: {
     label: 'Notifications',
     id: 'notifications',
@@ -38,6 +66,7 @@ export const Checked: Story = {
 };
 
 export const Disabled: Story = {
+  render: args => <SwitchDemo {...args} />,
   args: {
     label: 'Disabled switch',
     id: 'disabled',
@@ -46,6 +75,7 @@ export const Disabled: Story = {
 };
 
 export const DisabledChecked: Story = {
+  render: args => <SwitchDemo {...args} />,
   args: {
     label: 'Disabled checked switch',
     id: 'disabled-checked',
@@ -55,6 +85,7 @@ export const DisabledChecked: Story = {
 };
 
 export const WithCustomLabel: Story = {
+  render: args => <SwitchDemo {...args} />,
   args: {
     label: (
       <div className="flex flex-col">
