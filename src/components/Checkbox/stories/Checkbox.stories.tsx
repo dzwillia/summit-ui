@@ -38,7 +38,7 @@ const CheckboxDemo = ({ isChecked: initialValue = false, ...args }: CheckboxProp
   );
 };
 
-export const PlaygroundStory: Story = {
+export const Playground: Story = {
   args: {
     label: 'Accept terms and conditions',
     id: 'terms',

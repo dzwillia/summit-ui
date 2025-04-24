@@ -1,6 +1,8 @@
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useEffect, useState } from 'react';
 import { Radio } from '../src/Radio';
+import { RadioProps } from '../types';
 
 const meta = {
   title: 'Components/Radio',
@@ -27,7 +29,35 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const RadioDemo = ({ isChecked: initialValue = false, ...args }: RadioProps) => {
+  const [isChecked, setIsChecked] = useState<boolean>(!!initialValue);
+
+  useEffect(() => {
+    setIsChecked(!!initialValue);
+  }, [initialValue]);
+
+  return (
+    <div className="space-y-4">
+      <Radio {...args} isChecked={isChecked} onClick={() => setIsChecked(!isChecked)} />
+      <p className="text-sm text-muted-foreground">
+        Radio {isChecked ? 'is selected' : 'is not selected'}
+      </p>
+    </div>
+  );
+};
+
+export const Playground: Story = {
+  args: {
+    label: 'Radio option',
+    id: 'radio-playground',
+    value: 'option-playground',
+  },
+  // Removes this story from auto-generated documentation
+  tags: ['!autodocs'],
+};
+
 export const Default: Story = {
+  render: args => <RadioDemo {...args} />,
   args: {
     label: 'Radio option',
     id: 'radio-1',
@@ -36,6 +66,7 @@ export const Default: Story = {
 };
 
 export const Selected: Story = {
+  render: args => <RadioDemo {...args} />,
   args: {
     label: 'Selected radio',
     id: 'radio-2',
@@ -45,6 +76,7 @@ export const Selected: Story = {
 };
 
 export const Disabled: Story = {
+  render: args => <RadioDemo {...args} />,
   args: {
     label: 'Disabled radio',
     id: 'radio-3',
@@ -54,6 +86,7 @@ export const Disabled: Story = {
 };
 
 export const DisabledSelected: Story = {
+  render: args => <RadioDemo {...args} />,
   args: {
     label: 'Disabled selected radio',
     id: 'radio-4',

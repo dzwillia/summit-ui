@@ -21,7 +21,13 @@ const RadioGroup = React.forwardRef<
       )}
     >
       {options.map(option => (
-        <Radio key={option.value} id={option.value} value={option.value} label={option.label} />
+        <Radio
+          key={option.value}
+          id={option.value}
+          value={option.value}
+          label={option.label}
+          isChecked={value === option.value}
+        />
       ))}
     </RadioGroupPrimitive.Root>
   );
