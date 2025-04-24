@@ -58,7 +58,7 @@ export const Default: Story = {
   render: args => <SwitchGroupDemo {...args} />,
   args: {
     options,
-    columns: 2,
+    columns: 1,
     value: [],
     onChange: () => {},
   },
@@ -100,8 +100,9 @@ export const WithManyOptions: Story = {
     options: [
       ...options,
       { id: 'backup', label: 'Automatic backup' },
+      { id: 'location', label: 'Location tracking (disabled)', isDisabled: true },
       { id: 'sync', label: 'Cloud sync' },
-      { id: 'analytics', label: 'Usage analytics' },
+      { id: 'analytics', label: 'Usage analytics (disabled)', isDisabled: true },
       { id: 'beta', label: 'Beta features' },
     ],
     columns: 2,

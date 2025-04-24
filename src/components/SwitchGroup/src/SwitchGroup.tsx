@@ -4,13 +4,16 @@ import { Switch } from '../../Switch';
 import { SwitchGroupProps } from '../types';
 
 const SwitchGroup = React.forwardRef<HTMLDivElement, SwitchGroupProps>(
-  ({ options, value, onChange, className, columns = 2 }, ref) => {
+  ({ options, value, onChange, className, columns = 1 }, ref) => {
     const handleSwitchChange = useCallback(
-      (id: string, checked: boolean) => {
-        if (checked) {
-          onChange([...value, id]);
+      (id: string, isChecked: boolean) => {
+        const addId = (id: string) => onChange([...value, id]);
+        const removeId = (id: string) => onChange(value.filter(v => v !== id));
+
+        if (isChecked) {
+          addId(id);
         } else {
-          onChange(value.filter(v => v !== id));
+          removeId(id);
         }
       },
       [onChange, value],
@@ -18,21 +21,14 @@ const SwitchGroup = React.forwardRef<HTMLDivElement, SwitchGroupProps>(
 
     return (
       <div ref={ref} className={cn('', className)}>
-        <div
-          className={cn(
-            'grid gap-3',
-            columns === 1 && 'grid-cols-1',
-            columns === 2 && 'grid-cols-2',
-            columns === 3 && 'grid-cols-3',
-            columns === 4 && 'grid-cols-4',
-          )}
-        >
+        <div className={cn('grid gap-3', `grid-cols-${columns}`)}>
           {options.map(option => (
             <Switch
               key={option.id}
               id={option.id}
               label={option.label}
-              checked={value.includes(option.id)}
+              isChecked={value.includes(option.id)}
+              isDisabled={option.isDisabled}
               onCheckedChange={checked => handleSwitchChange(option.id, checked)}
             />
           ))}
