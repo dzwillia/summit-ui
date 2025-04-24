@@ -7,9 +7,25 @@ import * as React from 'react';
 import { CheckboxProps } from '../types';
 
 const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root>, CheckboxProps>(
-  ({ className, label, id, 'aria-label': ariaLabel, ...props }, ref) => {
+  (
+    {
+      className,
+      label,
+      id,
+      'aria-label': ariaLabel,
+      isChecked = false,
+      isDisabled = false,
+      ...props
+    },
+    ref,
+  ) => {
     if (!label && !ariaLabel) {
       throw new Error('Checkbox must have either a label prop or an aria-label attribute');
+    }
+    if (label && ariaLabel) {
+      throw new Error(
+        'Checkbox must have either a label prop or an aria-label attribute, but not both',
+      );
     }
 
     return (
@@ -23,6 +39,9 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
             'peer h-5 w-5 shrink-0 rounded-sm border-2 border-gray-500 ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground',
             className,
           )}
+          checked={isChecked}
+          disabled={isDisabled}
+          aria-label={ariaLabel}
           {...props}
         >
           <CheckboxPrimitive.Indicator
