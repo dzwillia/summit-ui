@@ -31,7 +31,6 @@ type Story = StoryObj<typeof meta>;
 interface TagInputDemoProps extends TagInputProps {
   initialTags?: Tag[];
   maxTags?: number;
-  minTags?: number;
 }
 
 const defaultProps = {
@@ -43,13 +42,10 @@ const defaultProps = {
 const TagInputDemo = ({
   initialTags = [],
   maxTags,
-  minTags,
   isDisabled,
   delimiterChars,
 }: TagInputDemoProps) => {
   const [tags, setTags] = useState<Tag[]>(initialTags);
-  const errorText =
-    minTags && tags.length < minTags ? `Please add at least ${minTags} tags` : undefined;
 
   return (
     <div className="space-y-4">
@@ -57,7 +53,6 @@ const TagInputDemo = ({
         value={tags}
         onChange={setTags}
         maxTags={maxTags}
-        errorText={errorText}
         isDisabled={isDisabled}
         delimiterChars={delimiterChars}
       />
@@ -142,18 +137,6 @@ export const WithMaxTags: Story = {
       ]}
       maxTags={3}
     />
-  ),
-};
-
-export const WithError: Story = {
-  args: {
-    value: [{ id: '1', text: 'React' }],
-    onChange: () => {},
-    placeholder: 'Add tags...',
-    errorText: 'Please add at least 2 tags',
-  },
-  render: () => (
-    <TagInputDemo {...defaultProps} initialTags={[{ id: '1', text: 'React' }]} minTags={2} />
   ),
 };
 

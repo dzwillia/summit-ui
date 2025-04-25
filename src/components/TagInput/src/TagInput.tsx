@@ -11,7 +11,6 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
       className,
       placeholder = 'Type and press Enter...',
       maxTags,
-      errorText,
       delimiterChars,
       isDisabled = false,
       onChange,
@@ -138,61 +137,58 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
     }, [delimiterChars, placeholder]);
 
     return (
-      <div ref={ref} className="space-y-1.5">
-        <div
-          className={cn(
-            styles.input,
-            styles.focusRingWithin,
-            'flex min-h-[2.5rem] w-full cursor-text flex-wrap gap-1.5 !p-1.5',
-            isDisabled && 'cursor-not-allowed',
-            errorText && 'border-destructive focus-visible:ring-destructive',
-            className,
-          )}
-          onClick={handleContainerClick}
-        >
-          {value.map((tag, index) => (
-            <button
-              key={tag.id}
-              ref={el => (tagsRef.current[index] = el)}
-              type="button"
-              disabled={isDisabled}
-              onClick={e => e.stopPropagation()}
-              onKeyDown={e => handleTagKeyDown(e, index)}
-              className={cn(
-                'flex items-center gap-1 rounded-sm bg-secondary px-2 py-0.5 text-sm text-secondary-foreground transition-colors',
-                'hover:bg-secondary/80',
-                isDisabled && 'opacity-50 cursor-not-allowed',
-                styles.focusRing,
-                'focus:ring-2 focus:ring-offset-0',
-              )}
-            >
-              {tag.text}
-              {!isDisabled && (
-                <X
-                  className="h-3 w-3 opacity-50 transition-opacity hover:opacity-100"
-                  role="button"
-                  aria-label={`Remove ${tag.text}`}
-                  onClick={e => {
-                    e.stopPropagation();
-                    removeTag(tag.id);
-                  }}
-                />
-              )}
-            </button>
-          ))}
-          <input
-            ref={inputRef}
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyDown}
-            onFocus={() => setFocusedTagIndex(-1)}
-            placeholder={value.length === 0 ? placeholderText : ''}
-            className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed"
-            disabled={isDisabled || (maxTags !== undefined && value.length >= maxTags)}
-          />
-        </div>
-        {errorText && <p className={styles.text.error}>{errorText}</p>}
+      <div
+        ref={ref}
+        className={cn(
+          styles.input,
+          styles.focusRingWithin,
+          'flex min-h-[2.5rem] w-full cursor-text flex-wrap gap-1.5 !p-1.5',
+          isDisabled && 'cursor-not-allowed',
+          className,
+        )}
+        onClick={handleContainerClick}
+      >
+        {value.map((tag, index) => (
+          <button
+            key={tag.id}
+            ref={el => (tagsRef.current[index] = el)}
+            type="button"
+            disabled={isDisabled}
+            onClick={e => e.stopPropagation()}
+            onKeyDown={e => handleTagKeyDown(e, index)}
+            className={cn(
+              'flex items-center gap-1 rounded-sm bg-secondary px-2 py-0.5 text-sm text-secondary-foreground transition-colors',
+              'hover:bg-secondary/80',
+              isDisabled && 'opacity-50 cursor-not-allowed',
+              styles.focusRing,
+              'focus:ring-2 focus:ring-offset-0',
+            )}
+          >
+            {tag.text}
+            {!isDisabled && (
+              <X
+                className="h-3 w-3 opacity-50 transition-opacity hover:opacity-100"
+                role="button"
+                aria-label={`Remove ${tag.text}`}
+                onClick={e => {
+                  e.stopPropagation();
+                  removeTag(tag.id);
+                }}
+              />
+            )}
+          </button>
+        ))}
+        <input
+          ref={inputRef}
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
+          onFocus={() => setFocusedTagIndex(-1)}
+          placeholder={value.length === 0 ? placeholderText : ''}
+          className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed"
+          disabled={isDisabled || (maxTags !== undefined && value.length >= maxTags)}
+        />
       </div>
     );
   },
