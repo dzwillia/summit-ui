@@ -15,6 +15,10 @@ const meta = {
     isDisabled: {
       control: 'boolean',
     },
+    variant: {
+      control: 'radio',
+      options: ['default', 'tile'],
+    },
   },
   decorators: [
     Story => (
@@ -62,6 +66,41 @@ export const Default: Story = {
     label: 'Radio option',
     id: 'radio-1',
     value: 'option-1',
+  },
+};
+
+export const Tile: Story = {
+  render: args => <RadioDemo {...args} />,
+  args: {
+    label: 'Tile Radio',
+    description: 'This is a description for the tile radio option',
+    id: 'radio-tile',
+    value: 'option-tile',
+    variant: 'tile',
+  },
+};
+
+export const TileSelected: Story = {
+  render: args => <RadioDemo {...args} />,
+  args: {
+    label: 'Selected Tile Radio',
+    description: 'This tile radio option is selected',
+    id: 'radio-tile-selected',
+    value: 'option-tile-selected',
+    variant: 'tile',
+    isChecked: true,
+  },
+};
+
+export const TileDisabled: Story = {
+  render: args => <RadioDemo {...args} />,
+  args: {
+    label: 'Disabled Tile Radio',
+    description: 'This tile radio option is disabled',
+    id: 'radio-tile-disabled',
+    value: 'option-tile-disabled',
+    variant: 'tile',
+    isDisabled: true,
   },
 };
 

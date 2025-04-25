@@ -6,4 +6,6 @@ export interface RadioProps
   label?: ReactNode;
   isChecked?: boolean;
   isDisabled?: boolean;
+  variant?: 'default' | 'tile';
+  description?: string;
 }
