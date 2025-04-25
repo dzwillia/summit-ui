@@ -1,0 +1,14 @@
+/**
+  * This file is used to override the default Storybook styles.
+  * It is loaded in .storybook/manager.js
+  * See https://storybook.js.org/docs/react/configure/styling#customizing-the-manager-ui
+  */
+
+/**
+  * Playground stories are used for the Storybook Playground
+  * on the Docs page and are not meant to be shown in the sidebar.
+  * This is a workaround to hide the Playground stories from the sidebar.
+  */
+[data-item-id$="playground"] {
+  display: none !important;
+}
