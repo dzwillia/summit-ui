@@ -1,6 +1,7 @@
 export interface RadioOption {
   value: string;
   label: string;
+  description?: string;
 }
 
 export interface RadioGroupProps {
@@ -9,4 +10,5 @@ export interface RadioGroupProps {
   onChange: (value: string) => void;
   className?: string;
   orientation?: 'horizontal' | 'vertical';
+  variant?: 'default' | 'tile';
 }
