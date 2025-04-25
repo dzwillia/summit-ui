@@ -29,6 +29,12 @@ const meta = {
       description: 'Layout orientation of the radio group',
       type: { name: 'string', required: false },
     },
+    variant: {
+      control: 'radio',
+      options: ['default', 'tile'],
+      description: 'Visual variant of radio buttons',
+      type: { name: 'string', required: false },
+    },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof RadioGroup>;
@@ -36,10 +42,28 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const options = [
+const defaultOptions = [
   { value: 'option1', label: 'Option 1' },
   { value: 'option2', label: 'Option 2' },
   { value: 'option3', label: 'Option 3' },
+];
+
+const tileOptions = [
+  {
+    value: 'startup',
+    label: 'Startup',
+    description: 'Perfect for new businesses and small teams',
+  },
+  {
+    value: 'business',
+    label: 'Business',
+    description: 'For medium-sized businesses and growing teams',
+  },
+  {
+    value: 'enterprise',
+    label: 'Enterprise',
+    description: 'For large organizations and enterprise teams',
+  },
 ];
 
 const RadioGroupDemo = ({ value: initialValue = '', ...args }: RadioGroupProps) => {
@@ -59,10 +83,20 @@ const RadioGroupDemo = ({ value: initialValue = '', ...args }: RadioGroupProps) 
   );
 };
 
+export const Playground: Story = {
+  args: {
+    options: defaultOptions,
+    value: '',
+    onChange: () => {},
+  },
+  // Removes this story from auto-generated documentation
+  tags: ['!autodocs'],
+};
+
 export const Default: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
-    options,
+    options: defaultOptions,
     value: '',
     onChange: () => {},
   },
@@ -71,7 +105,7 @@ export const Default: Story = {
 export const WithSelection: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
-    options,
+    options: defaultOptions,
     value: 'option2',
     onChange: () => {},
   },
@@ -80,7 +114,7 @@ export const WithSelection: Story = {
 export const Horizontal: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
-    options,
+    options: defaultOptions,
     value: '',
     onChange: () => {},
     orientation: 'horizontal',
@@ -90,23 +124,29 @@ export const Horizontal: Story = {
 export const Vertical: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
-    options,
+    options: defaultOptions,
     value: '',
     onChange: () => {},
     orientation: 'vertical',
   },
 };
 
-export const WithManyOptions: Story = {
+export const Tile: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
-    options: [
-      ...options,
-      { value: 'option4', label: 'Option 4' },
-      { value: 'option5', label: 'Option 5' },
-      { value: 'option6', label: 'Option 6' },
-    ],
+    options: tileOptions,
     value: '',
     onChange: () => {},
+    variant: 'tile',
+  },
+};
+
+export const TileWithSelection: Story = {
+  render: args => <RadioGroupDemo {...args} />,
+  args: {
+    options: tileOptions,
+    value: 'business',
+    onChange: () => {},
+    variant: 'tile',
   },
 };

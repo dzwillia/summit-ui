@@ -7,16 +7,17 @@ import { RadioGroupProps } from '../types';
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   RadioGroupProps
->(({ options, value, onChange, className, orientation = 'vertical' }, ref) => {
+>(({ options, value, onChange, className, orientation = 'vertical', variant = 'default' }, ref) => {
   return (
     <RadioGroupPrimitive.Root
       ref={ref}
       value={value}
       onValueChange={onChange}
       className={cn(
-        'grid gap-2',
-        orientation === 'horizontal' && 'flex flex-row space-x-2',
-        orientation === 'vertical' && 'flex flex-col space-y-1',
+        'grid gap-3',
+        orientation === 'horizontal' && variant === 'default' && 'flex flex-row space-x-2',
+        orientation === 'vertical' && variant === 'default' && 'flex flex-col gap-2 space-y-1',
+        variant === 'tile' && 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
         className,
       )}
     >
@@ -26,6 +27,8 @@ const RadioGroup = React.forwardRef<
           id={option.value}
           value={option.value}
           label={option.label}
+          description={option.description}
+          variant={variant}
           isChecked={value === option.value}
         />
       ))}
