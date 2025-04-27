@@ -83,6 +83,10 @@ const RadioGroupDemo = ({ value: initialValue = '', ...args }: RadioGroupProps) 
   );
 };
 
+/**
+ * Interactive playground for the RadioGroup component.
+ * Use the controls to experiment with different props and states.
+ */
 export const Playground: Story = {
   args: {
     options: defaultOptions,
@@ -93,6 +97,10 @@ export const Playground: Story = {
   tags: ['!autodocs'],
 };
 
+/**
+ * The default state of the RadioGroup component.
+ * Shows a basic vertical radio group with no initial selection.
+ */
 export const Default: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
@@ -102,6 +110,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * RadioGroup with a pre-selected value.
+ * Demonstrates how the group appears with an initial selection.
+ */
 export const WithSelection: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
@@ -111,6 +123,10 @@ export const WithSelection: Story = {
   },
 };
 
+/**
+ * RadioGroup with horizontal layout.
+ * Shows radio options arranged in a horizontal line.
+ */
 export const Horizontal: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
@@ -121,6 +137,10 @@ export const Horizontal: Story = {
   },
 };
 
+/**
+ * RadioGroup with vertical layout.
+ * Shows radio options stacked vertically.
+ */
 export const Vertical: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
@@ -131,6 +151,10 @@ export const Vertical: Story = {
   },
 };
 
+/**
+ * RadioGroup with tile variant.
+ * Shows radio options as larger tiles with descriptions.
+ */
 export const Tile: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {
@@ -141,6 +165,10 @@ export const Tile: Story = {
   },
 };
 
+/**
+ * Tile variant RadioGroup with a pre-selected value.
+ * Demonstrates how tile radio options appear with an initial selection.
+ */
 export const TileWithSelection: Story = {
   render: args => <RadioGroupDemo {...args} />,
   args: {

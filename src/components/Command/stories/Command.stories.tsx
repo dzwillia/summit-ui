@@ -15,6 +15,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * The default command menu with groups and suggestions.
+ * Shows a fully featured command palette with search, groups, and items.
+ */
 export const Default: Story = {
   render: () => (
     <Command className="rounded-lg border shadow-md">
@@ -34,6 +38,10 @@ export const Default: Story = {
   ),
 };
 
+/**
+ * A simplified command menu without groups.
+ * Shows a basic list of commands without categorization.
+ */
 export const WithoutGroups: Story = {
   render: () => (
     <Command className="rounded-lg border shadow-md">

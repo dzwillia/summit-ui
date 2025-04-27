@@ -11,12 +11,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * The default state of the Input component.
+ * Shows a basic text input field with placeholder text.
+ */
 export const Default: Story = {
   args: {
     placeholder: 'Enter text...',
   },
 };
 
+/**
+ * Input with a specific type attribute.
+ * Demonstrates using the input as an email field.
+ */
 export const WithType: Story = {
   args: {
     type: 'email',
@@ -24,6 +32,10 @@ export const WithType: Story = {
   },
 };
 
+/**
+ * Input with a pre-filled value.
+ * Shows how the input appears with initial text content.
+ */
 export const WithValue: Story = {
   args: {
     value: 'Hello World',
@@ -31,6 +43,10 @@ export const WithValue: Story = {
   },
 };
 
+/**
+ * A disabled input field.
+ * Shows how the input appears when it's not interactive.
+ */
 export const Disabled: Story = {
   args: {
     isDisabled: true,
@@ -38,6 +54,10 @@ export const Disabled: Story = {
   },
 };
 
+/**
+ * Input with automatic text transformation to uppercase.
+ * Demonstrates the transform feature for uppercase text.
+ */
 export const WithTransformUppercase: Story = {
   args: {
     transform: 'uppercase',
@@ -45,6 +65,10 @@ export const WithTransformUppercase: Story = {
   },
 };
 
+/**
+ * Input with automatic text transformation to lowercase.
+ * Demonstrates the transform feature for lowercase text.
+ */
 export const WithTransformLowercase: Story = {
   args: {
     transform: 'lowercase',
@@ -52,6 +76,10 @@ export const WithTransformLowercase: Story = {
   },
 };
 
+/**
+ * Input with automatic whitespace trimming.
+ * Shows how the transform feature removes leading and trailing spaces.
+ */
 export const WithTransformTrim: Story = {
   args: {
     transform: 'trim',
@@ -59,6 +87,10 @@ export const WithTransformTrim: Story = {
   },
 };
 
+/**
+ * Input with multiple text transformations.
+ * Demonstrates combining multiple transform operations.
+ */
 export const WithMultipleTransforms: Story = {
   args: {
     transform: ['trim', 'uppercase'],

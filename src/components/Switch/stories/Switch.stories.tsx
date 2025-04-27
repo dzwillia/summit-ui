@@ -39,6 +39,10 @@ const SwitchDemo = ({ isChecked: initialValue = false, ...args }: SwitchProps) =
   );
 };
 
+/**
+ * Interactive playground for the Switch component.
+ * Use the controls to experiment with different props and states.
+ */
 export const Playground: Story = {
   args: {
     label: 'Airplane Mode',
@@ -48,6 +52,10 @@ export const Playground: Story = {
   tags: ['!autodocs'],
 };
 
+/**
+ * The default state of the Switch component.
+ * Shows a basic toggle switch with a label.
+ */
 export const Default: Story = {
   render: args => <SwitchDemo {...args} />,
   args: {
@@ -56,6 +64,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * A switch in its checked state.
+ * Demonstrates how the switch appears when toggled on.
+ */
 export const Checked: Story = {
   render: args => <SwitchDemo {...args} />,
   args: {
@@ -65,6 +77,10 @@ export const Checked: Story = {
   },
 };
 
+/**
+ * A disabled switch.
+ * Shows how the switch appears when it's not interactive.
+ */
 export const Disabled: Story = {
   render: args => <SwitchDemo {...args} />,
   args: {
@@ -74,6 +90,10 @@ export const Disabled: Story = {
   },
 };
 
+/**
+ * A disabled switch in its checked state.
+ * Demonstrates a non-interactive switch that's toggled on.
+ */
 export const DisabledChecked: Story = {
   render: args => <SwitchDemo {...args} />,
   args: {
@@ -84,6 +104,10 @@ export const DisabledChecked: Story = {
   },
 };
 
+/**
+ * A switch with custom label content.
+ * Shows how to use rich content in the switch label.
+ */
 export const WithCustomLabel: Story = {
   render: args => <SwitchDemo {...args} />,
   args: {

@@ -12,6 +12,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * The default state of the DropdownButton component.
+ * Shows a basic dropdown menu with simple text items.
+ */
 export const Default: Story = {
   args: {
     children: 'Actions',
@@ -23,6 +27,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * A disabled dropdown button.
+ * Demonstrates how the component appears when it's not interactive.
+ */
 export const Disabled: Story = {
   args: {
     children: 'Disabled Dropdown Button',
@@ -35,6 +43,10 @@ export const Disabled: Story = {
   },
 };
 
+/**
+ * A dropdown menu with icons next to each item.
+ * Shows how to enhance menu items with visual indicators.
+ */
 export const WithIcons: Story = {
   args: {
     children: 'Menu',
@@ -58,6 +70,10 @@ export const WithIcons: Story = {
   },
 };
 
+/**
+ * A dropdown menu with separators between groups of items.
+ * Demonstrates how to organize menu items into logical sections.
+ */
 export const WithSeparators: Story = {
   args: {
     children: 'Options',
@@ -73,6 +89,10 @@ export const WithSeparators: Story = {
   },
 };
 
+/**
+ * A dropdown menu with some disabled items.
+ * Shows how to indicate that certain options are not currently available.
+ */
 export const WithDisabledItems: Story = {
   args: {
     children: 'Options',
@@ -86,6 +106,10 @@ export const WithDisabledItems: Story = {
   },
 };
 
+/**
+ * A dropdown button with a different visual style.
+ * Demonstrates how to change the button's appearance using variants.
+ */
 export const WithVariant: Story = {
   args: {
     children: 'Settings',
@@ -99,6 +123,10 @@ export const WithVariant: Story = {
   },
 };
 
+/**
+ * A dropdown menu with custom alignment.
+ * Shows how to control the positioning of the dropdown menu.
+ */
 export const WithAlignment: Story = {
   args: {
     children: 'Aligned Menu',

@@ -19,6 +19,10 @@ const options = [
   { value: 'solid', label: 'Solid' },
 ];
 
+/**
+ * The default state of the MultiSelect component.
+ * Shows a searchable dropdown that allows multiple selections from a list of frameworks.
+ */
 export const Default: Story = {
   args: {
     options,
@@ -28,6 +32,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * MultiSelect with pre-selected values.
+ * Demonstrates how the component appears with multiple items already selected.
+ */
 export const WithSelection: Story = {
   args: {
     options,
@@ -37,6 +45,10 @@ export const WithSelection: Story = {
   },
 };
 
+/**
+ * MultiSelect with custom placeholder text.
+ * Shows how to customize the placeholder and search text for better user guidance.
+ */
 export const CustomPlaceholders: Story = {
   args: {
     options,
@@ -48,6 +60,10 @@ export const CustomPlaceholders: Story = {
   },
 };
 
+/**
+ * MultiSelect with an extended list of options.
+ * Demonstrates how the component handles a larger set of choices with scrolling.
+ */
 export const WithManyOptions: Story = {
   args: {
     options: [

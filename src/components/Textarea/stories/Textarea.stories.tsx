@@ -11,12 +11,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * The default state of the Textarea component.
+ * Shows a basic multiline text input field with placeholder text.
+ */
 export const Default: Story = {
   args: {
     placeholder: 'Type your message here...',
   },
 };
 
+/**
+ * Textarea with pre-filled content.
+ * Demonstrates how the component appears with initial text content.
+ */
 export const WithValue: Story = {
   args: {
     value:
@@ -25,6 +33,10 @@ export const WithValue: Story = {
   },
 };
 
+/**
+ * A disabled textarea.
+ * Shows how the component appears when it's not interactive.
+ */
 export const Disabled: Story = {
   args: {
     isDisabled: true,
@@ -32,6 +44,10 @@ export const Disabled: Story = {
   },
 };
 
+/**
+ * Textarea with custom height.
+ * Demonstrates how to control the initial height using rows.
+ */
 export const WithRows: Story = {
   args: {
     rows: 8,
@@ -39,6 +55,10 @@ export const WithRows: Story = {
   },
 };
 
+/**
+ * A read-only textarea.
+ * Shows how the component appears when content can be viewed but not modified.
+ */
 export const ReadOnly: Story = {
   args: {
     readOnly: true,
@@ -47,6 +67,10 @@ export const ReadOnly: Story = {
   },
 };
 
+/**
+ * Textarea with custom styling.
+ * Demonstrates how to apply custom styles using className.
+ */
 export const WithCustomStyle: Story = {
   args: {
     className: 'min-h-[12rem] font-mono',

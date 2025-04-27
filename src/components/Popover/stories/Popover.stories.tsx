@@ -12,6 +12,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * A popover with an arrow pointer.
+ * Demonstrates the default popover with a visual indicator pointing to its trigger element.
+ * This example includes form elements to show how the popover can contain complex content.
+ */
 export const WithArrow: Story = {
   render: () => (
     <Popover>
@@ -52,6 +57,10 @@ export const WithArrow: Story = {
   ),
 };
 
+/**
+ * A basic popover without an arrow pointer.
+ * Shows a simpler version of the popover for when a visual indicator isn't needed.
+ */
 export const WithoutArrow: Story = {
   render: () => (
     <Popover>
@@ -65,6 +74,10 @@ export const WithoutArrow: Story = {
   ),
 };
 
+/**
+ * A popover with custom positioning.
+ * Demonstrates how to control the alignment of the popover relative to its trigger.
+ */
 export const CustomPosition: Story = {
   render: () => (
     <Popover>

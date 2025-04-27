@@ -16,6 +16,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * The default dialog with a form layout.
+ * Demonstrates a typical dialog with header, content, and footer sections.
+ */
 export const Default: Story = {
   render: () => (
     <Dialog>
@@ -57,6 +61,10 @@ export const Default: Story = {
   ),
 };
 
+/**
+ * A dialog with destructive action.
+ * Shows a confirmation dialog with both cancel and destructive actions.
+ */
 export const WithDestructiveAction: Story = {
   render: () => (
     <Dialog>

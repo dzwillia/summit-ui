@@ -38,6 +38,10 @@ const CheckboxDemo = ({ isChecked: initialValue = false, ...args }: CheckboxProp
   );
 };
 
+/**
+ * Interactive playground for the Checkbox component.
+ * Use the controls to experiment with different props and states.
+ */
 export const Playground: Story = {
   args: {
     label: 'Accept terms and conditions',
@@ -47,6 +51,10 @@ export const Playground: Story = {
   tags: ['!autodocs'],
 };
 
+/**
+ * The default state of the Checkbox component.
+ * Shows a basic checkbox with a label and interactive state.
+ */
 export const Default: Story = {
   render: args => <CheckboxDemo {...args} />,
   args: {
@@ -55,6 +63,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * A checkbox in its checked state.
+ * Demonstrates the appearance of a selected checkbox.
+ */
 export const Checked: Story = {
   render: args => <CheckboxDemo {...args} />,
   args: {
@@ -64,6 +76,10 @@ export const Checked: Story = {
   },
 };
 
+/**
+ * A disabled checkbox.
+ * Shows how the checkbox appears when it's not interactive.
+ */
 export const Disabled: Story = {
   render: args => <CheckboxDemo {...args} />,
   args: {
@@ -73,6 +89,10 @@ export const Disabled: Story = {
   },
 };
 
+/**
+ * A disabled checkbox in its checked state.
+ * Demonstrates a non-interactive checkbox that's already selected.
+ */
 export const DisabledChecked: Story = {
   render: args => <CheckboxDemo {...args} />,
   args: {

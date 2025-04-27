@@ -18,6 +18,10 @@ const options = [
   { id: 'option4', label: 'Option 4' },
 ];
 
+/**
+ * The default state of the CheckboxGroup component.
+ * Shows a group of checkboxes with no initial selection.
+ */
 export const Default: Story = {
   args: {
     options,
@@ -26,6 +30,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * CheckboxGroup with pre-selected options.
+ * Demonstrates how the group appears with multiple selected checkboxes.
+ */
 export const WithSelection: Story = {
   args: {
     options,
@@ -34,6 +42,10 @@ export const WithSelection: Story = {
   },
 };
 
+/**
+ * CheckboxGroup in a single column layout.
+ * Shows checkboxes stacked vertically in one column.
+ */
 export const SingleColumn: Story = {
   args: {
     options,
@@ -43,6 +55,10 @@ export const SingleColumn: Story = {
   },
 };
 
+/**
+ * CheckboxGroup in a three-column layout.
+ * Demonstrates how checkboxes can be arranged in multiple columns.
+ */
 export const ThreeColumns: Story = {
   args: {
     options,

@@ -12,6 +12,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * The default state of the FormItem component.
+ * Shows a basic form field with a label and input.
+ */
 export const Default: Story = {
   args: {
     label: 'Email',
@@ -19,6 +23,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * FormItem with hint text.
+ * Demonstrates how to provide additional context or instructions for a form field.
+ */
 export const WithHintText: Story = {
   args: {
     label: 'Password',
@@ -27,6 +35,10 @@ export const WithHintText: Story = {
   },
 };
 
+/**
+ * FormItem with error state.
+ * Shows how validation errors are displayed to the user.
+ */
 export const WithError: Story = {
   args: {
     label: 'Username',
@@ -35,6 +47,10 @@ export const WithError: Story = {
   },
 };
 
+/**
+ * FormItem with both hint and error text.
+ * Demonstrates how to show both helper text and error messages.
+ */
 export const WithHintAndError: Story = {
   args: {
     label: 'Email',

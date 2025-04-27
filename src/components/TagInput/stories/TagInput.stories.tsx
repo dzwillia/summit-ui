@@ -61,12 +61,20 @@ const TagInputDemo = ({
   );
 };
 
+/**
+ * Interactive playground for the TagInput component.
+ * Use the controls to experiment with different props and states.
+ */
 export const Playground: Story = {
   args: { value: [], delimiterChars: [], onChange: () => {}, placeholder: 'Add tags...' },
   // Removes this story from auto-generated documentation
   tags: ['!autodocs'],
 };
 
+/**
+ * The default state of the TagInput component.
+ * Shows a tag input with some pre-existing tags for React and TypeScript.
+ */
 export const Default: Story = {
   args: {
     value: [
@@ -87,6 +95,10 @@ export const Default: Story = {
   ),
 };
 
+/**
+ * An empty TagInput.
+ * Shows the initial state before any tags are added.
+ */
 export const Empty: Story = {
   args: {
     value: [],
@@ -96,6 +108,10 @@ export const Empty: Story = {
   render: () => <TagInputDemo {...defaultProps} />,
 };
 
+/**
+ * A disabled TagInput.
+ * Shows how the component appears when it's not interactive.
+ */
 export const Disabled: Story = {
   args: {
     value: [
@@ -118,6 +134,10 @@ export const Disabled: Story = {
   ),
 };
 
+/**
+ * TagInput with a maximum number of tags.
+ * Demonstrates how the component behaves when it reaches its tag limit.
+ */
 export const WithMaxTags: Story = {
   args: {
     value: [
@@ -140,6 +160,10 @@ export const WithMaxTags: Story = {
   ),
 };
 
+/**
+ * TagInput with a single delimiter character.
+ * Shows how tags can be created using a comma as a separator.
+ */
 export const WithSingleDelimiter: Story = {
   args: {
     value: [{ id: '1', text: 'React' }],
@@ -152,6 +176,10 @@ export const WithSingleDelimiter: Story = {
   ),
 };
 
+/**
+ * TagInput with multiple delimiter characters.
+ * Demonstrates using multiple characters (comma, space, and pipe) to create tags.
+ */
 export const WithMultipleDelimiters: Story = {
   args: {
     value: [{ id: '1', text: 'React' }],

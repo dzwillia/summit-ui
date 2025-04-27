@@ -11,12 +11,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * The default state of the Label component.
+ * Shows a basic text label without any additional styling.
+ */
 export const Default: Story = {
   args: {
     children: 'Label',
   },
 };
 
+/**
+ * Label with htmlFor attribute.
+ * Demonstrates proper accessibility connection with form inputs.
+ */
 export const WithHtmlFor: Story = {
   args: {
     htmlFor: 'input-id',
@@ -24,6 +32,10 @@ export const WithHtmlFor: Story = {
   },
 };
 
+/**
+ * Label indicating a required field.
+ * Shows how to add a required indicator using CSS classes.
+ */
 export const Required: Story = {
   args: {
     children: 'Required Field',
@@ -31,6 +43,10 @@ export const Required: Story = {
   },
 };
 
+/**
+ * A disabled label state.
+ * Shows how the label appears when associated with a disabled form element.
+ */
 export const Disabled: Story = {
   args: {
     children: 'Disabled Label',

@@ -20,6 +20,10 @@ const mockLoadOptions = async (query: string) => {
   ];
 };
 
+/**
+ * The default state of the Autocomplete component with async loading of options.
+ * This demonstrates the basic functionality with a search input that loads results after a delay.
+ */
 export const Default: Story = {
   args: {
     loadOptions: mockLoadOptions,
@@ -29,6 +33,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * An example of the Autocomplete component with static options instead of async loading.
+ * This shows how the component behaves with a predefined list of options.
+ */
 export const WithStaticOptions: Story = {
   args: {
     options: [

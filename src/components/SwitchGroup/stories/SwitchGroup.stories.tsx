@@ -54,6 +54,10 @@ const SwitchGroupDemo = ({ value: initialValue = [], ...args }: SwitchGroupProps
   );
 };
 
+/**
+ * The default state of the SwitchGroup component.
+ * Shows a group of switches arranged in a single column with no initial selections.
+ */
 export const Default: Story = {
   render: args => <SwitchGroupDemo {...args} />,
   args: {
@@ -64,6 +68,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * SwitchGroup with pre-selected values.
+ * Demonstrates how the group appears with multiple switches toggled on.
+ */
 export const WithSelection: Story = {
   render: args => <SwitchGroupDemo {...args} />,
   args: {
@@ -74,6 +82,10 @@ export const WithSelection: Story = {
   },
 };
 
+/**
+ * SwitchGroup in a single column layout.
+ * Shows switches stacked vertically in one column.
+ */
 export const SingleColumn: Story = {
   render: args => <SwitchGroupDemo {...args} />,
   args: {
@@ -84,6 +96,10 @@ export const SingleColumn: Story = {
   },
 };
 
+/**
+ * SwitchGroup in a three-column layout.
+ * Demonstrates how switches can be arranged in multiple columns.
+ */
 export const ThreeColumns: Story = {
   render: args => <SwitchGroupDemo {...args} />,
   args: {
@@ -94,6 +110,10 @@ export const ThreeColumns: Story = {
   },
 };
 
+/**
+ * SwitchGroup with an extended list of options.
+ * Shows how the component handles a larger set of switches, including disabled states.
+ */
 export const WithManyOptions: Story = {
   render: args => <SwitchGroupDemo {...args} />,
   args: {

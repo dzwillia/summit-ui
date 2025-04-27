@@ -60,6 +60,10 @@ const SelectDemo = ({ value: initialValue = '', ...args }: SingleSelectProps) =>
   );
 };
 
+/**
+ * The default state of the Select component.
+ * Shows a basic dropdown with a list of fruit options and placeholder text.
+ */
 export const Default: Story = {
   render: args => <SelectDemo {...args} />,
   args: {
@@ -70,6 +74,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * Select with a pre-selected value.
+ * Demonstrates how the component appears with an initial selection.
+ */
 export const WithValue: Story = {
   render: args => <SelectDemo {...args} />,
   args: {
@@ -80,6 +88,10 @@ export const WithValue: Story = {
   },
 };
 
+/**
+ * Select with custom placeholder text.
+ * Shows how to customize the default text shown before selection.
+ */
 export const CustomPlaceholder: Story = {
   render: args => <SelectDemo {...args} />,
   args: {
@@ -90,6 +102,10 @@ export const CustomPlaceholder: Story = {
   },
 };
 
+/**
+ * Select with an extended list of options.
+ * Demonstrates how the component handles a larger set of choices with scrolling.
+ */
 export const WithManyOptions: Story = {
   render: args => <SelectDemo {...args} />,
   args: {

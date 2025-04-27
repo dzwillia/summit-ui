@@ -19,6 +19,10 @@ const options = [
   { value: 'solid', label: 'Solid' },
 ];
 
+/**
+ * The default state of the Combobox component.
+ * Shows a searchable dropdown with framework options.
+ */
 export const Default: Story = {
   args: {
     options,
@@ -28,6 +32,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * Combobox with a pre-selected value.
+ * Demonstrates how the component appears with an initial selection.
+ */
 export const WithValue: Story = {
   args: {
     options,
@@ -37,6 +45,10 @@ export const WithValue: Story = {
   },
 };
 
+/**
+ * Combobox with custom placeholder text.
+ * Shows how to customize the placeholder and search text.
+ */
 export const CustomPlaceholders: Story = {
   args: {
     options,

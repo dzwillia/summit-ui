@@ -11,6 +11,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * The default state of the DateRangePicker component.
+ * Shows the basic date range picker with no pre-selected dates.
+ */
 export const Default: Story = {
   args: {
     value: {},
@@ -22,6 +26,10 @@ export const Default: Story = {
   },
 };
 
+/**
+ * DateRangePicker with pre-selected date range.
+ * Demonstrates how the component appears with initial start and end dates.
+ */
 export const WithValue: Story = {
   args: {
     value: {
@@ -36,6 +44,10 @@ export const WithValue: Story = {
   },
 };
 
+/**
+ * DateRangePicker with custom placeholder text.
+ * Shows how to customize the placeholder messages for both start and end dates.
+ */
 export const CustomPlaceholders: Story = {
   args: {
     value: {},
