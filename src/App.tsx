@@ -26,6 +26,7 @@ import {
   themeOptions,
   tools,
 } from '@/constants';
+import { mockSearchLibraries } from '@/mocks';
 import { useEffect, useState } from 'react';
 
 const App: React.FC = () => {
@@ -84,19 +85,6 @@ const App: React.FC = () => {
     classList.remove('light', 'dark', 'theme-uswds');
     classList.add(currentTheme);
   }, [currentTheme]);
-
-  // Simulated async search function
-  const searchLibraries = async (query: string) => {
-    // Simulate API latency
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    // Filter libraries based on query
-    return libraries.filter(
-      lib =>
-        lib.label.toLowerCase().includes(query.toLowerCase()) ||
-        lib.value.toLowerCase().includes(query.toLowerCase()),
-    );
-  };
 
   const themeSelectOptions = [
     { value: 'light', label: 'Light' },
@@ -259,7 +247,7 @@ const App: React.FC = () => {
             hintText="Search through 140+ React libraries with async loading"
           >
             <Autocomplete
-              loadOptions={searchLibraries}
+              loadOptions={mockSearchLibraries}
               value={searchQuery}
               onChange={setSearchQuery}
               placeholder="Search libraries..."

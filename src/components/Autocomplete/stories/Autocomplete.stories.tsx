@@ -1,3 +1,4 @@
+import { mockLoadOptions, mockSearchLibraries } from '@/mocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Autocomplete } from '../src/Autocomplete';
 
@@ -11,22 +12,29 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const mockLoadOptions = async (query: string) => {
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  return [
-    { value: '1', label: `Result 1 for ${query}` },
-    { value: '2', label: `Result 2 for ${query}` },
-    { value: '3', label: `Result 3 for ${query}` },
-  ];
+/**
+ * Interactive playground for the Checkbox component.
+ * Use the controls to experiment with different props and states.
+ */
+export const Playground: Story = {
+  args: {
+    loadOptions: mockLoadOptions,
+    value: '',
+    onChange: () => {},
+    placeholder: 'Search...',
+  },
+  // Removes this story from auto-generated documentation
+  tags: ['!autodocs'],
 };
 
 /**
  * The default state of the Autocomplete component with async loading of options.
  * This demonstrates the basic functionality with a search input that loads results after a delay.
+ * Search for "React" to see results.
  */
 export const Default: Story = {
   args: {
-    loadOptions: mockLoadOptions,
+    loadOptions: mockSearchLibraries,
     value: '',
     onChange: () => {},
     placeholder: 'Search...',
