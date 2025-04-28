@@ -55,6 +55,20 @@ const SwitchGroupDemo = ({ value: initialValue = [], ...args }: SwitchGroupProps
 };
 
 /**
+ * Interactive playground for the SwitchGroup component.
+ * Use the controls to experiment with different props and states.
+ */
+export const Playground: Story = {
+  args: {
+    options,
+    value: [],
+    onChange: () => {},
+  },
+  // Removes this story from auto-generated documentation
+  tags: ['!autodocs'],
+};
+
+/**
  * The default state of the SwitchGroup component.
  * Shows a group of switches arranged in a single column with no initial selections.
  */
@@ -62,7 +76,7 @@ export const Default: Story = {
   render: args => <SwitchGroupDemo {...args} />,
   args: {
     options,
-    columns: 1,
+    columns: 2,
     value: [],
     onChange: () => {},
   },

@@ -12,64 +12,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * The default success alert with standard sizing.
+ * A successs alert with standard sizing.
  * Demonstrates a typical success message with both heading and description.
  */
 export const Success: Story = {
   args: {
     variant: 'success',
     heading: 'Success',
-    children: 'Your changes have been saved successfully.',
-  },
-};
-
-/**
- * A compact success alert.
- * Shows how the alert appears with reduced padding and font sizes.
- */
-export const SuccessSmall: Story = {
-  args: {
-    variant: 'success',
-    size: 'sm',
-    heading: 'Success',
-    children: 'Your changes have been saved successfully.',
-  },
-};
-
-/**
- * A compact success alert without an icon.
- * Demonstrates how to hide the status icon while maintaining the alert's structure.
- */
-export const SuccessSmallNoIcon: Story = {
-  args: {
-    variant: 'success',
-    size: 'sm',
-    heading: 'Success',
-    children: 'Your changes have been saved successfully.',
-    className: '[&>svg]:hidden',
-  },
-};
-
-/**
- * A compact success alert without a heading.
- * Shows the alert's appearance when only displaying the message content.
- */
-export const SuccessSmallNoHeading: Story = {
-  args: {
-    variant: 'success',
-    size: 'sm',
-    children: 'Your changes have been saved successfully.',
-  },
-};
-
-/**
- * A compact success alert with an icon but no heading.
- * Demonstrates the layout when combining the icon with message content only.
- */
-export const SuccessSmallWithIconNoHeading: Story = {
-  args: {
-    variant: 'success',
-    size: 'sm',
     children: 'Your changes have been saved successfully.',
   },
 };
@@ -90,7 +39,8 @@ export const Warning: Story = {
  * An error alert with standard sizing.
  * Used to communicate critical errors or failures that need immediate attention.
  */
-export const Error: Story = {
+export const ErrorStory: Story = {
+  name: 'Error',
   args: {
     variant: 'error',
     heading: 'Error',
@@ -102,7 +52,7 @@ export const Error: Story = {
  * An information alert with standard sizing.
  * Used for general announcements or updates that aren't critical.
  */
-export const Information: Story = {
+export const Info: Story = {
   args: {
     variant: 'info',
     heading: 'Information',
@@ -111,13 +61,54 @@ export const Information: Story = {
 };
 
 /**
- * An alert without a heading.
- * Shows how to create a simpler alert when a heading isn't needed.
+ * A compact success alert.
+ * Shows how the alert appears with reduced padding and font sizes.
  */
-export const WithoutHeading: Story = {
+export const Small: Story = {
   args: {
-    variant: 'info',
-    children: 'This is an alert without a heading.',
+    variant: 'success',
+    size: 'sm',
+    heading: 'Success',
+    children: 'Your changes have been saved successfully.',
+  },
+};
+
+/**
+ * A compact success alert without an icon.
+ * Demonstrates how to hide the status icon while maintaining the alert's structure.
+ */
+export const SmallNoIcon: Story = {
+  args: {
+    variant: 'success',
+    size: 'sm',
+    heading: 'Success',
+    children: 'Your changes have been saved successfully.',
+    className: '[&>svg]:hidden',
+  },
+};
+
+/**
+ * A compact success alert without a heading.
+ * Shows the alert's appearance when only displaying the message content.
+ */
+export const SmallNoHeading: Story = {
+  args: {
+    variant: 'success',
+    size: 'sm',
+    children: 'Your changes have been saved successfully.',
+  },
+};
+
+/**
+ * A compact success alert with an icon but no heading.
+ * Demonstrates the layout when combining the icon with message content only.
+ */
+export const SmallNoIconNoHeading: Story = {
+  args: {
+    variant: 'success',
+    size: 'sm',
+    children: 'Your changes have been saved successfully.',
+    className: '[&>svg]:hidden',
   },
 };
 
@@ -131,6 +122,29 @@ export const CustomHeadingLevel: Story = {
     heading: 'H3 Heading',
     headingLevel: 'h3',
     children: 'This alert uses an h3 heading level.',
+  },
+};
+
+/**
+ * An alert without a heading.
+ * Shows how to create a simpler alert when a heading isn't needed.
+ */
+export const NoHeading: Story = {
+  args: {
+    variant: 'info',
+    children: 'This is an alert without a heading.',
+  },
+};
+
+/**
+ * An alert without a heading.
+ * Shows how to create a simpler alert when a heading isn't needed.
+ */
+export const NoIconNoHeading: Story = {
+  args: {
+    variant: 'info',
+    children: 'This is an alert without a heading.',
+    className: '[&>svg]:hidden',
   },
 };
 
