@@ -7,11 +7,34 @@ export interface AccordionItem {
   content: React.ReactNode;
 }
 
-export interface AccordionProps extends ComponentPropsWithoutRef<typeof AccordionPrimitive.Root> {
+type BaseAccordionProps = {
   items: AccordionItem[];
-  type?: 'single' | 'multiple';
   variant?: 'default';
-  defaultValue?: string | string[];
   className?: string;
   isBordered?: boolean;
-}
+};
+
+type SingleAccordionProps = BaseAccordionProps & {
+  type: 'single';
+  value?: string;
+  defaultValue?: string;
+  isCollapsible?: boolean;
+  onValueChange?: (value: string) => void;
+};
+
+type MultipleAccordionProps = BaseAccordionProps & {
+  type: 'multiple';
+  value?: string[];
+  defaultValue?: string[];
+  isCollapsible: undefined;
+  onValueChange?: (value: string[]) => void;
+};
+
+type OmittedAccordionProps = Omit<
+  ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>,
+  'type' | 'value' | 'defaultValue' | 'collapsible' | 'onValueChange'
+>;
+
+export type AccordionProps =
+  | (OmittedAccordionProps & SingleAccordionProps)
+  | (OmittedAccordionProps & MultipleAccordionProps);
