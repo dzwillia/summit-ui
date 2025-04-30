@@ -1,14 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Accordion } from '../src/Accordion';
 
-const meta: Meta<typeof Accordion> = {
+const meta = {
   title: 'Components/Accordion',
   component: Accordion,
+  parameters: {},
   tags: ['autodocs'],
-};
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'primary', 'success', 'danger', 'warning'],
+      description: 'The visual style variant of the accordion',
+    },
+    isBordered: {
+      control: 'boolean',
+      description: 'Whether to show borders around the content area',
+    },
+  },
+} satisfies Meta<typeof Accordion>;
 
 export default meta;
-type Story = StoryObj<typeof Accordion>;
+type Story = StoryObj<typeof meta>;
 
 const defaultItems = [
   { id: 'item-1', title: 'Section 1', content: 'Content for section 1' },
@@ -96,6 +108,50 @@ const longContentItems = [
 export const Default: Story = {
   args: {
     variant: 'default',
+    items: defaultItems,
+  },
+};
+
+/**
+ * Primary variant of the Accordion component.
+ * Uses the primary color scheme for a more prominent appearance.
+ */
+export const Primary: Story = {
+  args: {
+    variant: 'primary',
+    items: defaultItems,
+  },
+};
+
+/**
+ * Success variant of the Accordion component.
+ * Uses green colors to indicate positive or successful content.
+ */
+export const Success: Story = {
+  args: {
+    variant: 'success',
+    items: defaultItems,
+  },
+};
+
+/**
+ * Danger variant of the Accordion component.
+ * Uses red colors to indicate dangerous or destructive content.
+ */
+export const Danger: Story = {
+  args: {
+    variant: 'danger',
+    items: defaultItems,
+  },
+};
+
+/**
+ * Warning variant of the Accordion component.
+ * Uses yellow colors to indicate cautionary content.
+ */
+export const Warning: Story = {
+  args: {
+    variant: 'warning',
     items: defaultItems,
   },
 };

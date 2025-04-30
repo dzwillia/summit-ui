@@ -6,6 +6,10 @@ export const accordionVariants = cva('w-full', {
   variants: {
     variant: {
       default: 'space-y-2',
+      primary: 'space-y-2',
+      success: 'space-y-2',
+      danger: 'space-y-2',
+      warning: 'space-y-2',
     },
   },
   defaultVariants: {
@@ -22,6 +26,10 @@ export const accordionTriggerVariants = cva(
     variants: {
       variant: {
         default: 'bg-gray-100',
+        primary: 'bg-primary text-primary-foreground',
+        success: 'bg-green-100 text-green-900',
+        danger: 'bg-destructive text-destructive-foreground',
+        warning: 'bg-yellow-100 text-yellow-900',
       },
     },
     defaultVariants: {
@@ -36,6 +44,10 @@ export const accordionContentVariants = cva(
     variants: {
       variant: {
         default: 'border-gray-100',
+        primary: 'border-primary',
+        success: 'border-green-100',
+        danger: 'border-destructive',
+        warning: 'border-yellow-100',
       },
       bordered: {
         true: 'border-l-4 border-r-4 border-b-4',

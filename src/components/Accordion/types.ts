@@ -9,7 +9,7 @@ export interface AccordionItem {
 
 type BaseAccordionProps = {
   items: AccordionItem[];
-  variant?: 'default';
+  variant?: 'default' | 'primary' | 'success' | 'danger' | 'warning';
   className?: string;
   isBordered?: boolean;
 };
