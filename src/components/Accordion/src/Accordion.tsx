@@ -32,12 +32,12 @@ const Accordion = React.forwardRef<
       return (
         <AccordionPrimitive.Root
           ref={ref}
-          type="single"
+          type={type}
           value={value}
           defaultValue={defaultValue}
-          onValueChange={onValueChange}
           collapsible={isCollapsible}
           className={cn(accordionVariants({ variant }), className)}
+          onValueChange={onValueChange}
           {...props}
         >
           {items.map(item => (
@@ -63,11 +63,11 @@ const Accordion = React.forwardRef<
     return (
       <AccordionPrimitive.Root
         ref={ref}
-        type="multiple"
+        type={type}
         value={value}
         defaultValue={defaultValue}
-        onValueChange={onValueChange}
         className={cn(accordionVariants({ variant }), className)}
+        onValueChange={onValueChange}
         {...props}
       >
         {items.map(item => (
