@@ -32,7 +32,7 @@ const Accordion = React.forwardRef<
       return (
         <AccordionPrimitive.Root
           ref={ref}
-          type={type}
+          type="single"
           value={value}
           defaultValue={defaultValue}
           collapsible={isCollapsible}
@@ -63,7 +63,7 @@ const Accordion = React.forwardRef<
     return (
       <AccordionPrimitive.Root
         ref={ref}
-        type={type}
+        type="multiple"
         value={value}
         defaultValue={defaultValue}
         className={cn(accordionVariants({ variant }), className)}
