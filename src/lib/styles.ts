@@ -25,6 +25,9 @@ export const styles = {
   focusRingWithin,
   focusRingWithinSm,
 
+  // Link
+  link: 'text-primary hover:underline visited:text-[#54278f] transition-colors',
+
   // Form elements
   input: `${input} ${focusRingVisible}`,
 

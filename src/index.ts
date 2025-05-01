@@ -3,6 +3,7 @@ export * from './components/Accordion';
 export * from './components/Alert';
 export * from './components/Autocomplete';
 export * from './components/Badge';
+export * from './components/Breadcrumbs';
 export * from './components/Button';
 export * from './components/Calendar';
 export * from './components/Checkbox';
