@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef } from 'react';
 
 export interface AccordionItem {
   id: string;
-  title: string;
+  title: React.ReactNode;
   content: React.ReactNode;
 }
 

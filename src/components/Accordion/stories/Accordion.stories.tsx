@@ -235,3 +235,36 @@ export const DefaultOpen: Story = {
     defaultValue: ['item-1', 'item-2'],
   },
 };
+
+/**
+ * Accordion with custom titles.
+ * Demonstrates how to use custom React elements in accordion titles.
+ */
+export const CustomTitle: Story = {
+  args: {
+    type: 'multiple',
+    variant: 'default',
+    items: [
+      {
+        id: 'item-1',
+        title: (
+          <div className="flex items-center gap-2">
+            <span className="h-4 w-4 rounded-full bg-green-500" />
+            <span>Online Status</span>
+          </div>
+        ),
+        content: 'This section demonstrates a title with custom React elements.',
+      },
+      {
+        id: 'item-2',
+        title: (
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-blue-500">Important:</span>
+            <span>System Updates</span>
+          </div>
+        ),
+        content: 'Another example of a custom title with styled components.',
+      },
+    ],
+  },
+};
