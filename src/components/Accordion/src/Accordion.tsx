@@ -17,25 +17,24 @@ const Accordion = React.forwardRef<
     {
       className,
       items,
+      mode,
       value,
       defaultValue,
-      type,
-      onValueChange,
       variant = 'default',
-      isCollapsible = false,
       isBordered = false,
+      onValueChange,
       ...props
     },
     ref,
   ) => {
-    if (type === 'single') {
+    if (mode !== 'multiple') {
       return (
         <AccordionPrimitive.Root
           ref={ref}
           type="single"
           value={value}
           defaultValue={defaultValue}
-          collapsible={isCollapsible}
+          collapsible={mode === 'single'}
           className={cn(accordionVariants({ variant }), className)}
           onValueChange={onValueChange}
           {...props}

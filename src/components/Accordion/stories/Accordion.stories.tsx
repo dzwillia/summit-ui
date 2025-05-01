@@ -7,10 +7,11 @@ const meta = {
   parameters: {},
   tags: ['autodocs'],
   argTypes: {
-    type: {
+    mode: {
       control: 'select',
-      options: ['single', 'multiple'],
-      description: 'The type of accordion, either single or multiple',
+      options: ['multiple', 'single', 'accordion'],
+      description:
+        'The mode of the accordion. Determines how many sections can be expanded at one time',
     },
     variant: {
       control: 'select',
@@ -20,10 +21,6 @@ const meta = {
     items: {
       control: 'object',
       description: 'The items to be displayed in the accordion',
-    },
-    isCollapsible: {
-      control: 'boolean',
-      description: 'Whether to allow all sections are closed when in `single` mode',
     },
     isBordered: {
       control: 'boolean',
@@ -120,7 +117,7 @@ const longContentItems = [
  */
 export const Default: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'default',
     items: defaultItems,
   },
@@ -132,7 +129,7 @@ export const Default: Story = {
  */
 export const Primary: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'primary',
     items: defaultItems,
   },
@@ -144,7 +141,7 @@ export const Primary: Story = {
  */
 export const Success: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'success',
     items: defaultItems,
   },
@@ -156,7 +153,7 @@ export const Success: Story = {
  */
 export const Danger: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'danger',
     items: defaultItems,
   },
@@ -168,7 +165,7 @@ export const Danger: Story = {
  */
 export const Warning: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'warning',
     items: defaultItems,
   },
@@ -180,7 +177,7 @@ export const Warning: Story = {
  */
 export const RichContent: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'default',
     items: richContentItems,
   },
@@ -192,7 +189,7 @@ export const RichContent: Story = {
  */
 export const LongContent: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'default',
     items: longContentItems,
   },
@@ -204,7 +201,7 @@ export const LongContent: Story = {
  */
 export const Bordered: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'default',
     items: defaultItems,
     isBordered: true,
@@ -217,7 +214,19 @@ export const Bordered: Story = {
  */
 export const SingleExpansion: Story = {
   args: {
-    type: 'single',
+    mode: 'single',
+    variant: 'default',
+    items: defaultItems,
+  },
+};
+
+/**
+ * Accordion with single expansion that cannot be fully collapsed once expanded.
+ * Only allows one section to be open at a time.
+ */
+export const AccordionExpansion: Story = {
+  args: {
+    mode: 'accordion',
     variant: 'default',
     items: defaultItems,
   },
@@ -229,7 +238,7 @@ export const SingleExpansion: Story = {
  */
 export const DefaultOpen: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'default',
     items: defaultItems,
     defaultValue: ['item-1', 'item-2'],
@@ -242,7 +251,7 @@ export const DefaultOpen: Story = {
  */
 export const CustomTitle: Story = {
   args: {
-    type: 'multiple',
+    mode: 'multiple',
     variant: 'default',
     items: [
       {

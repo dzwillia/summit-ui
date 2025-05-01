@@ -9,21 +9,21 @@ export interface AccordionItem {
 
 type BaseAccordionProps = {
   items: AccordionItem[];
+  mode?: 'accordion' | 'single' | 'multiple';
   variant?: 'default' | 'primary' | 'success' | 'danger' | 'warning';
   className?: string;
   isBordered?: boolean;
-  isCollapsible?: boolean;
 };
 
 type SingleAccordionProps = BaseAccordionProps & {
-  type: 'single';
+  mode: 'single' | 'accordion';
   value?: string;
   defaultValue?: string;
   onValueChange?: (value: string) => void;
 };
 
 type MultipleAccordionProps = BaseAccordionProps & {
-  type: 'multiple';
+  mode: 'multiple';
   value?: string[];
   defaultValue?: string[];
   onValueChange?: (value: string[]) => void;
