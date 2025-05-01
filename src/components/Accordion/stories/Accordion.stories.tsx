@@ -26,6 +26,10 @@ const meta = {
       control: 'boolean',
       description: 'Whether to show borders around the content area',
     },
+    className: {
+      type: 'string',
+      description: 'Additional class names to apply to the accordion',
+    },
   },
 } satisfies Meta<typeof Accordion>;
 
