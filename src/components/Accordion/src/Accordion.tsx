@@ -22,7 +22,7 @@ const Accordion = React.forwardRef<
       type,
       onValueChange,
       variant = 'default',
-      isCollapsible,
+      isCollapsible = false,
       isBordered = false,
       ...props
     },

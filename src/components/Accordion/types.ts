@@ -12,13 +12,13 @@ type BaseAccordionProps = {
   variant?: 'default' | 'primary' | 'success' | 'danger' | 'warning';
   className?: string;
   isBordered?: boolean;
+  isCollapsible?: boolean;
 };
 
 type SingleAccordionProps = BaseAccordionProps & {
   type: 'single';
   value?: string;
   defaultValue?: string;
-  isCollapsible?: boolean;
   onValueChange?: (value: string) => void;
 };
 
@@ -26,7 +26,6 @@ type MultipleAccordionProps = BaseAccordionProps & {
   type: 'multiple';
   value?: string[];
   defaultValue?: string[];
-  isCollapsible: undefined;
   onValueChange?: (value: string[]) => void;
 };
 
