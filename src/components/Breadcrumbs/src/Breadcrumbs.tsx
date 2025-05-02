@@ -10,7 +10,7 @@ const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
       <nav ref={ref} aria-label="Breadcrumb" className={cn('flex', className)}>
         <ol className="flex flex-wrap items-center gap-1">
           {items.map((item, index) => (
-            <li key={index} className="flex items-center gap-2">
+            <li key={index} className="flex items-center gap-1">
               {item.href ? (
                 <a href={item.href} className={styles.link}>
                   {item.label}
