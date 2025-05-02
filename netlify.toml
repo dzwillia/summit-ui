@@ -1,0 +1,8 @@
+[build]
+  publish = "dist"
+  command = "./build-netlify.sh"
+
+[[redirects]]
+  from = "/storybook/*"
+  to = "/storybook/:splat"
+  status = 200
