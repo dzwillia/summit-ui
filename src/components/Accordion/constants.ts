@@ -27,7 +27,7 @@ export const accordionTriggerVariants = cva(
       variant: {
         default: 'bg-base-200 hover:hover:brightness-90 text-black',
         primary: 'bg-primary-400 hover:bg-primary-500 text-white',
-        success: 'bg-success-400 hover:bg-success-500 text-white',
+        success: 'bg-success-500 hover:bg-success-600 text-white',
         danger: 'bg-danger-400 hover:bg-danger-500 text-white',
         warning: 'bg-warning-300 hover:bg-warning-400 text-black',
       },

@@ -12,6 +12,8 @@ type BaseAccordionProps = {
   mode?: 'accordion' | 'single' | 'multiple';
   variant?: 'default' | 'primary' | 'success' | 'danger' | 'warning';
   className?: string;
+  triggerClassName?: string;
+  contentClassName?: string;
   isBordered?: boolean;
 };
 

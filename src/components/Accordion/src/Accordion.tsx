@@ -16,6 +16,8 @@ const Accordion = React.forwardRef<
   (
     {
       className,
+      triggerClassName,
+      contentClassName,
       items,
       mode,
       value,
@@ -42,13 +44,18 @@ const Accordion = React.forwardRef<
           {items.map(item => (
             <AccordionPrimitive.Item key={item.id} value={item.id}>
               <AccordionPrimitive.Header className="flex">
-                <AccordionPrimitive.Trigger className={accordionTriggerVariants({ variant })}>
+                <AccordionPrimitive.Trigger
+                  className={cn(accordionTriggerVariants({ variant }), triggerClassName)}
+                >
                   {item.title}
                   <ChevronDown className="h-5 w-5 shrink-0 text-inherit transition-transform duration-200" />
                 </AccordionPrimitive.Trigger>
               </AccordionPrimitive.Header>
               <AccordionPrimitive.Content
-                className={accordionContentVariants({ variant, bordered: isBordered })}
+                className={cn(
+                  accordionContentVariants({ variant, bordered: isBordered }),
+                  contentClassName,
+                )}
               >
                 <div className="py-4">{item.content}</div>
               </AccordionPrimitive.Content>
@@ -72,13 +79,18 @@ const Accordion = React.forwardRef<
         {items.map(item => (
           <AccordionPrimitive.Item key={item.id} value={item.id}>
             <AccordionPrimitive.Header className="flex">
-              <AccordionPrimitive.Trigger className={accordionTriggerVariants({ variant })}>
+              <AccordionPrimitive.Trigger
+                className={cn(accordionTriggerVariants({ variant }), triggerClassName)}
+              >
                 {item.title}
                 <ChevronDown className="h-5 w-5 shrink-0 text-inherit transition-transform duration-200" />
               </AccordionPrimitive.Trigger>
             </AccordionPrimitive.Header>
             <AccordionPrimitive.Content
-              className={accordionContentVariants({ variant, bordered: isBordered })}
+              className={cn(
+                accordionContentVariants({ variant, bordered: isBordered }),
+                contentClassName,
+              )}
             >
               <div className="py-4">{item.content}</div>
             </AccordionPrimitive.Content>

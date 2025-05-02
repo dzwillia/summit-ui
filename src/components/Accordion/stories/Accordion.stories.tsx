@@ -30,13 +30,21 @@ const meta = {
       type: 'string',
       description: 'Additional class names to apply to the accordion',
     },
+    triggerClassName: {
+      type: 'string',
+      description: 'Additional class names to apply to the accordion trigger',
+    },
+    contentClassName: {
+      type: 'string',
+      description: 'Additional class names to apply to the accordion content',
+    },
   },
 } satisfies Meta<typeof Accordion>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const defaultItems = [
+const exampleItems = [
   { id: 'item-1', title: 'Section 1', content: 'Content for section 1' },
   { id: 'item-2', title: 'Section 2', content: 'Content for section 2' },
   { id: 'item-3', title: 'Section 3', content: 'Content for section 3' },
@@ -123,7 +131,7 @@ export const Default: Story = {
   args: {
     mode: 'multiple',
     variant: 'default',
-    items: defaultItems,
+    items: exampleItems,
   },
 };
 
@@ -135,7 +143,7 @@ export const Primary: Story = {
   args: {
     mode: 'multiple',
     variant: 'primary',
-    items: defaultItems,
+    items: [exampleItems[0]],
   },
 };
 
@@ -147,7 +155,7 @@ export const Success: Story = {
   args: {
     mode: 'multiple',
     variant: 'success',
-    items: defaultItems,
+    items: [exampleItems[0]],
   },
 };
 
@@ -159,7 +167,7 @@ export const Warning: Story = {
   args: {
     mode: 'multiple',
     variant: 'warning',
-    items: defaultItems,
+    items: [exampleItems[0]],
   },
 };
 
@@ -171,7 +179,54 @@ export const Danger: Story = {
   args: {
     mode: 'multiple',
     variant: 'danger',
-    items: defaultItems,
+    items: [exampleItems[0]],
+  },
+};
+
+/**
+ * Accordion with custom trigger and content class names.
+ * Demonstrates how to apply custom styles to the trigger and content areas.
+ */
+export const CustomClasses: Story = {
+  args: {
+    mode: 'multiple',
+    variant: 'default',
+    items: [exampleItems[0]],
+    triggerClassName: 'bg-[#551c9a] text-white hover:bg-[#551c9a]/80',
+    contentClassName: 'bg-[#551c9a]/10 text-[#551c9a] font-semibold',
+  },
+};
+
+/**
+ * Accordion with custom titles.
+ * Demonstrates how to use custom React elements in accordion titles.
+ */
+export const CustomTitle: Story = {
+  args: {
+    mode: 'multiple',
+    variant: 'default',
+    items: [
+      {
+        id: 'item-1',
+        title: (
+          <div className="flex items-center gap-2">
+            <span className="h-4 w-4 rounded-full bg-green-500" />
+            <span>Online Status</span>
+          </div>
+        ),
+        content: 'This section demonstrates a title with custom React elements.',
+      },
+      {
+        id: 'item-2',
+        title: (
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-blue-500">Important:</span>
+            <span>System Updates</span>
+          </div>
+        ),
+        content: 'Another example of a custom title with styled components.',
+      },
+    ],
   },
 };
 
@@ -183,7 +238,7 @@ export const Bordered: Story = {
   args: {
     mode: 'multiple',
     variant: 'default',
-    items: defaultItems,
+    items: [exampleItems[0]],
     isBordered: true,
   },
 };
@@ -220,7 +275,7 @@ export const SingleExpansion: Story = {
   args: {
     mode: 'single',
     variant: 'default',
-    items: defaultItems,
+    items: exampleItems,
   },
 };
 
@@ -232,7 +287,7 @@ export const AccordionExpansion: Story = {
   args: {
     mode: 'accordion',
     variant: 'default',
-    items: defaultItems,
+    items: exampleItems,
   },
 };
 
@@ -244,40 +299,7 @@ export const DefaultOpen: Story = {
   args: {
     mode: 'multiple',
     variant: 'default',
-    items: defaultItems,
+    items: exampleItems,
     defaultValue: ['item-1', 'item-2'],
-  },
-};
-
-/**
- * Accordion with custom titles.
- * Demonstrates how to use custom React elements in accordion titles.
- */
-export const CustomTitle: Story = {
-  args: {
-    mode: 'multiple',
-    variant: 'default',
-    items: [
-      {
-        id: 'item-1',
-        title: (
-          <div className="flex items-center gap-2">
-            <span className="h-4 w-4 rounded-full bg-green-500" />
-            <span>Online Status</span>
-          </div>
-        ),
-        content: 'This section demonstrates a title with custom React elements.',
-      },
-      {
-        id: 'item-2',
-        title: (
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-blue-500">Important:</span>
-            <span>System Updates</span>
-          </div>
-        ),
-        content: 'Another example of a custom title with styled components.',
-      },
-    ],
   },
 };
