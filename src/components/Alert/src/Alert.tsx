@@ -21,11 +21,11 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       <div ref={ref} className={cn(alertVariants({ variant, size }), className)} {...props}>
         {icons[variant]}
         <div className="flex-1">
-          {heading && (
+          {heading ? (
             <HeadingTag className={cn(alertHeadingVariants({ variant, size }))}>
               {heading}
             </HeadingTag>
-          )}
+          ) : null}
           {children}
         </div>
       </div>

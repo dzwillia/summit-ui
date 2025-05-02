@@ -156,7 +156,7 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
               {selectedOption ? selectedOption.label : value || placeholder}
             </span>
             <div className="flex items-center gap-1">
-              {(value || inputValue) && (
+              {value || inputValue ? (
                 <X
                   className="h-4 w-4 opacity-50 hover:opacity-100"
                   onClick={e => {
@@ -164,7 +164,7 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
                     handleClear();
                   }}
                 />
-              )}
+              ) : null}
               <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
             </div>
           </Button>
@@ -176,12 +176,12 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
               value={inputValue}
               onValueChange={handleInputChange}
             />
-            {loading && <CommandLoading>{loadingMessage}</CommandLoading>}
-            {!loading && error && <CommandForceEmpty>{errorMessage}</CommandForceEmpty>}
-            {!loading && !error && hasSearched && displayOptions.length === 0 && (
+            {loading ? <CommandLoading>{loadingMessage}</CommandLoading> : null}
+            {!loading && error ? <CommandForceEmpty>{errorMessage}</CommandForceEmpty> : null}
+            {!loading && !error && hasSearched && displayOptions.length === 0 ? (
               <CommandForceEmpty>{emptyMessage}</CommandForceEmpty>
-            )}
-            {!loading && !error && displayOptions.length > 0 && (
+            ) : null}
+            {!loading && !error && displayOptions.length > 0 ? (
               <CommandGroup className="max-h-[12rem] overflow-y-auto">
                 {displayOptions.map(option => (
                   <CommandItem
@@ -200,7 +200,7 @@ const Autocomplete = React.forwardRef<HTMLButtonElement, AutocompleteProps>(
                   </CommandItem>
                 ))}
               </CommandGroup>
-            )}
+            ) : null}
           </Command>
         </PopoverContent>
       </Popover>

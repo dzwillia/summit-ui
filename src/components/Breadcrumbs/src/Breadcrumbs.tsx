@@ -18,9 +18,9 @@ const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
               ) : (
                 <span className="text-foreground font-medium">{item.label}</span>
               )}
-              {index < items.length - 1 && (
+              {index < items.length - 1 ? (
                 <span className="text-muted-foreground">{separator}</span>
-              )}
+              ) : null}
             </li>
           ))}
         </ol>

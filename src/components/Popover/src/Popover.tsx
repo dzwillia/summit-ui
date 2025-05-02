@@ -21,9 +21,9 @@ const PopoverContent = React.forwardRef<
       {...props}
     >
       {children}
-      {hasArrow && (
+      {hasArrow ? (
         <PopoverArrow className="fill-popover stroke-border stroke-[1px]" width={11} height={5} />
-      )}
+      ) : null}
     </PopoverPrimitive.Content>
   </PopoverPrimitive.Portal>
 ));

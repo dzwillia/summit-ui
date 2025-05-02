@@ -13,12 +13,17 @@ const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
         data-error={errorText ? 'true' : undefined}
       >
         <div className="space-y-1">
-          {label &&
-            (typeof label === 'string' ? <Label className="font-bold">{label}</Label> : label)}
-          {hintText && <p className={styles.text.hint}>{hintText}</p>}
+          {label ? (
+            typeof label === 'string' ? (
+              <Label className="font-bold">{label}</Label>
+            ) : (
+              label
+            )
+          ) : null}
+          {hintText ? <p className={styles.text.hint}>{hintText}</p> : null}
         </div>
         {children}
-        {errorText && <p className={styles.text.error}>{errorText}</p>}
+        {errorText ? <p className={styles.text.error}>{errorText}</p> : null}
       </div>
     );
   },

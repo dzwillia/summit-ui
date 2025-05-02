@@ -48,7 +48,7 @@ const Switch = React.forwardRef<React.ElementRef<typeof SwitchPrimitives.Root>, 
             )}
           />
         </SwitchPrimitives.Root>
-        {label && (typeof label === 'string' ? <Label htmlFor={id}>{label}</Label> : label)}
+        {label ? typeof label === 'string' ? <Label htmlFor={id}>{label}</Label> : label : null}
       </div>
     );
   },

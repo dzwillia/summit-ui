@@ -56,7 +56,7 @@ const DropdownButton = React.forwardRef<
                 )}
                 onClick={item.onClick}
               >
-                {item.icon && <span className="mr-2">{item.icon}</span>}
+                {item.icon ? <span className="mr-2">{item.icon}</span> : null}
                 {item.label}
               </DropdownMenuPrimitive.Item>
             ),

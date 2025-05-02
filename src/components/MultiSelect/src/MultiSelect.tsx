@@ -65,7 +65,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                           : 'opacity-50',
                       )}
                     >
-                      {value.includes(option.value) && <Check className="h-3 w-3" />}
+                      {value.includes(option.value) ? <Check className="h-3 w-3" /> : null}
                     </div>
                     {option.label}
                   </div>

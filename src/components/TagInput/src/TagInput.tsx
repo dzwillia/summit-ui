@@ -165,7 +165,7 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
             )}
           >
             {tag.text}
-            {!isDisabled && (
+            {!isDisabled ? (
               <X
                 className="h-3 w-3 opacity-50 transition-opacity hover:opacity-100"
                 role="button"
@@ -175,7 +175,7 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
                   removeTag(tag.id);
                 }}
               />
-            )}
+            ) : null}
           </button>
         ))}
         <input

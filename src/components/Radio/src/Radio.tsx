@@ -63,12 +63,12 @@ const Radio = React.forwardRef<React.ElementRef<typeof RadioGroupPrimitive.Item>
               </RadioGroupPrimitive.Indicator>
             </RadioGroupPrimitive.Item>
             <div className="space-y-1">
-              {label && (
+              {label ? (
                 <Label htmlFor={id} className="font-medium">
                   {label}
                 </Label>
-              )}
-              {description && <p className="text-sm text-muted-foreground">{description}</p>}
+              ) : null}
+              {description ? <p className="text-sm text-muted-foreground">{description}</p> : null}
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ const Radio = React.forwardRef<React.ElementRef<typeof RadioGroupPrimitive.Item>
             <Circle className="h-3 w-3 fill-current text-current" />
           </RadioGroupPrimitive.Indicator>
         </RadioGroupPrimitive.Item>
-        {label && (typeof label === 'string' ? <Label htmlFor={id}>{label}</Label> : label)}
+        {label ? typeof label === 'string' ? <Label htmlFor={id}>{label}</Label> : label : null}
       </div>
     );
   },

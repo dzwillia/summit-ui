@@ -50,7 +50,7 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
             <Check className="h-4 w-4" />
           </CheckboxPrimitive.Indicator>
         </CheckboxPrimitive.Root>
-        {label && (typeof label === 'string' ? <Label htmlFor={id}>{label}</Label> : label)}
+        {label ? typeof label === 'string' ? <Label htmlFor={id}>{label}</Label> : label : null}
       </div>
     );
   },
