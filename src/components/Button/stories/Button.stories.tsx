@@ -12,57 +12,35 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
+ * The default button style.
+ * This is the main call-to-action button style used throughout the application.
+ */
+export const Default: Story = {
+  args: {
+    children: 'Default Button',
+    variant: 'default',
+  },
+};
+
+/**
  * The primary button style.
  * This is the main call-to-action button style used throughout the application.
  */
 export const Primary: Story = {
   args: {
     children: 'Primary Button',
-    variant: 'default',
+    variant: 'primary',
   },
 };
 
 /**
- * The secondary button style.
- * Used for secondary actions that don't require primary emphasis.
- */
-export const Secondary: Story = {
-  args: {
-    children: 'Secondary Button',
-    variant: 'secondary',
-  },
-};
-
-/**
- * The destructive button style.
+ * The danger button style.
  * Used for dangerous or destructive actions like delete operations.
  */
-export const Destructive: Story = {
+export const Danger: Story = {
   args: {
-    children: 'Destructive Button',
-    variant: 'destructive',
-  },
-};
-
-/**
- * The outline button style.
- * A more subtle button style with just a border.
- */
-export const Outline: Story = {
-  args: {
-    children: 'Outline Button',
-    variant: 'outline',
-  },
-};
-
-/**
- * The ghost button style.
- * A minimal button style that only shows on hover.
- */
-export const Ghost: Story = {
-  args: {
-    children: 'Ghost Button',
-    variant: 'ghost',
+    children: 'Danger Button',
+    variant: 'danger',
   },
 };
 
@@ -96,17 +74,6 @@ export const Large: Story = {
   args: {
     children: 'Large Button',
     size: 'lg',
-  },
-};
-
-/**
- * An icon button.
- * Square-shaped button typically used for icons or emoji.
- */
-export const Icon: Story = {
-  args: {
-    children: '👋',
-    size: 'icon',
   },
 };
 

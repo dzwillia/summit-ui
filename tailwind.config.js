@@ -53,6 +53,8 @@ export default {
           foreground: 'hsl(var(--card-foreground))',
         },
 
+        link: 'var(--color-primary-400)', // #005ea2
+
         // semantic colors
         base: {
           100: 'var(--color-base-100)', // #f7f6f7
