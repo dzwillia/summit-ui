@@ -6,6 +6,22 @@ const meta = {
   component: Button,
   parameters: {},
   tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'primary', 'danger', 'link'],
+      description: 'The visual style variant of the dropdown button',
+    },
+    size: {
+      options: ['default', 'sm', 'lg'],
+      control: 'radio',
+      description: 'The size of the dropdown button',
+    },
+    className: {
+      type: 'string',
+      description: 'Additional class names to apply to the accordion',
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
