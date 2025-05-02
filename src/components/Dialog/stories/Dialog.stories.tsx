@@ -24,7 +24,7 @@ export const Default: Story = {
   render: () => (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Open Dialog</Button>
+        <Button variant="primary">Open Dialog</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -54,7 +54,9 @@ export const Default: Story = {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button type="submit" variant="primary">
+            Save changes
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -69,7 +71,7 @@ export const WithDestructiveAction: Story = {
   render: () => (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Delete Account</Button>
+        <Button variant="danger">Delete Account</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -80,8 +82,8 @@ export const WithDestructiveAction: Story = {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button variant="outline">Cancel</Button>
-          <Button variant="destructive">Delete Account</Button>
+          <Button>Cancel</Button>
+          <Button variant="danger">Delete Account</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

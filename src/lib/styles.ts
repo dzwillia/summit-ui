@@ -34,9 +34,9 @@ export const styles = {
   // Typography
   text: {
     title: 'text-3xl font-bold',
-    subtitle: 'text-muted-foreground mt-2',
-    hint: 'text-sm text-muted-foreground',
-    error: 'text-sm font-medium text-destructive',
+    subtitle: 'text-base-400 mt-2',
+    hint: 'text-sm text-base-400',
+    error: 'text-sm font-medium text-danger-400',
     label:
       'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
   },
