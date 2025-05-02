@@ -39,11 +39,10 @@ export const Warning: Story = {
  * An error alert with standard sizing.
  * Used to communicate critical errors or failures that need immediate attention.
  */
-export const ErrorStory: Story = {
-  name: 'Error',
+export const Danger: Story = {
   args: {
-    variant: 'error',
-    heading: 'Error',
+    variant: 'danger',
+    heading: 'Danger',
     children: 'Error: Failed to save changes. Please try again.',
   },
 };

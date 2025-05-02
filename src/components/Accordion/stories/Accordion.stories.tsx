@@ -152,6 +152,18 @@ export const Success: Story = {
 };
 
 /**
+ * Warning variant of the Accordion component.
+ * Uses yellow colors to indicate cautionary content.
+ */
+export const Warning: Story = {
+  args: {
+    mode: 'multiple',
+    variant: 'warning',
+    items: defaultItems,
+  },
+};
+
+/**
  * Danger variant of the Accordion component.
  * Uses red colors to indicate dangerous or destructive content.
  */
@@ -164,14 +176,15 @@ export const Danger: Story = {
 };
 
 /**
- * Warning variant of the Accordion component.
- * Uses yellow colors to indicate cautionary content.
+ * Accordion with bordered content.
+ * Shows sections with borders around the content area.
  */
-export const Warning: Story = {
+export const Bordered: Story = {
   args: {
     mode: 'multiple',
-    variant: 'warning',
+    variant: 'default',
     items: defaultItems,
+    isBordered: true,
   },
 };
 
@@ -196,19 +209,6 @@ export const LongContent: Story = {
     mode: 'multiple',
     variant: 'default',
     items: longContentItems,
-  },
-};
-
-/**
- * Accordion with bordered content.
- * Shows sections with borders around the content area.
- */
-export const Bordered: Story = {
-  args: {
-    mode: 'multiple',
-    variant: 'default',
-    items: defaultItems,
-    isBordered: true,
   },
 };
 

@@ -20,16 +20,16 @@ export const accordionVariants = cva('w-full', {
 export const accordionTriggerVariants = cva(
   cn(
     styles.focusRingVisible,
-    'flex flex-1 items-center justify-between px-4 py-[0.875rem] font-bold transition-all hover:brightness-90 [&[data-state=open]>svg]:rotate-180',
+    'flex flex-1 items-center justify-between px-4 py-[0.875rem] font-bold transition-all [&[data-state=open]>svg]:rotate-180',
   ),
   {
     variants: {
       variant: {
-        default: 'bg-gray-100',
-        primary: 'bg-primary text-primary-foreground',
-        success: 'bg-green-100 text-green-900',
-        danger: 'bg-destructive text-destructive-foreground',
-        warning: 'bg-yellow-100 text-yellow-900',
+        default: 'bg-base-200 hover:hover:brightness-90 text-black',
+        primary: 'bg-primary-400 hover:bg-primary-500 text-white',
+        success: 'bg-success-400 hover:bg-success-500 text-white',
+        danger: 'bg-danger-400 hover:bg-danger-500 text-white',
+        warning: 'bg-warning-300 hover:bg-warning-400 text-black',
       },
     },
     defaultVariants: {
@@ -43,11 +43,11 @@ export const accordionContentVariants = cva(
   {
     variants: {
       variant: {
-        default: 'border-gray-100',
-        primary: 'border-primary',
-        success: 'border-green-100',
-        danger: 'border-destructive',
-        warning: 'border-yellow-100',
+        default: 'border-base-200',
+        primary: 'border-primary-400',
+        success: 'border-success-400',
+        danger: 'border-danger-400',
+        warning: 'border-yellow-300',
       },
       bordered: {
         true: 'border-l-4 border-r-4 border-b-4',

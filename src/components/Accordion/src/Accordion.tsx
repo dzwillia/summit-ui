@@ -44,7 +44,7 @@ const Accordion = React.forwardRef<
               <AccordionPrimitive.Header className="flex">
                 <AccordionPrimitive.Trigger className={accordionTriggerVariants({ variant })}>
                   {item.title}
-                  <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200" />
+                  <ChevronDown className="h-5 w-5 shrink-0 text-inherit transition-transform duration-200" />
                 </AccordionPrimitive.Trigger>
               </AccordionPrimitive.Header>
               <AccordionPrimitive.Content
@@ -74,7 +74,7 @@ const Accordion = React.forwardRef<
             <AccordionPrimitive.Header className="flex">
               <AccordionPrimitive.Trigger className={accordionTriggerVariants({ variant })}>
                 {item.title}
-                <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200" />
+                <ChevronDown className="h-5 w-5 shrink-0 text-inherit transition-transform duration-200" />
               </AccordionPrimitive.Trigger>
             </AccordionPrimitive.Header>
             <AccordionPrimitive.Content

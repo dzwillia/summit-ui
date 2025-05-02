@@ -100,12 +100,12 @@ const App: React.FC = () => {
             <h1 className="text-3xl font-bold">Summit UI</h1>
             <p className="text-muted-foreground mt-2">Configure your development environment</p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <Badge variant="secondary">React</Badge>
-              <Badge variant="secondary">TypeScript</Badge>
-              <Badge variant="secondary">Tailwind CSS</Badge>
-              <Badge variant="secondary">Radix UI</Badge>
-              <Badge variant="secondary">cmdk</Badge>
-              <Badge variant="secondary">React Day Picker</Badge>
+              <Badge>React</Badge>
+              <Badge>TypeScript</Badge>
+              <Badge>Tailwind CSS</Badge>
+              <Badge>Radix UI</Badge>
+              <Badge>cmdk</Badge>
+              <Badge>React Day Picker</Badge>
             </div>
           </div>
           <div className="w-[16rem]">
@@ -124,9 +124,11 @@ const App: React.FC = () => {
           </div>
           <div className="flex gap-2 mt-2">
             <Badge>Default</Badge>
-            <Badge variant="secondary">Secondary</Badge>
-            <Badge variant="destructive">Destructive</Badge>
-            <Badge variant="outline">Outline</Badge>
+            <Badge variant="primary">Primary</Badge>
+            <Badge variant="success">Success</Badge>
+            <Badge variant="danger">Danger</Badge>
+            <Badge variant="warning">Warning</Badge>
+            <Badge className="bg-purple-700 text-white">Custom</Badge>
           </div>
         </div>
 

@@ -22,24 +22,46 @@ export const Default: Story = {
 };
 
 /**
- * A badge with secondary styling.
- * This variant is useful for less prominent or supplementary information.
+ * A badge with primary styling.
+ * This variant is typically used for highlighting important information.
  */
-export const Secondary: Story = {
+export const Primary: Story = {
   args: {
-    variant: 'secondary',
-    children: 'Secondary',
+    variant: 'primary',
+    children: 'Primary',
   },
 };
 
 /**
- * A badge with destructive styling.
- * This variant is typically used for error states or warning indicators.
+ * A badge with success styling.
+ * This variant is typically used to indicate successful actions or statuses.
  */
-export const Destructive: Story = {
+export const Success: Story = {
   args: {
-    variant: 'destructive',
-    children: 'Destructive',
+    variant: 'success',
+    children: 'Success',
+  },
+};
+
+/**
+ * A badge with warning styling.
+ * This variant is typically used to indicate caution or warnings.
+ */
+export const Warning: Story = {
+  args: {
+    variant: 'warning',
+    children: 'Success',
+  },
+};
+
+/**
+ * A badge with danger styling.
+ * This variant is typically used to indicate errors or critical issues.
+ */
+export const Danger: Story = {
+  args: {
+    variant: 'danger',
+    children: 'Danger',
   },
 };
 
@@ -61,6 +83,6 @@ export const Outline: Story = {
 export const WithCustomClass: Story = {
   args: {
     children: 'Custom',
-    className: 'bg-blue-500 text-white',
+    className: 'bg-purple-700 text-white',
   },
 };

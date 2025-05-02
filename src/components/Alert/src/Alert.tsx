@@ -13,7 +13,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const icons = {
       success: <CheckCircle2 />,
       warning: <AlertTriangle />,
-      error: <AlertCircle />,
+      danger: <AlertCircle />,
       info: <Info />,
     };
 

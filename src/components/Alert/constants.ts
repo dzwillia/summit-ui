@@ -5,10 +5,10 @@ export const alertVariants = cva(
   {
     variants: {
       variant: {
-        success: 'bg-green-50 border-green-500 [&>svg]:text-green-500 dark:bg-green-950',
-        warning: 'bg-yellow-50 border-yellow-500 [&>svg]:text-yellow-500 dark:bg-yellow-950',
-        error: 'bg-red-50 border-destructive [&>svg]:text-destructive dark:bg-red-950',
-        info: 'bg-blue-50 border-blue-500 [&>svg]:text-blue-500 dark:bg-blue-950',
+        success: 'bg-success-100 border-success-400 [&>svg]:text-success-400 dark:bg-success-700',
+        warning: 'bg-warning-100 border-warning-400 [&>svg]:text-warning-400 dark:bg-warning-700',
+        danger: 'bg-danger-100 border-danger-400 [&>svg]:text-danger-400 dark:bg-danger-700',
+        info: 'bg-info-100 border-info-400 [&>svg]:text-info-400 dark:bg-info-700',
       },
       size: {
         sm: 'py-2 px-3 text-sm [&>svg]:h-5 [&>svg]:w-5 [&>svg]:mr-2',
@@ -21,12 +21,12 @@ export const alertVariants = cva(
   },
 );
 
-export const alertHeadingVariants = cva('font-semibold mb-1 text-gray-900 dark:text-gray-100', {
+export const alertHeadingVariants = cva('font-bold mb-1 text-base-700 dark:text-base-100', {
   variants: {
     variant: {
       success: '',
       warning: '',
-      error: '',
+      danger: '',
       info: '',
     },
     size: {
