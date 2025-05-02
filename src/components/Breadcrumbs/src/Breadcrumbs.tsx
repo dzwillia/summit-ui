@@ -12,7 +12,7 @@ const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
           {items.map((item, index) => (
             <li key={index} className="flex items-center gap-1">
               {item.href ? (
-                <a href={item.href} className={styles.link}>
+                <a href={item.href} className={cn(styles.link, styles.linkNoUnderline)}>
                   {item.label}
                 </a>
               ) : (

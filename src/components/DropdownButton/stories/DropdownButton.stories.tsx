@@ -113,7 +113,7 @@ export const WithDisabledItems: Story = {
 export const WithVariant: Story = {
   args: {
     children: 'Settings',
-    variant: 'outline',
+    variant: 'link',
     items: [
       { label: 'Account', onClick: () => console.log('Account clicked') },
       { label: 'Security', onClick: () => console.log('Security clicked') },

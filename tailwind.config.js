@@ -53,7 +53,10 @@ export default {
           foreground: 'hsl(var(--card-foreground))',
         },
 
-        link: 'var(--color-primary-400)', // #005ea2
+        link: {
+          DEFAULT: 'var(--link)', // #005ea2
+          hover: 'var(--link-hover)', // #1a4480
+        },
 
         // semantic colors
         base: {
