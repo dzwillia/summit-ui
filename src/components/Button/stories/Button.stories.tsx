@@ -9,17 +9,17 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'primary', 'danger', 'link'],
-      description: 'The visual style variant of the dropdown button',
+      options: ['default', 'primary', 'danger', 'link', 'input'],
+      description: 'The visual style variant of the button',
     },
     size: {
       options: ['default', 'sm', 'lg'],
       control: 'radio',
-      description: 'The size of the dropdown button',
+      description: 'The size of the button',
     },
     className: {
       type: 'string',
-      description: 'Additional class names to apply to the accordion',
+      description: 'Additional class names to apply to the button',
     },
   },
 } satisfies Meta<typeof Button>;
@@ -68,6 +68,17 @@ export const Link: Story = {
   args: {
     children: 'Link Button',
     variant: 'link',
+  },
+};
+
+/**
+ * The input button style.
+ * Used for input fields or forms where the button is part of the input (e.g. Autocomplete, ComboBox, etc.).
+ */
+export const Input: Story = {
+  args: {
+    children: 'Input Button',
+    variant: 'input',
   },
 };
 

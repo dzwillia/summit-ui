@@ -10,7 +10,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'primary', 'danger', 'link'],
+      options: ['default', 'primary', 'danger', 'link', 'input'],
       description: 'The visual style variant of the dropdown button',
     },
     size: {
@@ -24,7 +24,7 @@ const meta = {
     },
     className: {
       type: 'string',
-      description: 'Additional class names to apply to the accordion',
+      description: 'Additional class names to apply to the dropdown button',
     },
   },
 } satisfies Meta<typeof DropdownButton>;

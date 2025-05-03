@@ -26,7 +26,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
         <PopoverTrigger asChild>
           <Button
             ref={ref}
-            variant="outline"
+            variant="input"
             role="combobox"
             aria-expanded={open}
             className={cn(
