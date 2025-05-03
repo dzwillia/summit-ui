@@ -31,14 +31,14 @@ const Radio = React.forwardRef<React.ElementRef<typeof RadioGroupPrimitive.Item>
     }
 
     const radioCircle =
-      'aspect-square h-5 w-5 rounded-full border-2 border-gray-500 text-primary ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary ';
+      'aspect-square h-5 w-5 rounded-full border-2 border-gray-500 text-primary-400 ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary-400 ';
 
     if (variant === 'tile') {
       return (
         <div
           className={cn(
             'relative rounded-lg border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground',
-            isChecked && 'border-primary',
+            isChecked && 'border-primary-400',
             isDisabled && 'cursor-not-allowed opacity-50',
             className,
           )}

@@ -36,7 +36,7 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
           className={cn(
             styles.focusRingVisible,
             styles.focusRingVisibleSm,
-            'peer h-5 w-5 shrink-0 rounded-sm border-2 border-gray-500 ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground',
+            'peer h-5 w-5 shrink-0 rounded-sm border-2 border-gray-500 ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary-400 data-[state=checked]:bg-primary-400 data-[state=checked]:text-white',
             className,
           )}
           checked={isChecked}
@@ -45,9 +45,9 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
           {...props}
         >
           <CheckboxPrimitive.Indicator
-            className={cn('flex items-center justify-center text-current')}
+            className={cn('flex items-center justify-center text-current stroke-width-4')}
           >
-            <Check className="h-4 w-4" />
+            <Check className="h-4 w-4" strokeWidth={3} />
           </CheckboxPrimitive.Indicator>
         </CheckboxPrimitive.Root>
         {label ? typeof label === 'string' ? <Label htmlFor={id}>{label}</Label> : label : null}
