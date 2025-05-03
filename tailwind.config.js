@@ -19,47 +19,51 @@ export default {
     },
     extend: {
       colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
+        border: 'var(--border)',
+        input: 'var(--input)',
+        ring: 'var(--ring)',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        // defined below with semantic colors
+        // primary: {
+        //   DEFAULT: 'var(--primary)',
+        //   foreground: 'var(--primary-foreground)',
+        // },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
+          DEFAULT: 'var(--destructive)',
+          foreground: 'var(--destructive-foreground)',
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
         },
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
         },
-
         link: {
-          DEFAULT: 'var(--link)', // #005ea2
-          hover: 'var(--link-hover)', // #1a4480
+          DEFAULT: 'var(--link)',
+          visited: 'var(--link-visited)',
+          hover: 'var(--link-hover)',
+          active: 'var(--link-active)',
         },
 
         // semantic colors
         base: {
+          DEFAULT: 'var(--base)',
+          foreground: 'var(--base-foreground)',
           100: 'var(--color-base-100)', // #f7f6f7
           200: 'var(--color-base-200)', // #f0f0f0
           300: 'var(--color-base-300)', // #9b9d9f
@@ -69,6 +73,8 @@ export default {
           700: 'var(--color-base-700)', // #1b1b1b
         },
         primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
           100: 'var(--color-primary-100)', // #eff6fb
           200: 'var(--color-primary-200)', // #d9e8f6
           300: 'var(--color-primary-300)', // #24a1ff
@@ -78,6 +84,8 @@ export default {
           700: 'var(--color-primary-700)', // #252f3e
         },
         success: {
+          DEFAULT: 'var(--success)',
+          foreground: 'var(--success-foreground)',
           100: 'var(--color-success-100)', // #ecf3ec
           200: 'var(--color-success-200)', // #dbebde
           300: 'var(--color-success-300)', // #70e17b
@@ -87,6 +95,8 @@ export default {
           700: 'var(--color-success-700)', // #154c21
         },
         danger: {
+          DEFAULT: 'var(--danger)',
+          foreground: 'var(--danger-foreground)',
           100: 'var(--color-danger-100)', // #f8eff1
           200: 'var(--color-danger-200)', // #ffd7d7
           300: 'var(--color-danger-300)', // #f2938c
@@ -96,6 +106,8 @@ export default {
           700: 'var(--color-danger-700)', // #4f1c24
         },
         warning: {
+          DEFAULT: 'var(--warning)',
+          foreground: 'var(--warning-foreground)',
           100: 'var(--color-warning-100)', // #faf3d1
           200: 'var(--color-warning-200)', // #fee685
           300: 'var(--color-warning-300)', // #ffbe2e
@@ -105,6 +117,8 @@ export default {
           700: 'var(--color-warning-700)', // #7a591a
         },
         info: {
+          DEFAULT: 'var(--info)',
+          foreground: 'var(--info-foreground)',
           100: 'var(--color-info-100)', // #e7f6f8
           200: 'var(--color-info-200)', // #def7ff
           300: 'var(--color-info-300)', // #99deea
@@ -114,11 +128,13 @@ export default {
           700: 'var(--color-info-700)', // #00687d
         },
       },
+
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 0.125rem)',
         sm: 'calc(var(--radius) - 0.25rem)',
       },
+
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
@@ -129,6 +145,7 @@ export default {
           to: { height: '0' },
         },
       },
+
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',

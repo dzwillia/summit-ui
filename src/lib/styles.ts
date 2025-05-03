@@ -18,10 +18,8 @@ const button =
 export const styles = {
   focusRing,
   focusRingSm,
-
   focusRingVisible,
   focusRingVisibleSm,
-
   focusRingWithin,
   focusRingWithinSm,
 
