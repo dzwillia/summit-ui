@@ -14,7 +14,7 @@ const DatePicker = React.forwardRef<HTMLButtonElement, DatePickerProps>(
         <PopoverTrigger asChild>
           <Button
             ref={ref}
-            variant={'outline'}
+            variant="input"
             className={cn(
               'w-full justify-start text-left font-normal',
               !value && 'text-muted-foreground',

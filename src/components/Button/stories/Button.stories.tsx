@@ -9,7 +9,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'primary', 'danger', 'link', 'input'],
+      options: ['default', 'primary', 'danger', 'link', 'input', 'ghost'],
       description: 'The visual style variant of the button',
     },
     size: {
@@ -73,12 +73,23 @@ export const Link: Story = {
 
 /**
  * The input button style.
- * Used for input fields or forms where the button is part of the input (e.g. Autocomplete, ComboBox, etc.).
+ * Provides the appearance of being an input field. Used in forms where the button is part of the input (e.g. Autocomplete, ComboBox, etc.).
  */
 export const Input: Story = {
   args: {
     children: 'Input Button',
     variant: 'input',
+  },
+};
+
+/**
+ * The ghost button style.
+ * Used for buttons that are less prominent, often used in secondary actions or to avoid visual clutter (e.g. DatePicker).
+ */
+export const Ghost: Story = {
+  args: {
+    children: 'Ghost Button',
+    variant: 'ghost',
   },
 };
 

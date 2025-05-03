@@ -10,7 +10,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'primary', 'danger', 'link', 'input'],
+      options: ['default', 'primary', 'danger', 'link', 'input', 'ghost'],
       description: 'The visual style variant of the dropdown button',
     },
     size: {

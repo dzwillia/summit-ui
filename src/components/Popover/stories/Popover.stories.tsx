@@ -21,7 +21,7 @@ export const WithArrow: Story = {
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline">Open Popover</Button>
+        <Button variant="input">Open Popover</Button>
       </PopoverTrigger>
       <PopoverContent className="w-80" hasArrow>
         <div className="grid gap-4">
@@ -65,7 +65,7 @@ export const WithoutArrow: Story = {
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline">Open Popover</Button>
+        <Button variant="input">Open Popover</Button>
       </PopoverTrigger>
       <PopoverContent className="w-80">
         <p className="text-sm">This is a simple popover without an arrow.</p>
@@ -82,7 +82,7 @@ export const CustomPosition: Story = {
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline">Open Popover</Button>
+        <Button variant="input">Open Popover</Button>
       </PopoverTrigger>
       <PopoverContent className="w-80" align="start" hasArrow>
         <p className="text-sm">This popover is aligned to the start.</p>

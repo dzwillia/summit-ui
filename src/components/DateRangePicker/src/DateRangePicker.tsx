@@ -46,7 +46,7 @@ const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePickerProps
             <Button
               ref={ref}
               id="date"
-              variant={'outline'}
+              variant="input"
               className={cn(
                 'w-full justify-start text-left font-normal',
                 !value.from && !value.to && 'text-muted-foreground',

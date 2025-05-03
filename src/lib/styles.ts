@@ -13,7 +13,7 @@ const input =
   'flex h-10 w-full rounded-sm border border-input bg-background px-3 py-2 text-sm ring-offset-background disabled:cursor-not-allowed disabled:opacity-50';
 
 const button =
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center whitespace-nowrap rounded-sm text-sm font-bold ring-offset-background transition-colors disabled:pointer-events-none disabled:opacity-50';
 
 export const styles = {
   focusRing,
