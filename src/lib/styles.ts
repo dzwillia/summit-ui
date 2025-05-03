@@ -35,7 +35,7 @@ export const styles = {
     title: 'text-3xl font-bold',
     subtitle: 'text-base-400 mt-2',
     hint: 'text-sm text-base-400',
-    error: 'text-sm font-medium text-danger-400',
+    error: 'text-sm font-medium text-destructive',
     label:
       'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
   },

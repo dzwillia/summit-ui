@@ -217,13 +217,13 @@
 @layer components {
   [data-error="true"] input,
   [data-error="true"] textarea {
-    @apply border-danger-400 focus-visible:ring-danger-400;
+    @apply border-destructive focus-visible:ring-destructive;
   }
 
   [data-error="true"] select,
   [data-error="true"] button[role="combobox"],
   [data-error="true"] button[data-component="date-picker"],
   [data-error="true"] button[data-component="date-range-picker"] {
-    @apply border-danger-400 focus:ring-danger-400;
+    @apply border-destructive focus:ring-destructive;
   }
 }
