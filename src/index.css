@@ -5,47 +5,7 @@
 @layer base {
   :root {
     /* ============================================
-       USWDS Text Input & Feedback Custom Properties
-       ============================================ */
-
-    /* Default Input State */
-    --usa-input-border-color: #5c5c5c; /* 0 0% 36% */
-    --usa-input-background-color: #ffffff; /* 0 0% 100% */
-    --usa-input-text-color: #1b1b1b; /* 0 0% 10.6% */
-    --usa-input-placeholder-color: #a9aeb1; /* 210 7.5% 66.3% */
-
-    /* Focus State */
-    --usa-focus-color: #2491ff; /* 212 100% 58% */
-    --usa-input-border-color-focus: #005ea2; /* 208 100% 32.5% */
-
-    /* Error State */
-    --usa-input-border-color-error: #d54309; /* 20 89.3% 45.5% */
-    --usa-input-background-color-error: #ffffff; /* 0 0% 100% */
-    --usa-input-text-color-error: #1b1b1b; /* 0 0% 10.6% */
-
-    /* Disabled State */
-    --usa-input-background-color-disabled: #f0f0f0; /* 0 0% 94.1% */
-    --usa-input-border-color-disabled: #d6d7d9; /* 210 4.2% 83.7% */
-    --usa-input-text-color-disabled: #c1c1c1; /* 0 0% 76.1% */
-
-    /* Error and Validation Messaging */
-    --usa-error-text-color: #d54309; /* 20 89.3% 45.5% */
-    --usa-error-icon-color: #d54309; /* 20 89.3% 45.5% */
-    --usa-warning-text-color: #fdb81e; /* 45 100% 40.2% */
-    --usa-success-text-color: #2e8540; /* 140 60.8% 34.9% */
-    --usa-info-text-color: #005ea2; /* 208 100% 32.5% */
-
-    --usa-bg-white: #ffffff; /* 0 0% 100% */
-    --usa-bg-gray-10: #e6e6e6; /* 240 6% 90% */
-    --usa-text-base-darkest: #1b1b1b; /* 0 0% 10.6% */
-    --usa-text-secondary-dark: #b50909; /* 0 89.3% 36.1% */
-    --usa-link: #005ea2; /* 210 100% 32% */
-    --usa-link-visited: #54278f; /* 266 57% 36% */
-    --usa-link-hover: #1a4480; /* 213 66% 30% */
-    --usa-link-active: #162e51; /* 217 56.2% 20.4% */
-
-    /* ============================================
-       Biosched Component Library Colors
+       Component Library Semantic Color Scheme
        ============================================ */
 
     /* Base */
@@ -143,6 +103,50 @@
   }
 
   .theme-uswds {
+    /* ============================================
+       USWDS Text Input & Feedback Custom Properties
+       ============================================ */
+
+    /* Default Input State */
+    --usa-input-border-color: #5c5c5c; /* 0 0% 36% */
+    --usa-input-background-color: #ffffff; /* 0 0% 100% */
+    --usa-input-text-color: #1b1b1b; /* 0 0% 10.6% */
+    --usa-input-placeholder-color: #a9aeb1; /* 210 7.5% 66.3% */
+
+    /* Focus State */
+    --usa-focus-color: #2491ff; /* 212 100% 58% */
+    --usa-input-border-color-focus: #005ea2; /* 208 100% 32.5% */
+
+    /* Error State */
+    --usa-input-border-color-error: #d54309; /* 20 89.3% 45.5% */
+    --usa-input-background-color-error: #ffffff; /* 0 0% 100% */
+    --usa-input-text-color-error: #1b1b1b; /* 0 0% 10.6% */
+
+    /* Disabled State */
+    --usa-input-background-color-disabled: #f0f0f0; /* 0 0% 94.1% */
+    --usa-input-border-color-disabled: #d6d7d9; /* 210 4.2% 83.7% */
+    --usa-input-text-color-disabled: #c1c1c1; /* 0 0% 76.1% */
+
+    /* Error and Validation Messaging */
+    --usa-error-text-color: #d54309; /* 20 89.3% 45.5% */
+    --usa-error-icon-color: #d54309; /* 20 89.3% 45.5% */
+    --usa-warning-text-color: #fdb81e; /* 45 100% 40.2% */
+    --usa-success-text-color: #2e8540; /* 140 60.8% 34.9% */
+    --usa-info-text-color: #005ea2; /* 208 100% 32.5% */
+
+    --usa-bg-white: #ffffff; /* 0 0% 100% */
+    --usa-bg-gray-10: #e6e6e6; /* 240 6% 90% */
+    --usa-text-base-darkest: #1b1b1b; /* 0 0% 10.6% */
+    --usa-text-secondary-dark: #b50909; /* 0 89.3% 36.1% */
+    --usa-link: #005ea2; /* 210 100% 32% */
+    --usa-link-visited: #54278f; /* 266 57% 36% */
+    --usa-link-hover: #1a4480; /* 213 66% 30% */
+    --usa-link-active: #162e51; /* 217 56.2% 20.4% */
+
+    /* ============================================
+       USWDS Color Scheme
+       ============================================ */
+
     --link: var(--usa-link);
     --link-visited: var(--usa-link-visited);
     --link-hover: var(--usa-link-hover);
