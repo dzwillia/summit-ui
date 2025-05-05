@@ -61,6 +61,21 @@ const SelectDemo = ({ value: initialValue = '', ...args }: SingleSelectProps) =>
 };
 
 /**
+ * Interactive playground for the Select component.
+ * Use the controls to experiment with different props and states.
+ */
+export const Playground: Story = {
+  args: {
+    options,
+    value: '',
+    onChange: () => {},
+    placeholder: 'Select a fruit...',
+  },
+  // Removes this story from auto-generated documentation
+  tags: ['!autodocs'],
+};
+
+/**
  * The default state of the Select component.
  * Shows a basic dropdown with a list of fruit options and placeholder text.
  */
