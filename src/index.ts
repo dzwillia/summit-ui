@@ -23,6 +23,7 @@ export * from './components/Popover';
 export * from './components/Radio';
 export * from './components/RadioGroup';
 export * from './components/Select';
+export * from './components/StepIndicator';
 export * from './components/Switch';
 export * from './components/SwitchGroup';
 export * from './components/TagInput';

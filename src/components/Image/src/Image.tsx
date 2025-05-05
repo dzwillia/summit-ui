@@ -24,11 +24,13 @@ const Image = React.forwardRef<HTMLImageElement, ImageProps>(
 
     return (
       <div className={cn('relative overflow-hidden', shapeStyles[shape], className)}>
-        {isLoading ? <div
+        {isLoading ? (
+          <div
             className="absolute inset-0 animate-pulse bg-muted"
             aria-hidden="true"
             role="presentation"
-          /> : null}
+          />
+        ) : null}
         <img
           ref={ref}
           src={hasError && fallback ? fallback : src}
