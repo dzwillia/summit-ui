@@ -2,11 +2,7 @@ import { cn } from '@/lib/utils';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDown } from 'lucide-react';
 import * as React from 'react';
-import {
-  accordionContentVariants,
-  accordionTriggerVariants,
-  accordionVariants,
-} from '../constants';
+import { accordionContentVariants, accordionTriggerVariants } from '../constants';
 import { AccordionProps } from '../types';
 
 const Accordion = React.forwardRef<
@@ -37,7 +33,7 @@ const Accordion = React.forwardRef<
           value={value}
           defaultValue={defaultValue}
           collapsible={mode === 'single'}
-          className={cn(accordionVariants({ variant }), className)}
+          className={cn('space-y-2', className)}
           onValueChange={onValueChange}
           {...props}
         >
@@ -72,7 +68,7 @@ const Accordion = React.forwardRef<
         type="multiple"
         value={value}
         defaultValue={defaultValue}
-        className={cn(accordionVariants({ variant }), className)}
+        className={cn('space-y-2', className)}
         onValueChange={onValueChange}
         {...props}
       >

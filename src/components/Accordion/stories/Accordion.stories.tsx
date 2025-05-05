@@ -6,6 +6,10 @@ const meta = {
   component: Accordion,
   parameters: {},
   tags: ['autodocs'],
+  args: {
+    mode: 'multiple',
+    variant: 'default',
+  },
   argTypes: {
     mode: {
       control: 'select',
@@ -129,8 +133,6 @@ const longContentItems = [
  */
 export const Default: Story = {
   args: {
-    mode: 'multiple',
-    variant: 'default',
     items: exampleItems,
   },
 };
@@ -141,7 +143,6 @@ export const Default: Story = {
  */
 export const Primary: Story = {
   args: {
-    mode: 'multiple',
     variant: 'primary',
     items: [exampleItems[0]],
   },
@@ -153,7 +154,6 @@ export const Primary: Story = {
  */
 export const Success: Story = {
   args: {
-    mode: 'multiple',
     variant: 'success',
     items: [exampleItems[0]],
   },
@@ -165,7 +165,6 @@ export const Success: Story = {
  */
 export const Warning: Story = {
   args: {
-    mode: 'multiple',
     variant: 'warning',
     items: [exampleItems[0]],
   },
@@ -177,7 +176,6 @@ export const Warning: Story = {
  */
 export const Danger: Story = {
   args: {
-    mode: 'multiple',
     variant: 'danger',
     items: [exampleItems[0]],
   },
@@ -189,8 +187,6 @@ export const Danger: Story = {
  */
 export const CustomClasses: Story = {
   args: {
-    mode: 'multiple',
-    variant: 'default',
     items: [exampleItems[0]],
     triggerClassName: 'bg-[#551c9a] text-white hover:bg-[#551c9a]/80',
     contentClassName: 'bg-[#551c9a]/10 text-[#551c9a] font-semibold',
@@ -203,8 +199,6 @@ export const CustomClasses: Story = {
  */
 export const CustomTitle: Story = {
   args: {
-    mode: 'multiple',
-    variant: 'default',
     items: [
       {
         id: 'item-1',
@@ -236,9 +230,7 @@ export const CustomTitle: Story = {
  */
 export const Bordered: Story = {
   args: {
-    mode: 'multiple',
-    variant: 'default',
-    items: [exampleItems[0]],
+    items: exampleItems,
     isBordered: true,
   },
 };
@@ -249,8 +241,6 @@ export const Bordered: Story = {
  */
 export const RichContent: Story = {
   args: {
-    mode: 'multiple',
-    variant: 'default',
     items: richContentItems,
   },
 };
@@ -261,8 +251,6 @@ export const RichContent: Story = {
  */
 export const LongContent: Story = {
   args: {
-    mode: 'multiple',
-    variant: 'default',
     items: longContentItems,
   },
 };
@@ -274,7 +262,6 @@ export const LongContent: Story = {
 export const SingleExpansion: Story = {
   args: {
     mode: 'single',
-    variant: 'default',
     items: exampleItems,
   },
 };
@@ -286,7 +273,6 @@ export const SingleExpansion: Story = {
 export const AccordionExpansion: Story = {
   args: {
     mode: 'accordion',
-    variant: 'default',
     items: exampleItems,
   },
 };
@@ -297,8 +283,6 @@ export const AccordionExpansion: Story = {
  */
 export const DefaultOpen: Story = {
   args: {
-    mode: 'multiple',
-    variant: 'default',
     items: exampleItems,
     defaultValue: ['item-1', 'item-2'],
   },

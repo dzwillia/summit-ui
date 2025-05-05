@@ -2,21 +2,6 @@ import { styles } from '@/lib/styles';
 import { cn } from '@/lib/utils';
 import { cva } from 'class-variance-authority';
 
-export const accordionVariants = cva('w-full', {
-  variants: {
-    variant: {
-      default: 'space-y-2',
-      primary: 'space-y-2',
-      success: 'space-y-2',
-      danger: 'space-y-2',
-      warning: 'space-y-2',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
-
 export const accordionTriggerVariants = cva(
   cn(
     styles.focusRingVisible,
