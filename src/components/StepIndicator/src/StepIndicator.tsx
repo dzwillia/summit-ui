@@ -68,7 +68,7 @@ const StepIndicator = React.forwardRef<HTMLDivElement, StepIndicatorProps>(
                 {/* Step circle */}
                 <div
                   className={cn(
-                    'relative z-10 flex items-center justify-center rounded-full border-2 bg-white',
+                    'relative z-10 flex items-center justify-center rounded-full border-[3px] bg-white font-bold',
                     sizeStyles[size].circle,
                     isCompleted
                       ? 'border-primary-400 bg-primary-400 text-white'
@@ -78,7 +78,7 @@ const StepIndicator = React.forwardRef<HTMLDivElement, StepIndicatorProps>(
                   )}
                 >
                   {isCompleted ? (
-                    <Check className="h-4 w-4" />
+                    <Check className="h-4 w-4" strokeWidth={3} />
                   ) : (
                     <span>{(index + 1).toString()}</span>
                   )}
