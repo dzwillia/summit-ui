@@ -39,7 +39,7 @@ const CheckboxGroupDemo = ({ value: initialValue = [], ...args }: CheckboxGroupP
 export const Playground: Story = {
   args: {
     options,
-    value: '',
+    value: [],
     onChange: () => {},
   },
   // Removes this story from auto-generated documentation
