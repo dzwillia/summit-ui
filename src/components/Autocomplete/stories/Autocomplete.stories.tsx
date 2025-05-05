@@ -1,6 +1,8 @@
-import { mockLoadOptions, mockSearchLibraries } from '@/mocks';
+import { mockSearchLibraries } from '@/mocks';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import { Autocomplete } from '../src/Autocomplete';
+import { AutocompleteProps } from '../types';
 
 const meta = {
   title: 'Components/Autocomplete',
@@ -12,13 +14,23 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const AutocompleteDemo = ({ value: initialValue = '', ...args }: AutocompleteProps) => {
+  const [value, setValue] = useState<string>(initialValue);
+  return (
+    <div className="space-y-4">
+      <Autocomplete {...args} value={value} onChange={setValue} />
+      <p className="text-sm text-muted-foreground">Selected value: {value || 'none'}</p>
+    </div>
+  );
+};
+
 /**
- * Interactive playground for the Checkbox component.
+ * Interactive playground for the Autocomplete component.
  * Use the controls to experiment with different props and states.
  */
 export const Playground: Story = {
   args: {
-    loadOptions: mockLoadOptions,
+    loadOptions: mockSearchLibraries,
     value: '',
     onChange: () => {},
     placeholder: 'Search...',
@@ -33,6 +45,7 @@ export const Playground: Story = {
  * Search for "React" to see results.
  */
 export const Default: Story = {
+  render: args => <AutocompleteDemo {...args} />,
   args: {
     loadOptions: mockSearchLibraries,
     value: '',
@@ -46,6 +59,7 @@ export const Default: Story = {
  * This shows how the component behaves with a predefined list of options.
  */
 export const WithStaticOptions: Story = {
+  render: args => <AutocompleteDemo {...args} />,
   args: {
     options: [
       { value: '1', label: 'Option 1' },
