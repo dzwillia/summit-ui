@@ -57,6 +57,7 @@ const Accordion = React.forwardRef<
       defaultValue,
       variant = 'default',
       isBordered = false,
+      isCollapsible = true,
       caretPosition = 'right',
       onValueChange,
       ...props
@@ -92,13 +93,14 @@ const Accordion = React.forwardRef<
       );
     }
 
+    // default to single mode
     return (
       <AccordionPrimitive.Root
         type="single"
         value={value}
         defaultValue={defaultValue}
         onValueChange={onValueChange}
-        collapsible={mode === 'single'}
+        collapsible={isCollapsible}
         {...sharedProps}
       >
         <AccordionItems {...itemProps} />

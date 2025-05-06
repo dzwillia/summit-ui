@@ -15,10 +15,11 @@ type SharedProps = {
   triggerClassName?: string;
   contentClassName?: string;
   isBordered?: boolean;
+  isCollapsible?: boolean;
 };
 
 type SingleOrAccordionProps = {
-  mode: 'accordion' | 'single';
+  mode: 'single';
   value?: string;
   defaultValue?: string;
   onValueChange?: (value: string) => void;
@@ -33,7 +34,7 @@ type MultipleProps = {
 
 type OmittedPrimitiveProps = Omit<
   ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>,
-  'type' | 'value' | 'defaultValue' | 'onValueChange'
+  'type' | 'value' | 'defaultValue' | 'collapsible' | 'onValueChange'
 >;
 
 export type AccordionProps =

@@ -7,33 +7,77 @@ const meta = {
   parameters: {},
   tags: ['autodocs'],
   args: {
-    mode: 'multiple',
+    mode: 'single',
     variant: 'default',
   },
   argTypes: {
     mode: {
       control: 'select',
-      options: ['multiple', 'single', 'accordion'],
+      options: ['multiple', 'single'],
       description:
         'The mode of the accordion. Determines how many sections can be expanded at one time',
+      table: {
+        defaultValue: {
+          summary: 'single',
+        },
+        type: {
+          summary: 'single | multiple',
+        },
+      },
     },
     variant: {
       control: 'select',
       options: ['default', 'primary', 'success', 'danger', 'warning'],
       description: 'The visual style variant of the accordion',
+      table: {
+        defaultValue: {
+          summary: 'default',
+        },
+        type: {
+          summary: 'default | primary | success | danger | warning',
+        },
+      },
     },
     caretPosition: {
       control: 'radio',
       options: ['left', 'right'],
       description: 'The position of the caret icon',
+      table: {
+        defaultValue: {
+          summary: 'right',
+        },
+        type: {
+          summary: 'left | right',
+        },
+      },
     },
     items: {
       control: 'object',
       description: 'The items to be displayed in the accordion',
+      type: { name: 'boolean', required: true },
+      table: {
+        type: {
+          summary: 'AccordionItem[]',
+        },
+      },
     },
     isBordered: {
       control: 'boolean',
       description: 'Whether to show borders around the content area',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
+    isCollapsible: {
+      control: 'boolean',
+      description: 'Whether the accordion can be fully collapsed (only applies to single mode)',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+      },
     },
     className: {
       type: 'string',
@@ -277,7 +321,8 @@ export const SingleExpansion: Story = {
  */
 export const AccordionExpansion: Story = {
   args: {
-    mode: 'accordion',
+    mode: 'single',
+    isCollapsible: false,
     items: exampleItems,
   },
 };
