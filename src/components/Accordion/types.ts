@@ -7,9 +7,8 @@ export interface AccordionItem {
   content: React.ReactNode;
 }
 
-type BaseAccordionProps = {
+type SharedProps = {
   items: AccordionItem[];
-  mode?: 'accordion' | 'single' | 'multiple';
   variant?: 'default' | 'primary' | 'success' | 'danger' | 'warning';
   caretPosition?: 'left' | 'right';
   className?: string;
@@ -18,25 +17,25 @@ type BaseAccordionProps = {
   isBordered?: boolean;
 };
 
-type SingleAccordionProps = BaseAccordionProps & {
-  mode: 'single' | 'accordion';
+type SingleOrAccordionProps = {
+  mode: 'accordion' | 'single';
   value?: string;
   defaultValue?: string;
   onValueChange?: (value: string) => void;
 };
 
-type MultipleAccordionProps = BaseAccordionProps & {
+type MultipleProps = {
   mode: 'multiple';
   value?: string[];
   defaultValue?: string[];
   onValueChange?: (value: string[]) => void;
 };
 
-type OmittedAccordionProps = Omit<
+type OmittedPrimitiveProps = Omit<
   ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>,
-  'type' | 'value' | 'defaultValue' | 'collapsible' | 'onValueChange'
+  'type' | 'value' | 'defaultValue' | 'onValueChange'
 >;
 
 export type AccordionProps =
-  | (OmittedAccordionProps & SingleAccordionProps)
-  | (OmittedAccordionProps & MultipleAccordionProps);
+  | (SharedProps & OmittedPrimitiveProps & SingleOrAccordionProps)
+  | (SharedProps & OmittedPrimitiveProps & MultipleProps);
