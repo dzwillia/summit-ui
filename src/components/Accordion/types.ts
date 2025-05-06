@@ -11,6 +11,7 @@ type BaseAccordionProps = {
   items: AccordionItem[];
   mode?: 'accordion' | 'single' | 'multiple';
   variant?: 'default' | 'primary' | 'success' | 'danger' | 'warning';
+  caretPosition?: 'left' | 'right';
   className?: string;
   triggerClassName?: string;
   contentClassName?: string;

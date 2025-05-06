@@ -22,6 +22,11 @@ const meta = {
       options: ['default', 'primary', 'success', 'danger', 'warning'],
       description: 'The visual style variant of the accordion',
     },
+    caretPosition: {
+      control: 'radio',
+      options: ['left', 'right'],
+      description: 'The position of the caret icon',
+    },
     items: {
       control: 'object',
       description: 'The items to be displayed in the accordion',
@@ -285,5 +290,16 @@ export const DefaultOpen: Story = {
   args: {
     items: exampleItems,
     defaultValue: ['item-1', 'item-2'],
+  },
+};
+
+/**
+ * Accordion with custom caret position.
+ * Demonstrates how to change the position of the caret icon.
+ */
+export const LeftCaret: Story = {
+  args: {
+    items: exampleItems,
+    caretPosition: 'left',
   },
 };

@@ -5,7 +5,7 @@ import { cva } from 'class-variance-authority';
 export const accordionTriggerVariants = cva(
   cn(
     styles.focusRingVisible,
-    'flex flex-1 items-center justify-between px-4 py-[0.875rem] font-bold transition-all [&[data-state=open]>svg]:rotate-180',
+    'flex flex-1 items-center px-4 py-[0.875rem] font-bold transition-all w-full',
   ),
   {
     variants: {
@@ -16,9 +16,14 @@ export const accordionTriggerVariants = cva(
         danger: 'bg-danger-400 hover:bg-danger-500 text-white',
         warning: 'bg-warning-300 hover:bg-warning-400 text-black',
       },
+      caretPosition: {
+        left: '[&[data-state=open]>svg]:rotate-90',
+        right: '[&[data-state=open]>svg]:rotate-180',
+      },
     },
     defaultVariants: {
       variant: 'default',
+      caretPosition: 'right',
     },
   },
 );
@@ -34,14 +39,14 @@ export const accordionContentVariants = cva(
         danger: 'border-danger-400',
         warning: 'border-yellow-300',
       },
-      bordered: {
+      isBordered: {
         true: 'border-l-4 border-r-4 border-b-4',
         false: '',
       },
     },
     defaultVariants: {
       variant: 'default',
-      bordered: false,
+      isBordered: false,
     },
   },
 );
