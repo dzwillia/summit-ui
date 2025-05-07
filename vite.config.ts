@@ -7,8 +7,11 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      include: ['src/components', 'src/lib'],
-      exclude: ['src/App.tsx', 'src/main.tsx'],
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/**/*.stories.{ts,tsx}', 'src/mocks/**/*', 'src/App.tsx', 'src/main.tsx'],
+      rollupTypes: true,
+      outDir: 'dist/types',
+      tsconfigPath: './tsconfig.app.json',
     }),
   ],
   build: {
