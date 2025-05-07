@@ -31,3 +31,6 @@ export * from './components/Textarea';
 
 // Export utilities
 export * from './lib/utils';
+
+// Import CSS so it's included in the build
+import './index.css';
