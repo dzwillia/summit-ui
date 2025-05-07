@@ -1,7 +1,7 @@
 {
-  "name": "summit-ui",
-  "private": true,
+  "name": "@dzwillia/summit-ui",
   "version": "1.0.0",
+  "description": "Accessible, modern, open source React component library inspired by USWDS built with Radix UI",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -30,6 +30,16 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzwillia/summit-ui.git"
+  },
+  "author": "Dave Williams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dzwillia/summit-ui/issues"
+  },
+  "homepage": "https://github.com/dzwillia/summit-ui#readme",
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
