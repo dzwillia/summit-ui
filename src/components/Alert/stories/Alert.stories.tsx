@@ -6,6 +6,60 @@ const meta = {
   component: Alert,
   parameters: {},
   tags: ['autodocs'],
+  args: {
+    size: 'default',
+    headingLevel: 'h2',
+  },
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['success', 'warning', 'danger', 'info'],
+      description: 'The visual style variant of the alert',
+      table: {
+        type: {
+          summary: 'success | warning | danger | info',
+        },
+      },
+    },
+    size: {
+      control: 'select',
+      options: ['sm', 'default'],
+      description: 'The size of the alert',
+      table: {
+        type: {
+          summary: 'sm | default',
+        },
+      },
+    },
+    headingLevel: {
+      control: 'select',
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+      description: 'The HTML heading level for the alert heading',
+      table: {
+        type: {
+          summary: 'h1 | h2 | h3 | h4 | h5 | h6',
+        },
+      },
+    },
+    heading: {
+      control: 'text',
+      description: 'The heading text for the alert',
+      table: {
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    children: {
+      control: 'text',
+      description: 'The content of the alert',
+      table: {
+        type: {
+          summary: 'ReactNode',
+        },
+      },
+    },
+  },
 } satisfies Meta<typeof Alert>;
 
 export default meta;
