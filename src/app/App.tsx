@@ -28,8 +28,9 @@ import {
 } from '@/constants';
 import { mockSearchLibraries } from '@/mocks';
 import { useEffect, useState } from 'react';
+import './styles.css';
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   // Text inputs
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -94,7 +95,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
-      <div className="w-full max-w-xl space-y-8">
+      <div className="w-full max-w-2xl space-y-8">
         <div className="flex justify-between items-start">
           <div>
             <h1 className="text-3xl font-bold">Summit UI</h1>
@@ -419,5 +420,3 @@ const App: React.FC = () => {
     </div>
   );
 };
-
-export default App;
