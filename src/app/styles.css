@@ -1,11 +1,13 @@
+/* Import component library styles/theme variables */
 @import "../styles/index.css";
 
+/* Tailwind directives should only be included with final app */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Example of app-specific base styles */
 @layer base {
-  /* Example of app-specific base styles */
   h1 {
     @apply text-4xl text-gray-800;
   }

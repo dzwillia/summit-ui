@@ -1,1 +1,7 @@
-/* Add styles for preview window here */
+/* Import component library styles/theme variables */
+@import "../src/styles/index.css";
+
+/* Tailwind directives should only be included with final app */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
