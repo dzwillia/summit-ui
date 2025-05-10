@@ -28,7 +28,8 @@
     "prepare": "husky install",
     "commitlint": "commitlint --edit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "release:patch": "npm run build && npm version patch && git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
