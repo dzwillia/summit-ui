@@ -1,7 +1,5 @@
-/* Import component library styles/theme variables */
 @import "../styles/index.css";
 
-/* Tailwind directives should only be included with final app */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
