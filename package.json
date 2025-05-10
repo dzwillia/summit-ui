@@ -24,6 +24,7 @@
     "build": "tsc -b && vite build",
     "build:app": "cross-env BUILD_TAILWIND=true && npm run build",
     "build:lib": "cross-env BUILD_TAILWIND=false && npm run build",
+    "release:patch": "npm version patch && git push && git push --tags && npm publish",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
