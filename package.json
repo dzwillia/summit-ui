@@ -16,11 +16,14 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./tailwind.config.js": "./dist/tailwind.config.js",
     "./index.css": "./dist/index.css"
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:app": "cross-env BUILD_TAILWIND=true && npm run build",
+    "build:lib": "cross-env BUILD_TAILWIND=false && npm run build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
@@ -81,6 +84,7 @@
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.18",
+    "cross-env": "^7.0.3",
     "eslint": "^9.22.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -92,11 +96,13 @@
     "prettier": "^3.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup-plugin-copy": "^3.5.0",
     "storybook": "^8.0.0",
     "tailwindcss": "^3.4.1",
     "typescript": "~5.4.2",
     "typescript-eslint": "^8.26.1",
     "vite": "^6.2.2",
+    "vite-plugin-clean": "^2.0.1",
     "vite-plugin-dts": "^3.7.3"
   },
   "lint-staged": {
