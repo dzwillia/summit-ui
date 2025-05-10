@@ -1,15 +1,10 @@
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import copy from 'rollup-plugin-copy';
 import { defineConfig } from 'vite';
-import clean from 'vite-plugin-clean';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [
-    clean({
-      targetFiles: ['dist'], // Delete the `dist` folder
-    }),
     react(),
     dts({
       include: ['src/**/*.{ts,tsx}'],
@@ -27,17 +22,6 @@ export default defineConfig({
       fileName: format => `index.${format === 'es' ? 'js' : 'cjs'}`,
     },
     rollupOptions: {
-      plugins: [
-        copy({
-          targets: [
-            {
-              src: './tailwind.config.js',
-              dest: 'dist/', // Output to the root of dist
-            },
-          ],
-          hook: 'writeBundle', // Make sure it runs after the build
-        }),
-      ],
       external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
