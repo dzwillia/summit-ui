@@ -9,7 +9,7 @@ export const buttonVariants = cva(styles.button, {
       danger: 'border border-danger-400 bg-danger-400 text-white hover:bg-danger-500',
       link: 'text-link underline-offset-4 hover:underline',
       input:
-        'border border-input font-normal bg-background hover:bg-accent hover:text-accent-foreground',
+        'border border-input bg-background font-normal hover:bg-accent hover:text-accent-foreground',
       ghost: 'hover:bg-base-200 hover:text-black',
     },
     size: {

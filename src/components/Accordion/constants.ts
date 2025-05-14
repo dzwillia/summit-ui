@@ -5,16 +5,16 @@ import { cva } from 'class-variance-authority';
 export const accordionTriggerVariants = cva(
   cn(
     styles.focusRingVisible,
-    'flex flex-1 items-center px-4 py-[0.875rem] font-bold transition-all w-full',
+    'flex w-full flex-1 items-center px-4 py-[0.875rem] font-bold transition-all',
   ),
   {
     variants: {
       variant: {
-        default: 'bg-base-200 hover:brightness-90 text-black',
-        primary: 'bg-primary-400 hover:bg-primary-500 text-white',
-        success: 'bg-success-500 hover:bg-success-600 text-white',
-        danger: 'bg-danger-400 hover:bg-danger-500 text-white',
-        warning: 'bg-warning-300 hover:bg-warning-400 text-black',
+        default: 'bg-base-200 text-black hover:brightness-90',
+        primary: 'bg-primary-400 text-white hover:bg-primary-500',
+        success: 'bg-success-500 text-white hover:bg-success-600',
+        danger: 'bg-danger-400 text-white hover:bg-danger-500',
+        warning: 'bg-warning-300 text-black hover:bg-warning-400',
       },
       caretPosition: {
         left: '[&[data-state=open]>svg]:rotate-90',
@@ -40,7 +40,7 @@ export const accordionContentVariants = cva(
         warning: 'border-yellow-300',
       },
       isBordered: {
-        true: 'border-l-4 border-r-4 border-b-4',
+        true: 'border-b-4 border-l-4 border-r-4',
         false: '',
       },
     },
