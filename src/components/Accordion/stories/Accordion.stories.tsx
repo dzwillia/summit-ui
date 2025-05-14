@@ -129,7 +129,7 @@ const richContentItems = [
     content: (
       <div className="space-y-2">
         <p>To get started with Summit UI, install it via npm:</p>
-        <pre className="bg-gray-100 p-2 rounded-md">
+        <pre className="rounded-md bg-gray-100 p-2">
           <code>npm install summit-ui</code>
         </pre>
       </div>

@@ -61,7 +61,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                       className={cn(
                         'mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary-400',
                         value.includes(option.value)
-                          ? 'bg-primary-400 text-primary-400-foreground'
+                          ? 'text-primary-400-foreground bg-primary-400'
                           : 'opacity-50',
                       )}
                     >

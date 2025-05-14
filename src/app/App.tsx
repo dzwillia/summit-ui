@@ -94,13 +94,13 @@ export const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-6">
+    <div className="flex min-h-screen items-center justify-center bg-background p-6">
       <div className="w-full max-w-2xl space-y-8">
-        <div className="flex justify-between items-start">
+        <div className="flex items-start justify-between">
           <div>
             <h1 className="text-3xl font-bold">Summit UI</h1>
-            <p className="text-muted-foreground mt-2">Configure your development environment</p>
-            <div className="flex flex-wrap gap-2 mt-3">
+            <p className="mt-2 text-muted-foreground">Configure your development environment</p>
+            <div className="mt-3 flex flex-wrap gap-2">
               <Badge>React</Badge>
               <Badge>TypeScript</Badge>
               <Badge>Tailwind CSS</Badge>
@@ -123,7 +123,7 @@ export const App: React.FC = () => {
           <div className="space-y-1">
             <Label className="font-bold">Badges</Label>
           </div>
-          <div className="flex gap-2 mt-2">
+          <div className="mt-2 flex gap-2">
             <Badge>Default</Badge>
             <Badge variant="primary">Primary</Badge>
             <Badge variant="success">Success</Badge>

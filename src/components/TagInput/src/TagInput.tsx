@@ -159,7 +159,7 @@ const TagInput = React.forwardRef<HTMLDivElement, TagInputProps>(
             className={cn(
               'flex items-center gap-1 rounded-sm bg-secondary px-2 py-0.5 text-sm text-secondary-foreground transition-colors',
               'hover:bg-secondary/80',
-              isDisabled && 'opacity-50 cursor-not-allowed',
+              isDisabled && 'cursor-not-allowed opacity-50',
               styles.focusRing,
               'focus:ring-2 focus:ring-offset-0',
             )}
