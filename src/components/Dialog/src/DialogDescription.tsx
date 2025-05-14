@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
 import { styles } from '@/lib/styles';
+import { cn } from '@/lib/utils';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import * as React from 'react';
 import { DialogDescriptionProps } from '../types';
