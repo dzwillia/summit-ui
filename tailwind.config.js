@@ -19,44 +19,6 @@ export default {
     },
     extend: {
       colors: {
-        border: 'var(--border)',
-        input: 'var(--input)',
-        ring: 'var(--ring)',
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        // defined below with semantic colors
-        // primary: {},
-        secondary: {
-          DEFAULT: 'var(--secondary)',
-          foreground: 'var(--secondary-foreground)',
-        },
-        destructive: {
-          DEFAULT: 'var(--destructive)',
-          foreground: 'var(--destructive-foreground)',
-        },
-        muted: {
-          DEFAULT: 'var(--muted)',
-          foreground: 'var(--muted-foreground)',
-        },
-        accent: {
-          DEFAULT: 'var(--accent)',
-          foreground: 'var(--accent-foreground)',
-        },
-        popover: {
-          DEFAULT: 'var(--popover)',
-          foreground: 'var(--popover-foreground)',
-        },
-        card: {
-          DEFAULT: 'var(--card)',
-          foreground: 'var(--card-foreground)',
-        },
-        link: {
-          DEFAULT: 'var(--link)',
-          visited: 'var(--link-visited)',
-          hover: 'var(--link-hover)',
-          active: 'var(--link-active)',
-        },
-
         // semantic colors
         base: {
           100: 'var(--color-base-100)', // #f7f6f7
@@ -67,6 +29,7 @@ export default {
           600: 'var(--color-base-600)', // #3d4551
           700: 'var(--color-base-700)', // #1b1b1b
         },
+
         primary: {
           DEFAULT: 'var(--primary)',
           foreground: 'var(--primary-foreground)',
@@ -87,6 +50,7 @@ export default {
           600: 'var(--color-success-600)', // #216e1f
           700: 'var(--color-success-700)', // #154c21
         },
+
         danger: {
           100: 'var(--color-danger-100)', // #f8eff1
           200: 'var(--color-danger-200)', // #ffd7d7
@@ -96,6 +60,7 @@ export default {
           600: 'var(--color-danger-600)', // #8b0a03
           700: 'var(--color-danger-700)', // #4f1c24
         },
+
         warning: {
           100: 'var(--color-warning-100)', // #faf3d1
           200: 'var(--color-warning-200)', // #fee685
@@ -105,6 +70,7 @@ export default {
           600: 'var(--color-warning-600)', // #936f38
           700: 'var(--color-warning-700)', // #7a591a
         },
+
         info: {
           100: 'var(--color-info-100)', // #e7f6f8
           200: 'var(--color-info-200)', // #def7ff
@@ -114,12 +80,55 @@ export default {
           600: 'var(--color-info-600)', // #0081a1
           700: 'var(--color-info-700)', // #00687d
         },
-      },
 
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 0.125rem)',
-        sm: 'calc(var(--radius) - 0.25rem)',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+
+        input: 'var(--input)',
+        ring: 'var(--ring)',
+
+        link: {
+          DEFAULT: 'var(--link)',
+          visited: 'var(--link-visited)',
+          hover: 'var(--link-hover)',
+          active: 'var(--link-active)',
+        },
+
+        // defined above with semantic colors
+        // primary: {
+        //   DEFAULT: 'var(--primary)',
+        //   foreground: 'var(--primary-foreground)',
+        // },
+
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
+        },
+
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+
+        accent: {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
+        },
+
+        destructive: {
+          DEFAULT: 'var(--destructive)',
+          foreground: 'var(--destructive-foreground)',
+        },
+
+        card: {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
+        },
+
+        popover: {
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
+        },
       },
 
       keyframes: {

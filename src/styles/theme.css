@@ -61,19 +61,16 @@
      All Other Custom Properties
      ============================================ */
 
+  --background: #ffffff; /* 0 0% 100% */
+  --foreground: #1a1a1a; /* 240 6% 10% */
+
+  --input: #e6e6e6; /* 240 6% 90% */
+  --ring: #006699; /* 204 100% 32% */
+
   --link: #005ea2; /* 210 100% 32% */
   --link-visited: #54278f; /* 266 57% 36% */
   --link-hover: #1a4480; /* 213 66% 30% */
   --link-active: #162e51; /* 217 56.2% 20.4% */
-
-  --background: #ffffff; /* 0 0% 100% */
-  --foreground: #1a1a1a; /* 240 6% 10% */
-
-  --card: #ffffff; /* 0 0% 100% */
-  --card-foreground: #1a1a1a; /* 240 6% 10% */
-
-  --popover: #ffffff; /* 0 0% 100% */
-  --popover-foreground: #1a1a1a; /* 240 6% 10% */
 
   --primary: #006699; /* 204 100% 32% */
   --primary-foreground: #ffffff; /* 0 0% 100% */
@@ -90,17 +87,17 @@
   --destructive: #a60000; /* 0 100% 32% */
   --destructive-foreground: #ffffff; /* 0 0% 100% */
 
-  --border: #e6e6e6; /* 240 6% 90% */
-  --input: #e6e6e6; /* 240 6% 90% */
-  --ring: #006699; /* 204 100% 32% */
+  --card: #ffffff; /* 0 0% 100% */
+  --card-foreground: #1a1a1a; /* 240 6% 10% */
 
-  --radius: 0.5rem;
+  --popover: #ffffff; /* 0 0% 100% */
+  --popover-foreground: #1a1a1a; /* 240 6% 10% */
 }
 
 .theme-uswds {
   /* ============================================
-      USWDS Text Input & Feedback Custom Properties
-      ============================================ */
+     USWDS Text Input & Feedback Custom Properties
+     ============================================ */
 
   /* Default Input State */
   --usa-input-border-color: #5c5c5c; /* 0 0% 36% */
@@ -142,19 +139,16 @@
      USWDS Color Scheme
      ============================================ */
 
+  --background: var(--usa-bg-white);
+  --foreground: var(--usa-text-base-darkest);
+
+  --input: var(--usa-input-border-color);
+  --ring: var(--usa-focus-color);
+
   --link: var(--usa-link);
   --link-visited: var(--usa-link-visited);
   --link-hover: var(--usa-link-hover);
   --link-active: var(--usa-link-active);
-
-  --background: var(--usa-bg-white);
-  --foreground: var(--usa-text-base-darkest);
-
-  --card: var(--usa-bg-white);
-  --card-foreground: var(--usa-text-base-darkest);
-
-  --popover: var(--usa-bg-white);
-  --popover-foreground: var(--usa-text-base-darkest);
 
   --primary: var(--color-primary-400);
   --primary-foreground: #fff;
@@ -168,20 +162,19 @@
   --destructive: var(--usa-text-secondary-dark);
   --destructive-foreground: #fff;
 
-  --border: var(--usa-bg-gray-10);
-  --input: var(--usa-input-border-color);
-  --ring: var(--usa-focus-color);
+  --card: var(--usa-bg-white);
+  --card-foreground: var(--usa-text-base-darkest);
+
+  --popover: var(--usa-bg-white);
+  --popover-foreground: var(--usa-text-base-darkest);
 }
 
 .dark {
   --background: #1a1a1a; /* 240 6% 10% */
   --foreground: #ffffff; /* 0 0% 100% */
 
-  --card: #1a1a1a; /* 240 6% 10% */
-  --card-foreground: #ffffff; /* 0 0% 100% */
-
-  --popover: #1a1a1a; /* 240 6% 10% */
-  --popover-foreground: #ffffff; /* 0 0% 100% */
+  --input: #333333; /* 240 6% 20% */
+  --ring: #0099cc; /* 204 100% 50% */
 
   --primary: #006699; /* 204 100% 32% */
   --primary-foreground: #ffffff; /* 0 0% 100% */
@@ -198,7 +191,9 @@
   --destructive: #a60000; /* 0 100% 32% */
   --destructive-foreground: #ffffff; /* 0 0% 100% */
 
-  --border: #333333; /* 240 6% 20% */
-  --input: #333333; /* 240 6% 20% */
-  --ring: #0099cc; /* 204 100% 50% */
+  --card: #1a1a1a; /* 240 6% 10% */
+  --card-foreground: #ffffff; /* 0 0% 100% */
+
+  --popover: #1a1a1a; /* 240 6% 10% */
+  --popover-foreground: #ffffff; /* 0 0% 100% */
 }
