@@ -6,7 +6,16 @@ import { AlertProps } from '../types';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   (
-    { className, variant, size = 'default', heading, headingLevel = 'h2', children, ...props },
+    {
+      className,
+      variant,
+      size = 'default',
+      heading,
+      headingLevel = 'h2',
+      hasIcon = true,
+      children,
+      ...props
+    },
     ref,
   ) => {
     const HeadingTag = headingLevel;
@@ -19,7 +28,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 
     return (
       <div ref={ref} className={cn(alertVariants({ variant, size }), className)} {...props}>
-        {icons[variant]}
+        {hasIcon ? icons[variant] : null}
         <div className="flex-1">
           {heading ? (
             <HeadingTag className={cn(alertHeadingVariants({ variant, size }))}>

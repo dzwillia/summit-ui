@@ -8,5 +8,6 @@ export interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, 'childr
   size?: AlertSize;
   heading?: string;
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  hasIcon?: boolean;
   children: ReactNode;
 }

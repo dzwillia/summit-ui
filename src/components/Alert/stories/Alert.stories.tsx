@@ -9,6 +9,7 @@ const meta = {
   args: {
     size: 'default',
     headingLevel: 'h2',
+    hasIcon: true,
   },
   argTypes: {
     variant: {
@@ -47,6 +48,15 @@ const meta = {
       table: {
         type: {
           summary: 'string',
+        },
+      },
+    },
+    hasIcon: {
+      control: 'boolean',
+      description: 'Whether to show the status icon',
+      table: {
+        type: {
+          summary: 'boolean',
         },
       },
     },
@@ -127,7 +137,7 @@ export const Small: Story = {
 };
 
 /**
- * A compact success alert without an icon.
+ * A success alert without an icon.
  * Demonstrates how to hide the status icon while maintaining the alert's structure.
  */
 export const SmallNoIcon: Story = {
@@ -136,7 +146,7 @@ export const SmallNoIcon: Story = {
     size: 'sm',
     heading: 'Success',
     children: 'Your changes have been saved successfully.',
-    className: '[&>svg]:hidden',
+    hasIcon: false,
   },
 };
 
@@ -161,20 +171,20 @@ export const SmallNoIconNoHeading: Story = {
     variant: 'success',
     size: 'sm',
     children: 'Your changes have been saved successfully.',
-    className: '[&>svg]:hidden',
+    hasIcon: false,
   },
 };
 
 /**
- * An alert with a custom heading level.
- * Demonstrates how to adjust the semantic heading level for accessibility.
+ * An alert without an icon.
+ * Demonstrates how to hide the status icon while maintaining the alert's structure.
  */
-export const CustomHeadingLevel: Story = {
+export const NoIcon: Story = {
   args: {
     variant: 'info',
-    heading: 'H3 Heading',
-    headingLevel: 'h3',
-    children: 'This alert uses an h3 heading level.',
+    heading: 'No Icon',
+    children: 'This is an alert without an icon.',
+    hasIcon: false,
   },
 };
 
@@ -196,8 +206,21 @@ export const NoHeading: Story = {
 export const NoIconNoHeading: Story = {
   args: {
     variant: 'info',
-    children: 'This is an alert without a heading.',
-    className: '[&>svg]:hidden',
+    children: 'This is an alert without an icon or heading.',
+    hasIcon: false,
+  },
+};
+
+/**
+ * An alert with a custom heading level.
+ * Demonstrates how to adjust the semantic heading level for accessibility.
+ */
+export const CustomHeadingLevel: Story = {
+  args: {
+    variant: 'info',
+    heading: 'H3 Heading',
+    headingLevel: 'h3',
+    children: 'This alert uses an h3 heading level.',
   },
 };
 
