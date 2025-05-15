@@ -1,3 +1,14 @@
 @import url(theme.css);
 @import url(components.css);
 @import url(utilities.css);
+
+/* these styles are pulled from Tailwind's Preflight and are still required */
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  box-sizing: border-box;
+  border: 0 solid;
+}
