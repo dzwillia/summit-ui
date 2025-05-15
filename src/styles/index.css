@@ -1,18 +1,3 @@
 @import url(theme.css);
-
-@tailwind components;
+@import url(components.css);
 @tailwind utilities;
-
-@layer components {
-  [data-error="true"] input,
-  [data-error="true"] textarea {
-    @apply border-destructive focus-visible:ring-destructive;
-  }
-
-  [data-error="true"] select,
-  [data-error="true"] button[role="combobox"],
-  [data-error="true"] button[data-component="date-picker"],
-  [data-error="true"] button[data-component="date-range-picker"] {
-    @apply border-destructive focus:ring-destructive;
-  }
-}
