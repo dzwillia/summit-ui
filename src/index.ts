@@ -1,6 +1,3 @@
-// Import CSS so it's included in the build
-import './styles/index.css';
-
 // Export components
 export * from './components/Accordion';
 export * from './components/Alert';

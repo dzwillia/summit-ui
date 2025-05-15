@@ -16,7 +16,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./index.css": "./dist/index.css"
+    "./preflight.css": "./dist/styles/preflight.css",
+    "./no-preflight.css": "./dist/styles/no-preflight.css"
   },
   "scripts": {
     "dev": "vite",
