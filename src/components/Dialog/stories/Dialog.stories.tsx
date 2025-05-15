@@ -40,7 +40,7 @@ export const Default: Story = {
             </label>
             <input
               id="name"
-              className="col-span-3 h-10 rounded-md border border-input bg-background px-3"
+              className="col-span-3 h-10 rounded-sm border border-input bg-background px-3"
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
@@ -49,7 +49,7 @@ export const Default: Story = {
             </label>
             <input
               id="username"
-              className="col-span-3 h-10 rounded-md border border-input bg-background px-3"
+              className="col-span-3 h-10 rounded-sm border border-input bg-background px-3"
             />
           </div>
         </div>

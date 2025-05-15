@@ -37,7 +37,7 @@ export const WithArrow: Story = {
               <input
                 id="width"
                 defaultValue="100%"
-                className="col-span-2 h-8 rounded-md border border-input bg-transparent px-3 text-sm"
+                className="col-span-2 h-8 rounded-sm border border-input bg-transparent px-3 text-sm"
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
@@ -47,7 +47,7 @@ export const WithArrow: Story = {
               <input
                 id="height"
                 defaultValue="25px"
-                className="col-span-2 h-8 rounded-md border border-input bg-transparent px-3 text-sm"
+                className="col-span-2 h-8 rounded-sm border border-input bg-transparent px-3 text-sm"
               />
             </div>
           </div>
