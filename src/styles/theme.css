@@ -1,0 +1,204 @@
+:root {
+  /* ============================================
+     Component Library Semantic Color Scheme
+     ============================================ */
+
+  /* Base */
+  --color-base-100: #f7f6f7; /* 300 7% 96% */
+  --color-base-200: #f0f0f0; /* 0 0% 94% */
+  --color-base-300: #9b9d9f; /* 210 2% 62% */
+  --color-base-400: #6b6b6b; /* 0 0% 42% */
+  --color-base-500: #565c65; /* 217 8% 37% */
+  --color-base-600: #3d4551; /* 217 13% 27% */
+  --color-base-700: #1b1b1b; /* 0 0% 11% */
+
+  /* Primary */
+  --color-primary-100: #eff6fb; /* 207 65% 96% */
+  --color-primary-200: #d9e8f6; /* 210 62% 91% */
+  --color-primary-300: #24a1ff; /* 205 100% 57% */
+  --color-primary-400: #005ea2; /* 210 100% 32% */
+  --color-primary-500: #1a4480; /* 213 66% 30% */
+  --color-primary-600: #162e51; /* 219 52% 20% */
+  --color-primary-700: #252f3e; /* 217 22% 19% */
+
+  /* Success */
+  --color-success-100: #ecf3ec; /* 120 20% 94% */
+  --color-success-200: #dbebde; /* 130 30% 90% */
+  --color-success-300: #70e17b; /* 123 65% 68% */
+  --color-success-400: #00a91c; /* 132 100% 33% */
+  --color-success-500: #008817; /* 133 100% 27% */
+  --color-success-600: #216e1f; /* 127 55% 27% */
+  --color-success-700: #154c21; /* 135 55% 19% */
+
+  /* Danger */
+  --color-danger-100: #f8eff1; /* 350 44% 95% */
+  --color-danger-200: #ffd7d7; /* 0 100% 90% */
+  --color-danger-300: #f2938c; /* 4 84% 76% */
+  --color-danger-400: #d83933; /* 3 70% 52% */
+  --color-danger-500: #b50909; /* 0 91% 37% */
+  --color-danger-600: #8b0a03; /* 3 92% 28% */
+  --color-danger-700: #4f1c24; /* 347 58% 21% */
+
+  /* Warning */
+  --color-warning-100: #faf3d1; /* 48 83% 91% */
+  --color-warning-200: #fee685; /* 48 98% 75% */
+  --color-warning-300: #ffbe2e; /* 42 100% 59% */
+  --color-warning-400: #e5a000; /* 42 100% 45% */
+  --color-warning-500: #c2850c; /* 42 76% 40% */
+  --color-warning-600: #936f38; /* 35 43% 40% */
+  --color-warning-700: #7a591a; /* 35 63% 29% */
+
+  /* Info */
+  --color-info-100: #e7f6f8; /* 187 50% 94% */
+  --color-info-200: #def7ff; /* 195 100% 93% */
+  --color-info-300: #99deea; /* 188 63% 75% */
+  --color-info-400: #00bde3; /* 191 100% 44% */
+  --color-info-500: #009ec1; /* 192 100% 39% */
+  --color-info-600: #0081a1; /* 194 100% 33% */
+  --color-info-700: #00687d; /* 196 100% 26% */
+
+  /* ============================================
+     All Other Custom Properties
+     ============================================ */
+
+  --link: #005ea2; /* 210 100% 32% */
+  --link-visited: #54278f; /* 266 57% 36% */
+  --link-hover: #1a4480; /* 213 66% 30% */
+  --link-active: #162e51; /* 217 56.2% 20.4% */
+
+  --background: #ffffff; /* 0 0% 100% */
+  --foreground: #1a1a1a; /* 240 6% 10% */
+
+  --card: #ffffff; /* 0 0% 100% */
+  --card-foreground: #1a1a1a; /* 240 6% 10% */
+
+  --popover: #ffffff; /* 0 0% 100% */
+  --popover-foreground: #1a1a1a; /* 240 6% 10% */
+
+  --primary: #006699; /* 204 100% 32% */
+  --primary-foreground: #ffffff; /* 0 0% 100% */
+
+  --secondary: #e6e6e6; /* 240 6% 90% */
+  --secondary-foreground: #1a1a1a; /* 240 6% 10% */
+
+  --muted: #e6e6e6; /* 240 6% 90% */
+  --muted-foreground: #6f6f6f; /* 240 6% 45% */
+
+  --accent: #ccecff; /* 204 100% 90% */
+  --accent-foreground: #006699; /* 204 100% 32% */
+
+  --destructive: #a60000; /* 0 100% 32% */
+  --destructive-foreground: #ffffff; /* 0 0% 100% */
+
+  --border: #e6e6e6; /* 240 6% 90% */
+  --input: #e6e6e6; /* 240 6% 90% */
+  --ring: #006699; /* 204 100% 32% */
+
+  --radius: 0.5rem;
+}
+
+.theme-uswds {
+  /* ============================================
+      USWDS Text Input & Feedback Custom Properties
+      ============================================ */
+
+  /* Default Input State */
+  --usa-input-border-color: #5c5c5c; /* 0 0% 36% */
+  --usa-input-background-color: #ffffff; /* 0 0% 100% */
+  --usa-input-text-color: #1b1b1b; /* 0 0% 10.6% */
+  --usa-input-placeholder-color: #a9aeb1; /* 210 7.5% 66.3% */
+
+  /* Focus State */
+  --usa-focus-color: #2491ff; /* 212 100% 58% */
+  --usa-input-border-color-focus: #005ea2; /* 208 100% 32.5% */
+
+  /* Error State */
+  --usa-input-border-color-error: #d54309; /* 20 89.3% 45.5% */
+  --usa-input-background-color-error: #ffffff; /* 0 0% 100% */
+  --usa-input-text-color-error: #1b1b1b; /* 0 0% 10.6% */
+
+  /* Disabled State */
+  --usa-input-background-color-disabled: #f0f0f0; /* 0 0% 94.1% */
+  --usa-input-border-color-disabled: #d6d7d9; /* 210 4.2% 83.7% */
+  --usa-input-text-color-disabled: #c1c1c1; /* 0 0% 76.1% */
+
+  /* Error and Validation Messaging */
+  --usa-error-text-color: #d54309; /* 20 89.3% 45.5% */
+  --usa-error-icon-color: #d54309; /* 20 89.3% 45.5% */
+  --usa-warning-text-color: #fdb81e; /* 45 100% 40.2% */
+  --usa-success-text-color: #2e8540; /* 140 60.8% 34.9% */
+  --usa-info-text-color: #005ea2; /* 208 100% 32.5% */
+
+  --usa-bg-white: #ffffff; /* 0 0% 100% */
+  --usa-bg-gray-10: #e6e6e6; /* 240 6% 90% */
+  --usa-text-base-darkest: #1b1b1b; /* 0 0% 10.6% */
+  --usa-text-secondary-dark: #b50909; /* 0 89.3% 36.1% */
+  --usa-link: #005ea2; /* 210 100% 32% */
+  --usa-link-visited: #54278f; /* 266 57% 36% */
+  --usa-link-hover: #1a4480; /* 213 66% 30% */
+  --usa-link-active: #162e51; /* 217 56.2% 20.4% */
+
+  /* ============================================
+     USWDS Color Scheme
+     ============================================ */
+
+  --link: var(--usa-link);
+  --link-visited: var(--usa-link-visited);
+  --link-hover: var(--usa-link-hover);
+  --link-active: var(--usa-link-active);
+
+  --background: var(--usa-bg-white);
+  --foreground: var(--usa-text-base-darkest);
+
+  --card: var(--usa-bg-white);
+  --card-foreground: var(--usa-text-base-darkest);
+
+  --popover: var(--usa-bg-white);
+  --popover-foreground: var(--usa-text-base-darkest);
+
+  --primary: var(--color-primary-400);
+  --primary-foreground: #fff;
+
+  --secondary: var(--usa-bg-gray-10);
+  --secondary-foreground: var(--usa-text-base-darkest);
+
+  --muted: var(--usa-bg-gray-10);
+  --muted-foreground: var(--color-base-400);
+
+  --destructive: var(--usa-text-secondary-dark);
+  --destructive-foreground: #fff;
+
+  --border: var(--usa-bg-gray-10);
+  --input: var(--usa-input-border-color);
+  --ring: var(--usa-focus-color);
+}
+
+.dark {
+  --background: #1a1a1a; /* 240 6% 10% */
+  --foreground: #ffffff; /* 0 0% 100% */
+
+  --card: #1a1a1a; /* 240 6% 10% */
+  --card-foreground: #ffffff; /* 0 0% 100% */
+
+  --popover: #1a1a1a; /* 240 6% 10% */
+  --popover-foreground: #ffffff; /* 0 0% 100% */
+
+  --primary: #006699; /* 204 100% 32% */
+  --primary-foreground: #ffffff; /* 0 0% 100% */
+
+  --secondary: #333333; /* 240 6% 20% */
+  --secondary-foreground: #ffffff; /* 0 0% 100% */
+
+  --muted: #333333; /* 240 6% 20% */
+  --muted-foreground: #999999; /* 240 6% 60% */
+
+  --accent: #004466; /* 204 100% 20% */
+  --accent-foreground: #ffffff; /* 0 0% 100% */
+
+  --destructive: #a60000; /* 0 100% 32% */
+  --destructive-foreground: #ffffff; /* 0 0% 100% */
+
+  --border: #333333; /* 240 6% 20% */
+  --input: #333333; /* 240 6% 20% */
+  --ring: #0099cc; /* 204 100% 50% */
+}

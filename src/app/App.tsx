@@ -72,7 +72,7 @@ export const App: React.FC = () => {
   const [projectType, setProjectType] = useState('web');
 
   // Theme
-  const [currentTheme, setCurrentTheme] = useState<string>('light');
+  const [currentTheme, setCurrentTheme] = useState<string>('theme-uswds');
 
   // Tags
   const [tags, setTags] = useState<Tag[]>([
