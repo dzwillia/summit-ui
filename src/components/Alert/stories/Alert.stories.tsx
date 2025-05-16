@@ -1,3 +1,4 @@
+import { Badge } from '@/components/Badge';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Alert } from '../src/Alert';
 
@@ -124,6 +125,42 @@ export const Info: Story = {
 };
 
 /**
+ * An alert without an icon.
+ * Demonstrates how to hide the status icon while maintaining the alert's structure.
+ */
+export const NoIcon: Story = {
+  args: {
+    variant: 'info',
+    heading: 'No Icon',
+    children: 'This is an alert without an icon.',
+    hasIcon: false,
+  },
+};
+
+/**
+ * An alert without a heading.
+ * Shows how to create a simpler alert when a heading isn't needed.
+ */
+export const NoHeading: Story = {
+  args: {
+    variant: 'info',
+    children: 'This is an alert without a heading.',
+  },
+};
+
+/**
+ * An alert without a heading.
+ * Shows how to create a simpler alert when a heading isn't needed.
+ */
+export const NoIconNoHeading: Story = {
+  args: {
+    variant: 'info',
+    children: 'This is an alert without an icon or heading.',
+    hasIcon: false,
+  },
+};
+
+/**
  * A compact success alert.
  * Shows how the alert appears with reduced padding and font sizes.
  */
@@ -176,42 +213,6 @@ export const SmallNoIconNoHeading: Story = {
 };
 
 /**
- * An alert without an icon.
- * Demonstrates how to hide the status icon while maintaining the alert's structure.
- */
-export const NoIcon: Story = {
-  args: {
-    variant: 'info',
-    heading: 'No Icon',
-    children: 'This is an alert without an icon.',
-    hasIcon: false,
-  },
-};
-
-/**
- * An alert without a heading.
- * Shows how to create a simpler alert when a heading isn't needed.
- */
-export const NoHeading: Story = {
-  args: {
-    variant: 'info',
-    children: 'This is an alert without a heading.',
-  },
-};
-
-/**
- * An alert without a heading.
- * Shows how to create a simpler alert when a heading isn't needed.
- */
-export const NoIconNoHeading: Story = {
-  args: {
-    variant: 'info',
-    children: 'This is an alert without an icon or heading.',
-    hasIcon: false,
-  },
-};
-
-/**
  * An alert with a custom heading level.
  * Demonstrates how to adjust the semantic heading level for accessibility.
  */
@@ -225,14 +226,37 @@ export const CustomHeadingLevel: Story = {
 };
 
 /**
- * An alert with extended content.
- * Shows how the alert handles longer messages while maintaining proper layout.
+ * An alert with rich, extended content.
+ * Demonstrates how the alert handles longer messages and React components while maintaining proper layout.
  */
-export const LongContent: Story = {
+export const RichContent: Story = {
   args: {
     variant: 'info',
     heading: 'Detailed Information',
-    children:
-      'This is an alert with a longer message that might wrap to multiple lines. It demonstrates how the alert component handles larger content while maintaining proper spacing and alignment.',
+    children: (
+      <div className="space-y-3">
+        <p>
+          This is an alert with a longer message that might wrap to multiple lines. It demonstrates
+          how the alert component handles larger content while maintaining proper spacing and
+          alignment.
+        </p>
+        <p>
+          This alert also contains <strong>rich content</strong> including{' '}
+          <a
+            href="https://storybook.js.org/docs/react/writing-stories/introduction"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link hover:underline"
+          >
+            links to documentation
+          </a>{' '}
+          and demonstrates support for React components.
+        </p>
+        <p>
+          <Badge variant="primary">React</Badge> <Badge variant="primary">Extensible</Badge>{' '}
+          <Badge variant="primary">Rich Content</Badge>
+        </p>
+      </div>
+    ),
   },
 };
