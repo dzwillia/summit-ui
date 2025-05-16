@@ -1,6 +1,6 @@
 {
   "name": "@dzwillia/summit-ui",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Accessible, modern, open source React component library inspired by USWDS built with Radix UI",
   "type": "module",
   "main": "dist/index.js",
