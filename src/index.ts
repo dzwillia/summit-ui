@@ -28,6 +28,7 @@ export * from './components/Switch';
 export * from './components/SwitchGroup';
 export * from './components/TagInput';
 export * from './components/Textarea';
+export * from './components/Tooltip';
 
 // Export utilities
 export * from './lib/utils';
