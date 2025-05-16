@@ -1,3 +1,7 @@
+**May 2025 Update: This repository was transferred to [Capital Technology Group](https://github.com/capitaltg) and can now be found at [capitaltg/vero](https://github.com/capitaltg/vero).**
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
